@@ -30,7 +30,7 @@ import pandas as pd
 MASTER_FILE = "cities_master.csv"
 
 WINTER_THRESHOLD  = 35.0   # avg winter low at/below this = real winter
-SUMMER_THRESHOLD  = 85.0   # avg summer high at/above this = real summer
+SUMMER_THRESHOLD  = 78.0   # avg summer high at/above this = real summer
 RANGE_THRESHOLD   = 40.0   # annual temp range needed for spring/fall seasons
 
 def compute_seasons(row) -> dict:

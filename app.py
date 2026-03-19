@@ -17,7 +17,7 @@ import plotly.express as px
 
 st.set_page_config(
     page_title="City Suggestor",
-    page_icon="🏙️",
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -138,7 +138,7 @@ def safe_range(col, default_min=0, default_max=100):
 # ── sidebar filters ───────────────────────────────────────────────────────────
 
 with st.sidebar:
-    st.markdown("# 🏙️ City Suggestor")
+    st.markdown("# City Suggestor")
     st.markdown("Filter cities by what matters to you.")
     st.markdown("---")
 
@@ -292,7 +292,7 @@ with st.sidebar:
 
     # ── Reset
     st.markdown("---")
-    if st.button("🔄 Reset all filters", use_container_width=True):
+    if st.button("Reset all filters", use_container_width=True):
         st.rerun()
 
 # ── apply filters ─────────────────────────────────────────────────────────────
@@ -335,19 +335,19 @@ if need_nba: filtered = filtered[filtered.get("nba_teams", pd.Series(0, index=fi
 if need_nhl: filtered = filtered[filtered.get("nhl_teams", pd.Series(0, index=filtered.index)) >= 1]
 if need_mls: filtered = filtered[filtered.get("mls_teams", pd.Series(0, index=filtered.index)) >= 1]
 
-# Sort by population descending as default ranking
-filtered = filtered.sort_values("metro_population", ascending=False).head(50).reset_index(drop=True)
+# Sort by city population descending
+filtered = filtered.sort_values("population", ascending=False).reset_index(drop=True)
 
 # ── header ────────────────────────────────────────────────────────────────────
 
-st.markdown(f"## 🏙️ City Suggestor")
+st.markdown(f"## City Suggestor")
 
-city_search = st.text_input("🔍 Search for a specific city", placeholder="e.g. Austin, Denver...", key="city_search")
+city_search = st.text_input("Search for a specific city", placeholder="e.g. Austin, Denver...", key="city_search")
 if city_search.strip():
     search_mask = filtered["city"].str.contains(city_search.strip(), case=False, na=False)
     filtered = filtered[search_mask].reset_index(drop=True)
 
-st.markdown(f"**{len(filtered)}** cities match your filters (showing top 50 by metro population)")
+st.markdown(f"**{len(filtered)}** cities match your filters")
 st.markdown("---")
 
 # ── main layout: list + map ───────────────────────────────────────────────────
@@ -368,23 +368,23 @@ with col_list:
             # Build stat pills
             pills = []
             if pd.notna(row.get("avg_temp_f")):
-                pills.append(f"🌡️ {row['avg_temp_f']:.0f}°F avg")
+                pills.append(f"{row['avg_temp_f']:.0f}°F avg")
             if pd.notna(row.get("median_household_income")):
-                pills.append(f"💰 ${row['median_household_income']:,.0f} income")
+                pills.append(f"${row['median_household_income']:,.0f} income")
             if pd.notna(row.get("median_home_price")):
-                pills.append(f"🏠 ${row['median_home_price']:,.0f} home")
+                pills.append(f"${row['median_home_price']:,.0f} home")
             if pd.notna(row.get("walkability_score_100")):
-                pills.append(f"🚶 {row['walkability_score_100']:.0f} walk")
+                pills.append(f"{row['walkability_score_100']:.0f} walk score")
             if pd.notna(row.get("dist_airport_miles")):
-                pills.append(f"✈️ {row['dist_airport_miles']:.0f} mi to airport")
+                pills.append(f"{row['dist_airport_miles']:.0f} mi to airport")
             if pd.notna(row.get("nature_score")):
-                pills.append(f"🌲 {row['nature_score']:.0f} nature")
+                pills.append(f"{row['nature_score']:.0f} nature")
             if pd.notna(row.get("seasons_count")):
-                pills.append(f"🍂 {int(row['seasons_count'])} seasons")
+                pills.append(f"{int(row['seasons_count'])} seasons")
             if pd.notna(row.get("total_pro_teams")) and row.get("total_pro_teams", 0) > 0:
-                pills.append(f"🏈 {int(row['total_pro_teams'])} pro teams")
+                pills.append(f"{int(row['total_pro_teams'])} pro teams")
             if row.get("coastline_type") in ("ocean", "great_lakes"):
-                ct = "🌊 Ocean" if row["coastline_type"] == "ocean" else "🏖️ Great Lakes"
+                ct = "Ocean" if row["coastline_type"] == "ocean" else "Great Lakes"
                 pills.append(ct)
 
             pills_html = "".join([f'<span class="stat-pill">{p}</span>' for p in pills])
