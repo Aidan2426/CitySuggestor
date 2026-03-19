@@ -2,7 +2,10 @@
 03_temperature.py
 -----------------
 Fetches average annual temperature for every city in cities_master.csv
-using the Open-Meteo Historical Weather API.
+using the Open-Meteo Historical Weather API (archive API, ERA5).
+
+Pulls 3 years of data (2019-2021) to keep requests small and avoid
+rate limiting. Computes annual and seasonal temperature averages.
 
 Input:  cities_master.csv
 Output: cities_master.csv (updated in place)
@@ -18,40 +21,39 @@ import requests
 import pandas as pd
 
 MASTER_FILE   = "cities_master.csv"
-START_YEAR    = "2014-01-01"
-END_YEAR      = "2023-12-31"
 API_BASE      = "https://archive-api.open-meteo.com/v1/archive"
-REQUEST_DELAY = 1.0   # seconds between calls — don't lower this
+START_DATE    = "2019-01-01"
+END_DATE      = "2021-12-31"
+REQUEST_DELAY = 2.0
 
 def fetch_temperature(lat: float, lon: float, city: str) -> dict:
     params = {
-        "latitude":         round(lat, 4),
-        "longitude":        round(lon, 4),
-        "start_date":       START_YEAR,
-        "end_date":         END_YEAR,
-        "daily":            "temperature_2m_max,temperature_2m_min",
-        "temperature_unit": "fahrenheit",
-        "timezone":         "auto",
+        "latitude":          round(lat, 4),
+        "longitude":         round(lon, 4),
+        "start_date":        START_DATE,
+        "end_date":          END_DATE,
+        "daily":             "temperature_2m_max,temperature_2m_min",
+        "temperature_unit":  "fahrenheit",
+        "timezone":          "auto",
     }
 
-    # Retry up to 4 times on 429 rate limit
-    for attempt in range(4):
+    for attempt in range(5):
         try:
-            resp = requests.get(API_BASE, params=params, timeout=20)
+            resp = requests.get(API_BASE, params=params, timeout=30)
 
             if resp.status_code == 429:
-                wait = 15 * (attempt + 1)
-                print(f"  [RATE LIMIT] {city} — waiting {wait}s before retry {attempt+1}/4...")
+                wait = 60 * (attempt + 1)
+                print(f"  [RATE LIMIT] {city} — waiting {wait}s (retry {attempt+1}/5)...")
                 time.sleep(wait)
                 continue
 
             resp.raise_for_status()
 
-            data   = resp.json()
-            daily  = data.get("daily", {})
-            dates  = daily.get("time", [])
-            highs  = daily.get("temperature_2m_max", [])
-            lows   = daily.get("temperature_2m_min", [])
+            data  = resp.json()
+            daily = data.get("daily", {})
+            dates = daily.get("time", [])
+            highs = daily.get("temperature_2m_max", [])
+            lows  = daily.get("temperature_2m_min", [])
 
             if not dates or not highs or not lows:
                 return {}
@@ -105,31 +107,30 @@ def main():
         print(f"ERROR: '{MASTER_FILE}' not found.")
         sys.exit(1)
 
-    missing_coords = cities[cities["lat"].isna() | cities["lon"].isna()]
-    if len(missing_coords) > 0:
-        print(f"\n  WARNING: {len(missing_coords)} cities missing lat/lon — will be skipped")
-
     temp_cols = ["avg_temp_f", "avg_temp_c", "avg_high_f",
                  "avg_low_f", "avg_summer_high_f", "avg_winter_low_f"]
     for col in temp_cols:
         if col not in cities.columns:
             cities[col] = None
 
-    # Only fetch cities that don't have temp data yet
-    needs_fetch = cities[cities["avg_temp_f"].isna() & cities["lat"].notna()].index.tolist()
+    # Only fetch cities missing temp data — safe to re-run anytime
+    needs_fetch = cities[
+        cities["avg_temp_f"].isna() & cities["lat"].notna()
+    ].index.tolist()
 
     total   = len(needs_fetch)
     success = 0
     failed  = 0
 
     print(f"\nFetching temperature data for {total} cities...")
-    print(f"  Range: {START_YEAR} to {END_YEAR} (10-year average)")
-    print(f"  Delay: {REQUEST_DELAY}s between requests\n")
+    print(f"  Source: Open-Meteo archive API (ERA5)")
+    print(f"  Period: {START_DATE} to {END_DATE} (3-year average)")
+    print(f"  Delay:  {REQUEST_DELAY}s between requests")
+    print(f"  Saves progress every 25 cities\n")
 
     for count, idx in enumerate(needs_fetch, start=1):
-        row   = cities.loc[idx]
-        city  = row["city"]
-        state = row["state"]
+        row  = cities.loc[idx]
+        city = row["city"]
 
         result = fetch_temperature(row["lat"], row["lon"], city)
 
@@ -142,7 +143,6 @@ def main():
 
         if count % 25 == 0:
             print(f"  {count}/{total} processed ({success} ok, {failed} failed)...")
-            # Save progress every 25 cities so you don't lose data if it crashes
             cities.to_csv(MASTER_FILE, index=False)
 
         time.sleep(REQUEST_DELAY)
@@ -152,9 +152,12 @@ def main():
     print(f"\nDone!")
     print(f"  Successful: {success}/{total}")
     print(f"  Failed:     {failed}/{total}")
-    print(f"\nSaved → '{MASTER_FILE}'")
+    if failed > 0:
+        print(f"  Re-run this script to retry the {failed} failed cities.")
+    print(f"\nSaved -> '{MASTER_FILE}'")
     print("\nSample (first 10 rows):")
-    print(cities[["city", "state", "avg_temp_f", "avg_summer_high_f", "avg_winter_low_f"]].head(10).to_string(index=False))
+    print(cities[["city", "state", "avg_temp_f", "avg_summer_high_f",
+                  "avg_winter_low_f"]].head(10).to_string(index=False))
     print("\nNext step: run 04_walkability.py")
 
 
