@@ -1,350 +1,350 @@
-city,state,population,land_area_sq_mi,city_state,lat,lon,metro_population,msa_name,median_household_income,median_home_price
-New York,NY,8478072,300.5,"New York, NY",,,19940274.0,,76607.0,732100.0
-Los Angeles,CA,3878704,469.5,"Los Angeles, CA",,,12927614.0,,76244.0,822600.0
-Chicago,IL,2721308,227.7,"Chicago, IL",,,9408576.0,,71673.0,304500.0
-Houston,TX,2390125,640.4,"Houston, TX",,,7796182.0,,60440.0,235000.0
-Phoenix,AZ,1673164,518.0,"Phoenix, AZ",,,5186958.0,,72092.0,340200.0
-Philadelphia,PA,1573916,134.4,"Philadelphia, PA",,,6330422.0,,57537.0,215500.0
-San Antonio,TX,1526656,498.8,"San Antonio, TX",,,2763006.0,,59593.0,198000.0
-San Diego,CA,1404452,325.9,"San Diego, CA",,,3298799.0,,98657.0,783300.0
-Dallas,TX,1326087,339.6,"Dallas, TX",,,8344032.0,,63985.0,270700.0
-Jacksonville,FL,1009833,747.3,"Jacksonville, FL",,,1760548.0,"Jacksonville, FL MSA",64138.0,243000.0
-Fort Worth,TX,1008106,347.3,"Fort Worth, TX",,,8344032.0,,72726.0,250300.0
-San Jose,CA,997368,178.3,"San Jose, CA",,,1995484.0,,136010.0,1149600.0
-Austin,TX,993588,319.9,"Austin, TX",,,2550637.0,,86556.0,461500.0
-Charlotte,NC,943476,308.3,"Charlotte, NC",,,2883370.0,,74070.0,312800.0
-Columbus,OH,933263,220.0,"Columbus, OH",,,2225377.0,"Columbus, OH MSA",62994.0,212500.0
-Indianapolis,IN,891484,361.6,"Indianapolis, IN",,,2174833.0,,,
-San Francisco,CA,827526,46.9,"San Francisco, CA",,,4648486.0,,136689.0,1348700.0
-Seattle,WA,780995,83.8,"Seattle, WA",,,4145494.0,,116068.0,879900.0
-Denver,CO,729019,153.1,"Denver, CO",,,3052498.0,,85853.0,540400.0
-Oklahoma City,OK,712919,606.2,"Oklahoma City, OK",,,1497821.0,"Oklahoma City, OK MSA",64251.0,196700.0
-Nashville,TN,704963,475.8,"Nashville, TN",,,2150553.0,"Nashville-Davidson–Murfreesboro–Franklin, TN MSA",,
-Washington,DC,702250,61.1,"Washington, DC",,,6436489.0,,101722.0,705000.0
-El Paso,TX,681723,258.4,"El Paso, TX",,,879392.0,"El Paso, TX MSA",55710.0,159300.0
-Las Vegas,NV,678922,141.8,"Las Vegas, NV",,,2398871.0,,66356.0,365300.0
-Boston,MA,673458,48.3,"Boston, MA",,,5025517.0,,89212.0,684900.0
-Detroit,MI,645705,138.7,"Detroit, MI",,,4400578.0,,37761.0,66700.0
-Louisville,KY,640796,324.9,"Louisville, KY",,,1394234.0,,,
-Portland,OR,635749,133.5,"Portland, OR",,,2537904.0,,85876.0,523100.0
-Memphis,TN,610919,297.0,"Memphis, TN",,,1339345.0,"Memphis, TN-MS-AR MSA",48090.0,139600.0
-Baltimore,MD,568271,80.9,"Baltimore, MD",,,2859024.0,,58349.0,202900.0
-Milwaukee,WI,563531,96.2,"Milwaukee, WI",,,1574452.0,,49733.0,157800.0
-Albuquerque,NM,560326,187.3,"Albuquerque, NM",,,926303.0,"Albuquerque, NM MSA",61503.0,246000.0
-Tucson,AZ,554013,241.0,"Tucson, AZ",,,1080149.0,"Tucson, AZ MSA",52049.0,218200.0
-Fresno,CA,550105,115.2,"Fresno, CA",,,1189557.0,"Fresno, CA MSA",63001.0,321800.0
-Sacramento,CA,535798,98.6,"Sacramento, CA",,,2463127.0,,78954.0,450500.0
-Atlanta,GA,520070,135.3,"Atlanta, GA",,,6411149.0,,77655.0,395600.0
-Mesa,AZ,517151,138.7,"Mesa, AZ",,,5186958.0,,73766.0,327700.0
-Kansas City,MO,516032,314.7,"Kansas City, MO",,,2253579.0,"Kansas City, MO-KS MSA",65256.0,208900.0
-Raleigh,NC,499825,147.1,"Raleigh, NC",,,1562009.0,,78631.0,347000.0
-Colorado Springs,CO,493554,195.4,"Colorado Springs, CO",,,777634.0,"Colorado Springs, CO MSA",79026.0,383000.0
-Omaha,NE,489265,141.6,"Omaha, NE",,,1001010.0,"Omaha, NE-IA MSA",70202.0,210300.0
-Miami,FL,487014,36.0,"Miami, FL",,,6457988.0,,54858.0,433900.0
-Virginia Beach,VA,454808,244.7,"Virginia Beach, VA",,,1794278.0,,87544.0,343700.0
-Long Beach,CA,450901,50.7,"Long Beach, CA",,,12927614.0,,78995.0,709700.0
-Oakland,CA,443554,55.9,"Oakland, CA",,,4648486.0,,94389.0,883800.0
-Minneapolis,MN,428579,54.0,"Minneapolis, MN",,,3757952.0,,76332.0,328700.0
-Bakersfield,CA,417468,149.8,"Bakersfield, CA",,,922529.0,,73827.0,320600.0
-Tulsa,OK,415154,197.5,"Tulsa, OK",,,1059803.0,"Tulsa, OK MSA",56648.0,174200.0
-Tampa,FL,414547,114.0,"Tampa, FL",,,3424560.0,,66802.0,333200.0
-Arlington,TX,403672,95.9,"Arlington, TX",,,8344032.0,,71736.0,251300.0
-Aurora,CO,403130,160.1,"Aurora, CO",,,3052498.0,,78685.0,409700.0
-Wichita,KS,400991,162.0,"Wichita, KS",,,661217.0,"Wichita, KS MSA",60712.0,166400.0
-Cleveland,OH,365379,77.7,"Cleveland, OH",,,2171877.0,"Cleveland, OH MSA",37271.0,87400.0
-New Orleans,LA,362701,169.5,"New Orleans, LA",,,966230.0,,51116.0,281500.0
-Henderson,NV,350039,106.2,"Henderson, NV",,,2398871.0,,85311.0,427900.0
-Honolulu,HI,344967,60.5,"Honolulu, HI",,,998747.0,,,
-Anaheim,CA,344561,50.3,"Anaheim, CA",,,12927614.0,,88538.0,713600.0
-Orlando,FL,334854,110.6,"Orlando, FL",,,2940513.0,,66292.0,332700.0
-Lexington,KY,329437,283.6,"Lexington, KY",,,533366.0,"Lexington-Fayette, KY MSA",,
-Stockton,CA,324975,62.2,"Stockton, CA",,,816108.0,,71612.0,382000.0
-Riverside,CA,323757,81.2,"Riverside, CA",,,4744214.0,,83448.0,485500.0
-Irvine,CA,318683,65.6,"Irvine, CA",,,,,122948.0,1025700.0
-Corpus Christi,TX,317317,162.2,"Corpus Christi, TX",,,450187.0,"Corpus Christi, TX MSA",64449.0,180900.0
-Newark,NJ,317303,24.1,"Newark, NJ",,,,,46460.0,312300.0
-Santa Ana,CA,316184,27.3,"Santa Ana, CA",,,,,84210.0,624000.0
-Cincinnati,OH,314915,77.8,"Cincinnati, OH",,,2302815.0,"Cincinnati, OH-KY-IN MSA",49191.0,192000.0
-Pittsburgh,PA,307668,55.4,"Pittsburgh, PA",,,2429917.0,"Pittsburgh, PA MSA",60187.0,171800.0
-Saint Paul,MN,307465,52.0,"Saint Paul, MN",,,,,,
-Greensboro,NC,307381,129.6,"Greensboro, NC",,,800722.0,,55051.0,197200.0
-Jersey City,NJ,302824,14.7,"Jersey City, NJ",,,,,91151.0,500100.0
-Durham,NC,301870,112.8,"Durham, NC",,,620522.0,,74710.0,316600.0
-Lincoln,NE,300619,97.7,"Lincoln, NE",,,350626.0,"Lincoln, NE MSA",67846.0,230400.0
-North Las Vegas,NV,294034,101.3,"North Las Vegas, NV",,,2398871.0,,71774.0,340200.0
-Plano,TX,293286,71.7,"Plano, TX",,,,,105679.0,412500.0
-Anchorage,AK,289600,1706.8,"Anchorage, AK",,,407213.0,"Anchorage, AK MSA",95731.0,363800.0
-Gilbert,AZ,288790,68.6,"Gilbert, AZ",,,,,115179.0,454300.0
-Madison,WI,285300,79.6,"Madison, WI",,,707606.0,"Madison, WI MSA",74895.0,326600.0
-Reno,NV,281714,108.8,"Reno, NV",,,575110.0,"Reno, NV MSA",73073.0,462100.0
-Chandler,AZ,281231,65.3,"Chandler, AZ",,,5186958.0,,99374.0,423900.0
-St. Louis,MO,279695,61.7,"St. Louis, MO",,,2811927.0,"St. Louis, MO-IL MSA",52941.0,174100.0
-Chula Vista,CA,278546,49.6,"Chula Vista, CA",,,3298799.0,,101984.0,647100.0
-Buffalo,NY,276617,40.4,"Buffalo, NY",,,1160172.0,,46184.0,132100.0
-Fort Wayne,IN,273203,110.7,"Fort Wayne, IN",,,462978.0,"Fort Wayne, IN MSA",58233.0,152500.0
-Lubbock,TX,272086,134.6,"Lubbock, TX",,,367109.0,"Lubbock, TX MSA",58734.0,181600.0
-St. Petersburg,FL,267102,61.8,"St. Petersburg, FL",,,3424560.0,,70333.0,289000.0
-Toledo,OH,265638,80.5,"Toledo, OH",,,601396.0,"Toledo, OH MSA",45405.0,98800.0
-Laredo,TX,261260,106.5,"Laredo, TX",,,272823.0,"Laredo, TX MSA",60928.0,164400.0
-Port St. Lucie,FL,258575,119.2,"Port St. Lucie, FL",,,556336.0,"Port St. Lucie, FL MSA",75040.0,292900.0
-Glendale,AZ,258143,61.6,"Glendale, AZ",,,,,66375.0,310000.0
-Irving,TX,258060,67.0,"Irving, TX",,,,,76686.0,259500.0
-Winston-Salem,NC,255769,132.7,"Winston-Salem, NC",,,705187.0,,54416.0,187400.0
-Chesapeake,VA,254997,338.5,"Chesapeake, VA",,,,,92703.0,339500.0
-Garland,TX,250431,57.1,"Garland, TX",,,,,71044.0,229000.0
-Scottsdale,AZ,246170,184.0,"Scottsdale, AZ",,,,,104197.0,651800.0
-Boise,ID,237963,84.0,"Boise, ID",,,,,,
-Hialeah,FL,235388,21.6,"Hialeah, FL",,,,,49531.0,324300.0
-Frisco,TX,235208,68.6,"Frisco, TX",,,,,144567.0,531400.0
-Richmond,VA,233655,59.9,"Richmond, VA",,,1370165.0,"Richmond, VA MSA",59606.0,308300.0
-Cape Coral,FL,233025,106.0,"Cape Coral, FL",,,860959.0,,72474.0,302400.0
-Norfolk,VA,231105,53.3,"Norfolk, VA",,,1794278.0,,60998.0,254200.0
-Spokane,WA,230609,68.8,"Spokane, WA",,,604962.0,,63316.0,286900.0
-Huntsville,AL,230402,218.1,"Huntsville, AL",,,542297.0,"Huntsville, AL MSA",67874.0,236300.0
-Santa Clarita,CA,229159,70.8,"Santa Clarita, CA",,,,,116186.0,669200.0
-Tacoma,WA,228202,49.7,"Tacoma, WA",,,4145494.0,,79085.0,415300.0
-Fremont,CA,228192,78.3,"Fremont, CA",,,4648486.0,,169023.0,1231500.0
-McKinney,TX,227526,67.0,"McKinney, TX",,,,,113286.0,400400.0
-San Bernardino,CA,224775,62.1,"San Bernardino, CA",,,4744214.0,,61323.0,347100.0
-Baton Rouge,LA,220907,86.3,"Baton Rouge, LA",,,882652.0,"Baton Rouge, LA MSA",50155.0,217700.0
-Modesto,CA,220592,43.0,"Modesto, CA",,,556972.0,"Modesto, CA MSA",73375.0,381800.0
-Fontana,CA,218455,43.1,"Fontana, CA",,,,,93230.0,506600.0
-Salt Lake City,UT,217783,110.3,"Salt Lake City, UT",,,1300762.0,,72357.0,458600.0
-Moreno Valley,CA,213919,51.3,"Moreno Valley, CA",,,,,82637.0,421400.0
-Des Moines,IA,213096,88.2,"Des Moines, IA",,,753913.0,,62378.0,170700.0
-Worcester,MA,211286,37.4,"Worcester, MA",,,881248.0,"Worcester, MA MSA",63011.0,305600.0
-Yonkers,NY,211040,18.0,"Yonkers, NY",,,,,78208.0,456500.0
-Fayetteville,NC,209496,148.3,"Fayetteville, NC",,,393812.0,"Fayetteville, NC MSA",53424.0,158500.0
-Sioux Falls,SD,209289,79.1,"Sioux Falls, SD",,,308266.0,"Sioux Falls, SD-MN MSA",71785.0,250000.0
-Grand Prairie,TX,207331,72.6,"Grand Prairie, TX",,,,,76626.0,242900.0
-Rochester,NY,207282,35.8,"Rochester, NY",,,1057218.0,"Rochester, NY MSA",44156.0,111400.0
-Tallahassee,FL,205089,100.9,"Tallahassee, FL",,,397675.0,"Tallahassee, FL MSA",52899.0,256400.0
-Little Rock,AR,204774,120.0,"Little Rock, AR",,,769258.0,,58697.0,205800.0
-Amarillo,TX,203729,102.3,"Amarillo, TX",,,274650.0,"Amarillo, TX MSA",60628.0,172700.0
-Overland Park,KS,202893,75.2,"Overland Park, KS",,,,,100876.0,361800.0
-Columbus,GA,201830,216.5,"Columbus, GA",,,324343.0,"Columbus, GA-AL MSA",54561.0,168400.0
-Augusta,GA,201737,302.3,"Augusta, GA",,,636760.0,"Augusta-Richmond County, GA-SC MSA",,
-Mobile,AL,201367,139.5,"Mobile, AL",,,412339.0,"Mobile, AL MSA",48524.0,158400.0
-Oxnard,CA,200616,26.5,"Oxnard, CA",,,835427.0,,90409.0,587200.0
-Grand Rapids,MI,200117,44.8,"Grand Rapids, MI",,,1178826.0,,61634.0,203900.0
-Peoria,AZ,199924,176.1,"Peoria, AZ",,,,,86759.0,383600.0
-Vancouver,WA,198992,48.7,"Vancouver, WA",,,,,73626.0,403400.0
-Knoxville,TN,198722,98.7,"Knoxville, TN",,,957608.0,"Knoxville, TN MSA",48309.0,184200.0
-Birmingham,AL,196357,147.0,"Birmingham, AL",,,1192583.0,"Birmingham, AL MSA",42464.0,123000.0
-Montgomery,AL,195818,159.9,"Montgomery, AL",,,387885.0,"Montgomery, AL MSA",54166.0,141900.0
-Providence,RI,194706,18.4,"Providence, RI",,,1700901.0,,61365.0,293000.0
-Huntington Beach,CA,193151,27.0,"Huntington Beach, CA",,,,,114747.0,976800.0
-Brownsville,TX,191967,131.5,"Brownsville, TX",,,431874.0,,46735.0,112600.0
-Chattanooga,TN,191496,142.4,"Chattanooga, TN",,,588050.0,"Chattanooga, TN-GA MSA",57703.0,230500.0
-Fort Lauderdale,FL,190641,34.6,"Fort Lauderdale, FL",,,6457988.0,,75376.0,417600.0
-Tempe,AZ,190114,39.9,"Tempe, AZ",,,,,72022.0,382100.0
-Akron,OH,189664,61.9,"Akron, OH",,,702209.0,"Akron, OH MSA",46596.0,99700.0
-Glendale,CA,187823,30.5,"Glendale, CA",,,,,81219.0,992000.0
-Clarksville,TN,185690,99.4,"Clarksville, TN",,,345955.0,"Clarksville, TN-KY MSA",62688.0,213200.0
-Ontario,CA,185285,50.0,"Ontario, CA",,,4744214.0,,78070.0,513000.0
-Newport News,VA,183056,69.0,"Newport News, VA",,,1794278.0,,63355.0,233400.0
-Elk Grove,CA,182797,42.0,"Elk Grove, CA",,,,,115864.0,560500.0
-Cary,NC,182659,59.2,"Cary, NC",,,1562009.0,,125317.0,477400.0
-Aurora,IL,180710,45.0,"Aurora, IL",,,,,85943.0,241600.0
-Salem,OR,180406,48.8,"Salem, OR",,,443416.0,"Salem, OR MSA",67540.0,349500.0
-Pembroke Pines,FL,179326,32.7,"Pembroke Pines, FL",,,,,77657.0,379900.0
-Eugene,OR,178786,44.2,"Eugene, OR",,,382396.0,,61481.0,406000.0
-Santa Rosa,CA,177524,42.5,"Santa Rosa, CA",,,485375.0,,92604.0,661700.0
-Rancho Cucamonga,CA,176675,40.1,"Rancho Cucamonga, CA",,,,,105534.0,657400.0
-Shreveport,LA,176578,107.8,"Shreveport, LA",,,383269.0,,45967.0,168900.0
-Garden Grove,CA,172361,18.0,"Garden Grove, CA",,,,,86139.0,702600.0
-Oceanside,CA,170941,41.3,"Oceanside, CA",,,,,86701.0,644600.0
-Fort Collins,CO,170924,57.2,"Fort Collins, CO",,,374574.0,,78977.0,497400.0
-Springfield,MO,170596,82.4,"Springfield, MO",,,496975.0,"Springfield, MO MSA",43450.0,146400.0
-Murfreesboro,TN,168387,62.9,"Murfreesboro, TN",,,2150553.0,,70451.0,327400.0
-Surprise,AZ,167564,110.3,"Surprise, AZ",,,,,87756.0,352600.0
-Lancaster,CA,167426,94.3,"Lancaster, CA",,,,,71367.0,368800.0
-Denton,TX,165998,96.4,"Denton, TX",,,,,71921.0,296100.0
-Roseville,CA,163304,44.1,"Roseville, CA",,,2463127.0,,112265.0,596700.0
-Palmdale,CA,162536,106.1,"Palmdale, CA",,,,,78414.0,397500.0
-Corona,CA,161540,39.9,"Corona, CA",,,,,103727.0,624200.0
-Salinas,CA,160783,23.5,"Salinas, CA",,,436251.0,"Salinas, CA MSA",84250.0,573600.0
-Killeen,TX,160616,54.8,"Killeen, TX",,,509487.0,,57086.0,175400.0
-Paterson,NJ,160463,8.4,"Paterson, NJ",,,,,52092.0,314100.0
-Alexandria,VA,159102,14.9,"Alexandria, VA",,,,,113179.0,655700.0
-Hollywood,FL,159073,27.3,"Hollywood, FL",,,,,61958.0,345300.0
-Hayward,CA,158440,45.8,"Hayward, CA",,,,,105371.0,775700.0
-Charleston,SC,157665,114.8,"Charleston, SC",,,869940.0,,83891.0,438900.0
-Macon,GA,157056,249.4,"Macon, GA",,,237617.0,"Macon-Bibb County, GA MSA",,
-Lakewood,CO,156868,43.5,"Lakewood, CO",,,,,82786.0,494100.0
-Sunnyvale,CA,156792,22.1,"Sunnyvale, CA",,,1995484.0,,174506.0,1680700.0
-Kansas City,KS,156752,124.7,"Kansas City, KS",,,,,56120.0,133800.0
-Springfield,MA,154888,31.9,"Springfield, MA",,,464151.0,"Springfield, MA MSA",47677.0,198500.0
-Bellevue,WA,154377,33.5,"Bellevue, WA",,,4145494.0,,149551.0,1139500.0
-Naperville,IL,153124,39.1,"Naperville, IL",,,9408576.0,,143754.0,482600.0
-Joliet,IL,151837,64.5,"Joliet, IL",,,,,84971.0,233800.0
-Bridgeport,CT,151599,16.1,"Bridgeport, CT",,,972679.0,,54440.0,227200.0
-Mesquite,TX,150140,48.5,"Mesquite, TX",,,,,69649.0,208800.0
-Mesquite,TX,150140,48.5,"Mesquite, TX",,,,,,128100.0
-Pasadena,TX,149617,43.7,"Pasadena, TX",,,7796182.0,,64698.0,171600.0
-Olathe,KS,149035,61.9,"Olathe, KS",,,,,108077.0,317900.0
-Escondido,CA,148847,37.3,"Escondido, CA",,,,,77554.0,616400.0
-Savannah,GA,148808,106.8,"Savannah, GA",,,431589.0,"Savannah, GA MSA",54748.0,203300.0
-McAllen,TX,148782,62.3,"McAllen, TX",,,914820.0,,56326.0,158700.0
-Gainesville,FL,148720,63.2,"Gainesville, FL",,,359780.0,"Gainesville, FL MSA",43783.0,216600.0
-Pomona,CA,147966,23.0,"Pomona, CA",,,,,73515.0,524700.0
-Rockford,IL,147486,64.5,"Rockford, IL",,,337103.0,"Rockford, IL MSA",50744.0,114100.0
-Thornton,CO,146689,35.9,"Thornton, CO",,,,,95064.0,445200.0
-Waco,TX,146608,88.7,"Waco, TX",,,307123.0,"Waco, TX MSA",47421.0,174100.0
-Visalia,CA,146271,37.9,"Visalia, CA",,,483546.0,"Visalia, CA MSA",75658.0,316600.0
-Syracuse,NY,146097,25.1,"Syracuse, NY",,,655189.0,"Syracuse, NY MSA",43584.0,117900.0
-Columbia,SC,144788,136.8,"Columbia, SC",,,870193.0,"Columbia, SC MSA",54095.0,226200.0
-Midland,TX,143687,75.5,"Midland, TX",,,188766.0,"Midland, TX MSA",90448.0,280700.0
-Miramar,FL,143242,28.9,"Miramar, FL",,,,,81812.0,378200.0
-Palm Bay,FL,142023,86.4,"Palm Bay, FL",,,658447.0,,62538.0,226200.0
-Lakewood,NJ,141985,24.7,"Lakewood, NJ",,,,,54826.0,604600.0
-Jackson,MS,141449,111.7,"Jackson, MS",,,606178.0,"Jackson, MS MSA",42193.0,104900.0
-Coral Springs,FL,140808,22.9,"Coral Springs, FL",,,,,87488.0,453100.0
-Victorville,CA,140721,73.7,"Victorville, CA",,,,,65746.0,300600.0
-Elizabeth,NJ,140413,12.3,"Elizabeth, NJ",,,,,59939.0,358400.0
-Fullerton,CA,140054,22.4,"Fullerton, CA",,,,,99279.0,791000.0
-Meridian,ID,139740,35.1,"Meridian, ID",,,,,93296.0,425800.0
-Torrance,CA,139576,20.5,"Torrance, CA",,,,,109554.0,962300.0
-Stamford,CT,139134,37.6,"Stamford, CT",,,972679.0,,100718.0,584700.0
-West Valley City,UT,138144,35.8,"West Valley City, UT",,,,,81719.0,333600.0
-Orange,CA,137941,25.7,"Orange, CA",,,,,109335.0,848200.0
-Cedar Rapids,IA,137904,72.1,"Cedar Rapids, IA",,,278677.0,"Cedar Rapids, IA MSA",66895.0,167900.0
-Warren,MI,137686,34.4,"Warren, MI",,,4400578.0,,61633.0,169300.0
-Hampton,VA,137596,51.5,"Hampton, VA",,,,,64430.0,219800.0
-New Haven,CT,137562,18.7,"New Haven, CT",,,576718.0,"New Haven, CT MSA",54305.0,236500.0
-Pasadena,CA,137195,23.0,"Pasadena, CA",,,,,97818.0,981600.0
-Kent,WA,136588,33.8,"Kent, WA",,,,,86966.0,478400.0
-Dayton,OH,136346,55.8,"Dayton, OH",,,821740.0,,41443.0,86200.0
-Fargo,ND,136285,49.8,"Fargo, ND",,,267793.0,"Fargo, ND-MN MSA",64432.0,254900.0
-Lewisville,TX,135983,37.0,"Lewisville, TX",,,,,82006.0,328300.0
-Carrollton,TX,135456,36.7,"Carrollton, TX",,,,,95380.0,327300.0
-Round Rock,TX,135359,37.6,"Round Rock, TX",,,2550637.0,,91888.0,337500.0
-Sterling Heights,MI,134342,36.4,"Sterling Heights, MI",,,,,75381.0,243400.0
-Santa Clara,CA,133132,18.3,"Santa Clara, CA",,,1995484.0,,165352.0,1440200.0
-Norman,OK,131010,178.8,"Norman, OK",,,,,62849.0,224900.0
-Columbia,MO,130900,66.5,"Columbia, MO",,,219426.0,"Columbia, MO MSA",60455.0,248600.0
-Abilene,TX,130501,106.7,"Abilene, TX",,,184278.0,"Abilene, TX MSA",59254.0,161800.0
-Pearland,TX,129620,48.7,"Pearland, TX",,,,,111123.0,311100.0
-Athens,GA,128691,116.3,"Athens, GA",,,223689.0,"Athens-Clarke County, GA MSA",,
-College Station,TX,128023,51.2,"College Station, TX",,,287462.0,,52397.0,305800.0
-Clovis,CA,127993,25.4,"Clovis, CA",,,,,98554.0,420700.0
-West Palm Beach,FL,127744,53.8,"West Palm Beach, FL",,,6457988.0,,64044.0,324800.0
-Allentown,PA,127138,17.6,"Allentown, PA",,,886418.0,,52449.0,168800.0
-North Charleston,SC,126005,77.6,"North Charleston, SC",,,869940.0,,58534.0,243300.0
-Simi Valley,CA,125778,41.5,"Simi Valley, CA",,,,,112144.0,704200.0
-Topeka,KS,125467,61.4,"Topeka, KS",,,232648.0,"Topeka, KS MSA",54052.0,124700.0
-Wilmington,NC,125284,51.4,"Wilmington, NC",,,480522.0,"Wilmington, NC MSA",58908.0,318600.0
-Lakeland,FL,124990,66.2,"Lakeland, FL",,,852878.0,,58290.0,207800.0
-Thousand Oaks,CA,124229,55.3,"Thousand Oaks, CA",,,835427.0,,125399.0,900600.0
-Concord,CA,124016,30.6,"Concord, CA",,,,,107789.0,706700.0
-Rochester,MN,123624,55.5,"Rochester, MN",,,230742.0,"Rochester, MN MSA",83973.0,268800.0
-Vallejo,CA,123475,30.4,"Vallejo, CA",,,455101.0,"Vallejo, CA MSA",86112.0,515500.0
-Ann Arbor,MI,122925,28.2,"Ann Arbor, MI",,,373875.0,"Ann Arbor, MI MSA",78546.0,416500.0
-Broken Arrow,OK,122756,63.0,"Broken Arrow, OK",,,,,82547.0,210800.0
-Fairfield,CA,122646,41.6,"Fairfield, CA",,,,,98857.0,546200.0
-Lafayette,LA,122280,55.8,"Lafayette, LA",,,419704.0,"Lafayette, LA MSA",58850.0,234900.0
-Hartford,CT,122129,17.4,"Hartford, CT",,,1169048.0,,41841.0,198900.0
-Arvada,CO,121873,38.9,"Arvada, CO",,,,,106014.0,553000.0
-Berkeley,CA,121749,10.4,"Berkeley, CA",,,,,104716.0,1280300.0
-Independence,MO,121629,78.0,"Independence, MO",,,,,57415.0,150800.0
-Billings,MT,121483,44.8,"Billings, MT",,,192531.0,"Billings, MT MSA",69692.0,285300.0
-Cambridge,MA,121186,6.4,"Cambridge, MA",,,5025517.0,,121539.0,997600.0
-Lowell,MA,120418,13.6,"Lowell, MA",,,,,73008.0,362800.0
-Odessa,TX,119748,51.1,"Odessa, TX",,,170022.0,"Odessa, TX MSA",71293.0,193500.0
-High Point,NC,118601,56.4,"High Point, NC",,,800722.0,,58582.0,196500.0
-League City,TX,118456,51.3,"League City, TX",,,,,117316.0,312500.0
-Antioch,CA,118453,29.2,"Antioch, CA",,,,,90709.0,570900.0
-Richardson,TX,118221,28.6,"Richardson, TX",,,,,94362.0,379800.0
-Goodyear,AZ,118186,191.3,"Goodyear, AZ",,,,,97307.0,396100.0
-Pompano Beach,FL,118104,24.0,"Pompano Beach, FL",,,,,61155.0,293300.0
-Nampa,ID,117350,33.5,"Nampa, ID",,,,,67346.0,289400.0
-Menifee,CA,117041,46.5,"Menifee, CA",,,,,87871.0,442600.0
-Las Cruces,NM,116998,76.9,"Las Cruces, NM",,,229366.0,"Las Cruces, NM MSA",51013.0,197200.0
-Clearwater,FL,116811,26.1,"Clearwater, FL",,,3424560.0,,59358.0,287900.0
-West Jordan,UT,116688,32.3,"West Jordan, UT",,,,,99002.0,412100.0
-New Braunfels,TX,116477,45.2,"New Braunfels, TX",,,2763006.0,,85827.0,290800.0
-Manchester,NH,116386,33.1,"Manchester, NH",,,430462.0,,74040.0,304700.0
-Miami Gardens,FL,116173,18.2,"Miami Gardens, FL",,,,,56071.0,299700.0
-Waterbury,CT,115908,28.5,"Waterbury, CT",,,462220.0,,51451.0,162800.0
-Provo,UT,115479,41.7,"Provo, UT",,,760531.0,,57943.0,391500.0
-Evansville,IN,115395,47.4,"Evansville, IN",,,271793.0,"Evansville, IN MSA",49853.0,121100.0
-Richmond,CA,115353,30.1,"Richmond, CA",,,,,86618.0,624800.0
-Westminster,CO,115302,31.6,"Westminster, CO",,,,,90651.0,467200.0
-Elgin,IL,114701,38.0,"Elgin, IL",,,9408576.0,,85998.0,242500.0
-Conroe,TX,114581,72.0,"Conroe, TX",,,,,71630.0,262500.0
-Greeley,CO,114363,48.9,"Greeley, CO",,,369745.0,"Greeley, CO MSA",65525.0,346400.0
-Lansing,MI,114336,39.1,"Lansing, MI",,,479971.0,,50747.0,112200.0
-Buckeye,AZ,114334,393.0,"Buckeye, AZ",,,,,94188.0,341700.0
-Tuscaloosa,AL,114288,61.9,"Tuscaloosa, AL",,,281963.0,"Tuscaloosa, AL MSA",47257.0,228300.0
-Allen,TX,113746,26.4,"Allen, TX",,,,,121259.0,390200.0
-Carlsbad,CA,113575,37.8,"Carlsbad, CA",,,3298799.0,,134139.0,1070500.0
-Everett,WA,113011,33.2,"Everett, WA",,,,,77806.0,471200.0
-Springfield,IL,112949,61.1,"Springfield, IL",,,206308.0,"Springfield, IL MSA",62419.0,147700.0
-Beaumont,TX,112893,82.5,"Beaumont, TX",,,398733.0,,53745.0,150400.0
-Murrieta,CA,112539,33.6,"Murrieta, CA",,,,,106925.0,567700.0
-Rio Rancho,NM,112524,103.4,"Rio Rancho, NM",,,,,78978.0,246700.0
-Temecula,CA,112431,37.3,"Temecula, CA",,,,,111881.0,604300.0
-Concord,NC,112395,63.5,"Concord, NC",,,2883370.0,,83480.0,288100.0
-Tyler,TX,112219,57.5,"Tyler, TX",,,249091.0,"Tyler, TX MSA",63056.0,205200.0
-Davie,FL,112052,34.9,"Davie, FL",,,,,84346.0,405100.0
-South Fulton,GA,112003,85.2,"South Fulton, GA",,,,,77488.0,242200.0
-Peoria,IL,111696,48.0,"Peoria, IL",,,364565.0,"Peoria, IL MSA",58068.0,146700.0
-Sparks,NV,111520,36.4,"Sparks, NV",,,,,82938.0,423500.0
-Gresham,OR,111507,23.5,"Gresham, OR",,,,,69437.0,411700.0
-Santa Maria,CA,111346,22.8,"Santa Maria, CA",,,444500.0,,81237.0,438100.0
-Pueblo,CO,111166,55.4,"Pueblo, CO",,,169866.0,"Pueblo, CO MSA",52794.0,197700.0
-Hillsboro,OR,110337,25.7,"Hillsboro, OR",,,2537904.0,,98891.0,452300.0
-Edison,NJ,110002,30.1,"Edison, NJ",,,,,,
-Sugar Land,TX,109851,40.5,"Sugar Land, TX",,,,,132247.0,387900.0
-Ventura,CA,109831,21.9,"Ventura, CA",,,835427.0,,,
-Downey,CA,109368,12.4,"Downey, CA",,,,,84236.0,679000.0
-Costa Mesa,CA,109131,15.8,"Costa Mesa, CA",,,,,104981.0,959800.0
-Centennial,CO,108853,29.7,"Centennial, CO",,,3052498.0,,124617.0,586500.0
-Edinburg,TX,108733,44.7,"Edinburg, TX",,,914820.0,,54139.0,159600.0
-Spokane Valley,WA,108267,37.7,"Spokane Valley, WA",,,604962.0,,66483.0,307700.0
-Jurupa Valley,CA,108154,42.9,"Jurupa Valley, CA",,,,,91562.0,481500.0
-Bend,OR,106926,33.6,"Bend, OR",,,264407.0,"Bend, OR MSA",82671.0,576900.0
-West Covina,CA,106920,16.0,"West Covina, CA",,,,,96219.0,664500.0
-Boulder,CO,106803,26.3,"Boulder, CO",,,330262.0,"Boulder, CO MSA",80243.0,919700.0
-Palm Coast,FL,106729,95.4,"Palm Coast, FL",,,,,68824.0,283300.0
-Lee's Summit,MO,106419,63.9,"Lee's Summit, MO",,,,,103447.0,291400.0
-Dearborn,MI,106377,24.2,"Dearborn, MI",,,4400578.0,,64600.0,189400.0
-Green Bay,WI,106311,45.5,"Green Bay, WI",,,334697.0,"Green Bay, WI MSA",59174.0,172700.0
-St. George,UT,106288,78.5,"St. George, UT",,,207943.0,"St. George, UT MSA",69333.0,415200.0
-Woodbridge,NJ,106101,23.3,"Woodbridge, NJ",,,,,103481.0,344200.0
-Brockton,MA,105788,21.3,"Brockton, MA",,,,,74016.0,364700.0
-Renton,WA,105543,23.5,"Renton, WA",,,,,92292.0,576800.0
-Sandy Springs,GA,105505,37.7,"Sandy Springs, GA",,,6411149.0,,93303.0,556300.0
-Rialto,CA,104918,24.1,"Rialto, CA",,,,,80750.0,418300.0
-El Monte,CA,104639,9.6,"El Monte, CA",,,,,59929.0,597200.0
-Vacaville,CA,103994,29.9,"Vacaville, CA",,,,,106764.0,560400.0
-Fishers,IN,103986,35.6,"Fishers, IN",,,,,126548.0,339000.0
-South Bend,IN,103713,42.0,"South Bend, IN",,,325294.0,,49056.0,113800.0
-Carmel,IN,103606,49.1,"Carmel, IN",,,2174833.0,,132859.0,425900.0
-Yuma,AZ,103559,120.7,"Yuma, AZ",,,220310.0,"Yuma, AZ MSA",59312.0,186500.0
-Burbank,CA,103533,17.3,"Burbank, CA",,,,,91455.0,959700.0
-Burbank,CA,103533,17.3,"Burbank, CA",,,,,137929.0,1086100.0
-Lynn,MA,103489,10.7,"Lynn, MA",,,,,70046.0,442800.0
-Quincy,MA,103434,16.6,"Quincy, MA",,,,,90668.0,563200.0
-El Cajon,CA,103291,14.5,"El Cajon, CA",,,,,64128.0,593500.0
-Fayetteville,AR,103134,54.1,"Fayetteville, AR",,,605615.0,,56881.0,291300.0
-Suffolk,VA,103105,399.2,"Suffolk, VA",,,,,87758.0,314400.0
-San Mateo,CA,103006,12.1,"San Mateo, CA",,,,,149152.0,1508900.0
-Chico,CA,102911,34.1,"Chico, CA",,,208334.0,"Chico, CA MSA",65932.0,427600.0
-Inglewood,CA,102774,9.1,"Inglewood, CA",,,,,67563.0,689700.0
-Wichita Falls,TX,102372,72.0,"Wichita Falls, TX",,,149869.0,"Wichita Falls, TX MSA",55584.0,128800.0
-Boca Raton,FL,102238,29.2,"Boca Raton, FL",,,,,95570.0,597100.0
-Hesperia,CA,101836,72.7,"Hesperia, CA",,,,,67698.0,337600.0
-Daly City,CA,101418,7.6,"Daly City, CA",,,,,114910.0,1073100.0
-Clinton,MI,101359,28.0,"Clinton, MI",,,,,78472.0,164100.0
-Georgetown,TX,101344,57.3,"Georgetown, TX",,,,,87465.0,361700.0
-New Bedford,MA,101318,20.0,"New Bedford, MA",,,,,54604.0,291300.0
-Albany,NY,101317,21.4,"Albany, NY",,,913485.0,,54736.0,213400.0
-Davenport,IA,100938,63.8,"Davenport, IA",,,381801.0,,59890.0,155100.0
-Plantation,FL,100694,21.8,"Plantation, FL",,,,,83074.0,412000.0
-Plantation,FL,100694,21.8,"Plantation, FL",,,,,72209.0,344500.0
-Deltona,FL,100513,37.3,"Deltona, FL",,,739516.0,,69074.0,226800.0
-Federal Way,WA,100252,22.3,"Federal Way, WA",,,,,80360.0,454300.0
-San Angelo,TX,100159,59.7,"San Angelo, TX",,,121629.0,"San Angelo, TX MSA",65040.0,171700.0
-Tracy,CA,100136,25.9,"Tracy, CA",,,,,111717.0,617300.0
-Sunrise,FL,100128,16.2,"Sunrise, FL",,,,,66001.0,296100.0
+city,state,population,land_area_sq_mi,city_state,lat,lon,metro_population,msa_name,median_household_income,median_home_price,avg_temp_f,avg_temp_c,avg_high_f,avg_low_f,avg_summer_high_f,avg_winter_low_f
+New York,NY,8478072,300.5,"New York, NY",40.712728,-74.006015,19940274.0,,76607.0,732100.0,,,,,,
+Los Angeles,CA,3878704,469.5,"Los Angeles, CA",34.053691,-118.242766,12927614.0,,76244.0,822600.0,,,,,,
+Chicago,IL,2721308,227.7,"Chicago, IL",41.875562,-87.624421,9408576.0,,71673.0,304500.0,,,,,,
+Houston,TX,2390125,640.4,"Houston, TX",29.758938,-95.367697,7796182.0,,60440.0,235000.0,,,,,,
+Phoenix,AZ,1673164,518.0,"Phoenix, AZ",33.448437,-112.074141,5186958.0,,72092.0,340200.0,,,,,,
+Philadelphia,PA,1573916,134.4,"Philadelphia, PA",39.952724,-75.163526,6330422.0,,57537.0,215500.0,,,,,,
+San Antonio,TX,1526656,498.8,"San Antonio, TX",29.4246,-98.495141,2763006.0,,59593.0,198000.0,,,,,,
+San Diego,CA,1404452,325.9,"San Diego, CA",32.71742,-117.162772,3298799.0,,98657.0,783300.0,,,,,,
+Dallas,TX,1326087,339.6,"Dallas, TX",32.776272,-96.796856,8344032.0,,63985.0,270700.0,,,,,,
+Jacksonville,FL,1009833,747.3,"Jacksonville, FL",30.326225,-81.657918,1760548.0,"Jacksonville, FL MSA",64138.0,243000.0,,,,,,
+Fort Worth,TX,1008106,347.3,"Fort Worth, TX",32.753177,-97.332746,8344032.0,,72726.0,250300.0,,,,,,
+San Jose,CA,997368,178.3,"San Jose, CA",37.336166,-121.890591,1995484.0,,136010.0,1149600.0,,,,,,
+Austin,TX,993588,319.9,"Austin, TX",30.271129,-97.7437,2550637.0,,86556.0,461500.0,,,,,,
+Charlotte,NC,943476,308.3,"Charlotte, NC",35.227209,-80.843083,2883370.0,,74070.0,312800.0,,,,,,
+Columbus,OH,933263,220.0,"Columbus, OH",39.96226,-83.000707,2225377.0,"Columbus, OH MSA",62994.0,212500.0,,,,,,
+Indianapolis,IN,891484,361.6,"Indianapolis, IN",39.768333,-86.15835,2174833.0,,,,,,,,,
+San Francisco,CA,827526,46.9,"San Francisco, CA",37.787936,-122.40752,4648486.0,,136689.0,1348700.0,,,,,,
+Seattle,WA,780995,83.8,"Seattle, WA",47.603832,-122.330062,4145494.0,,116068.0,879900.0,,,,,,
+Denver,CO,729019,153.1,"Denver, CO",39.739236,-104.984862,3052498.0,,85853.0,540400.0,,,,,,
+Oklahoma City,OK,712919,606.2,"Oklahoma City, OK",35.472989,-97.517054,1497821.0,"Oklahoma City, OK MSA",64251.0,196700.0,,,,,,
+Nashville,TN,704963,475.8,"Nashville, TN",36.162277,-86.774298,2150553.0,"Nashville-Davidson–Murfreesboro–Franklin, TN MSA",,,,,,,,
+Washington,DC,702250,61.1,"Washington, DC",38.895037,-77.036543,6436489.0,,101722.0,705000.0,,,,,,
+El Paso,TX,681723,258.4,"El Paso, TX",31.7601,-106.487048,879392.0,"El Paso, TX MSA",55710.0,159300.0,,,,,,
+Las Vegas,NV,678922,141.8,"Las Vegas, NV",36.167426,-115.148413,2398871.0,,66356.0,365300.0,,,,,,
+Boston,MA,673458,48.3,"Boston, MA",42.358834,-71.05783,5025517.0,,89212.0,684900.0,,,,,,
+Detroit,MI,645705,138.7,"Detroit, MI",42.331551,-83.04664,4400578.0,,37761.0,66700.0,,,,,,
+Louisville,KY,640796,324.9,"Louisville, KY",38.254238,-85.759407,1394234.0,,,,,,,,,
+Portland,OR,635749,133.5,"Portland, OR",45.520247,-122.674194,2537904.0,,85876.0,523100.0,,,,,,
+Memphis,TN,610919,297.0,"Memphis, TN",35.146025,-90.051764,1339345.0,"Memphis, TN-MS-AR MSA",48090.0,139600.0,,,,,,
+Baltimore,MD,568271,80.9,"Baltimore, MD",39.290882,-76.610759,2859024.0,,58349.0,202900.0,,,,,,
+Milwaukee,WI,563531,96.2,"Milwaukee, WI",43.038648,-87.909075,1574452.0,,49733.0,157800.0,,,,,,
+Albuquerque,NM,560326,187.3,"Albuquerque, NM",35.084103,-106.650985,926303.0,"Albuquerque, NM MSA",61503.0,246000.0,,,,,,
+Tucson,AZ,554013,241.0,"Tucson, AZ",32.222876,-110.974847,1080149.0,"Tucson, AZ MSA",52049.0,218200.0,,,,,,
+Fresno,CA,550105,115.2,"Fresno, CA",36.739442,-119.78483,1189557.0,"Fresno, CA MSA",63001.0,321800.0,,,,,,
+Sacramento,CA,535798,98.6,"Sacramento, CA",38.581061,-121.493895,2463127.0,,78954.0,450500.0,,,,,,
+Atlanta,GA,520070,135.3,"Atlanta, GA",33.754466,-84.389815,6411149.0,,77655.0,395600.0,,,,,,
+Mesa,AZ,517151,138.7,"Mesa, AZ",33.415101,-111.831455,5186958.0,,73766.0,327700.0,,,,,,
+Kansas City,MO,516032,314.7,"Kansas City, MO",39.100105,-94.578142,2253579.0,"Kansas City, MO-KS MSA",65256.0,208900.0,,,,,,
+Raleigh,NC,499825,147.1,"Raleigh, NC",35.780398,-78.639099,1562009.0,,78631.0,347000.0,,,,,,
+Colorado Springs,CO,493554,195.4,"Colorado Springs, CO",38.833958,-104.825348,777634.0,"Colorado Springs, CO MSA",79026.0,383000.0,,,,,,
+Omaha,NE,489265,141.6,"Omaha, NE",41.258746,-95.938376,1001010.0,"Omaha, NE-IA MSA",70202.0,210300.0,,,,,,
+Miami,FL,487014,36.0,"Miami, FL",25.774157,-80.193597,6457988.0,,54858.0,433900.0,,,,,,
+Virginia Beach,VA,454808,244.7,"Virginia Beach, VA",36.849658,-75.976075,1794278.0,,87544.0,343700.0,,,,,,
+Long Beach,CA,450901,50.7,"Long Beach, CA",33.769016,-118.191604,12927614.0,,78995.0,709700.0,,,,,,
+Oakland,CA,443554,55.9,"Oakland, CA",37.804456,-122.271356,4648486.0,,94389.0,883800.0,,,,,,
+Minneapolis,MN,428579,54.0,"Minneapolis, MN",44.9773,-93.265469,3757952.0,,76332.0,328700.0,,,,,,
+Bakersfield,CA,417468,149.8,"Bakersfield, CA",35.373871,-119.019463,922529.0,,73827.0,320600.0,,,,,,
+Tulsa,OK,415154,197.5,"Tulsa, OK",36.156312,-95.992752,1059803.0,"Tulsa, OK MSA",56648.0,174200.0,,,,,,
+Tampa,FL,414547,114.0,"Tampa, FL",27.944985,-82.458311,3424560.0,,66802.0,333200.0,,,,,,
+Arlington,TX,403672,95.9,"Arlington, TX",32.735582,-97.107119,8344032.0,,71736.0,251300.0,,,,,,
+Aurora,CO,403130,160.1,"Aurora, CO",39.740511,-104.830994,3052498.0,,78685.0,409700.0,,,,,,
+Wichita,KS,400991,162.0,"Wichita, KS",37.692236,-97.337545,661217.0,"Wichita, KS MSA",60712.0,166400.0,,,,,,
+Cleveland,OH,365379,77.7,"Cleveland, OH",41.499657,-81.693677,2171877.0,"Cleveland, OH MSA",37271.0,87400.0,,,,,,
+New Orleans,LA,362701,169.5,"New Orleans, LA",29.956142,-90.073393,966230.0,,51116.0,281500.0,,,,,,
+Henderson,NV,350039,106.2,"Henderson, NV",36.03196,-114.982272,2398871.0,,85311.0,427900.0,,,,,,
+Honolulu,HI,344967,60.5,"Honolulu, HI",21.304547,-157.855676,998747.0,,,,,,,,,
+Anaheim,CA,344561,50.3,"Anaheim, CA",33.834752,-117.911732,12927614.0,,88538.0,713600.0,,,,,,
+Orlando,FL,334854,110.6,"Orlando, FL",28.542122,-81.379045,2940513.0,,66292.0,332700.0,,,,,,
+Lexington,KY,329437,283.6,"Lexington, KY",38.046407,-84.497039,533366.0,"Lexington-Fayette, KY MSA",,,,,,,,
+Stockton,CA,324975,62.2,"Stockton, CA",37.957702,-121.290779,816108.0,,71612.0,382000.0,,,,,,
+Riverside,CA,323757,81.2,"Riverside, CA",33.982495,-117.374238,4744214.0,,83448.0,485500.0,,,,,,
+Irvine,CA,318683,65.6,"Irvine, CA",33.685697,-117.825981,,,122948.0,1025700.0,,,,,,
+Corpus Christi,TX,317317,162.2,"Corpus Christi, TX",27.76353,-97.403319,450187.0,"Corpus Christi, TX MSA",64449.0,180900.0,,,,,,
+Newark,NJ,317303,24.1,"Newark, NJ",40.735657,-74.172367,,,46460.0,312300.0,,,,,,
+Santa Ana,CA,316184,27.3,"Santa Ana, CA",33.749495,-117.873221,,,84210.0,624000.0,,,,,,
+Cincinnati,OH,314915,77.8,"Cincinnati, OH",39.101454,-84.51246,2302815.0,"Cincinnati, OH-KY-IN MSA",49191.0,192000.0,,,,,,
+Pittsburgh,PA,307668,55.4,"Pittsburgh, PA",40.440697,-80.002567,2429917.0,"Pittsburgh, PA MSA",60187.0,171800.0,,,,,,
+Saint Paul,MN,307465,52.0,"Saint Paul, MN",44.949749,-93.093103,,,,,,,,,,
+Greensboro,NC,307381,129.6,"Greensboro, NC",36.072635,-79.791975,800722.0,,55051.0,197200.0,,,,,,
+Jersey City,NJ,302824,14.7,"Jersey City, NJ",40.721568,-74.047455,,,91151.0,500100.0,,,,,,
+Durham,NC,301870,112.8,"Durham, NC",35.996653,-78.901805,620522.0,,74710.0,316600.0,,,,,,
+Lincoln,NE,300619,97.7,"Lincoln, NE",40.808886,-96.707775,350626.0,"Lincoln, NE MSA",67846.0,230400.0,,,,,,
+North Las Vegas,NV,294034,101.3,"North Las Vegas, NV",36.200519,-115.121475,2398871.0,,71774.0,340200.0,,,,,,
+Plano,TX,293286,71.7,"Plano, TX",33.013676,-96.69251,,,105679.0,412500.0,,,,,,
+Anchorage,AK,289600,1706.8,"Anchorage, AK",61.216313,-149.894852,407213.0,"Anchorage, AK MSA",95731.0,363800.0,,,,,,
+Gilbert,AZ,288790,68.6,"Gilbert, AZ",33.352763,-111.789037,,,115179.0,454300.0,,,,,,
+Madison,WI,285300,79.6,"Madison, WI",43.07469,-89.384166,707606.0,"Madison, WI MSA",74895.0,326600.0,,,,,,
+Reno,NV,281714,108.8,"Reno, NV",39.526179,-119.812658,575110.0,"Reno, NV MSA",73073.0,462100.0,,,,,,
+Chandler,AZ,281231,65.3,"Chandler, AZ",33.306203,-111.841185,5186958.0,,99374.0,423900.0,,,,,,
+St. Louis,MO,279695,61.7,"St. Louis, MO",38.625406,-90.190009,2811927.0,"St. Louis, MO-IL MSA",52941.0,174100.0,,,,,,
+Chula Vista,CA,278546,49.6,"Chula Vista, CA",32.640054,-117.084195,3298799.0,,101984.0,647100.0,,,,,,
+Buffalo,NY,276617,40.4,"Buffalo, NY",42.886416,-78.878149,1160172.0,,46184.0,132100.0,,,,,,
+Fort Wayne,IN,273203,110.7,"Fort Wayne, IN",41.07999,-85.138601,462978.0,"Fort Wayne, IN MSA",58233.0,152500.0,,,,,,
+Lubbock,TX,272086,134.6,"Lubbock, TX",33.585568,-101.847021,367109.0,"Lubbock, TX MSA",58734.0,181600.0,,,,,,
+St. Petersburg,FL,267102,61.8,"St. Petersburg, FL",27.771226,-82.634026,3424560.0,,70333.0,289000.0,,,,,,
+Toledo,OH,265638,80.5,"Toledo, OH",41.652914,-83.537817,601396.0,"Toledo, OH MSA",45405.0,98800.0,,,,,,
+Laredo,TX,261260,106.5,"Laredo, TX",27.507921,-99.506983,272823.0,"Laredo, TX MSA",60928.0,164400.0,,,,,,
+Port St. Lucie,FL,258575,119.2,"Port St. Lucie, FL",27.293933,-80.350328,556336.0,"Port St. Lucie, FL MSA",75040.0,292900.0,,,,,,
+Glendale,AZ,258143,61.6,"Glendale, AZ",33.538686,-112.185994,,,66375.0,310000.0,,,,,,
+Irving,TX,258060,67.0,"Irving, TX",32.829518,-96.944218,,,76686.0,259500.0,,,,,,
+Winston-Salem,NC,255769,132.7,"Winston-Salem, NC",36.099813,-80.244052,705187.0,,54416.0,187400.0,,,,,,
+Chesapeake,VA,254997,338.5,"Chesapeake, VA",36.716831,-76.249445,,,92703.0,339500.0,,,,,,
+Garland,TX,250431,57.1,"Garland, TX",32.912624,-96.638883,,,71044.0,229000.0,,,,,,
+Scottsdale,AZ,246170,184.0,"Scottsdale, AZ",33.494219,-111.926018,,,104197.0,651800.0,,,,,,
+Boise,ID,237963,84.0,"Boise, ID",43.616616,-116.200886,,,,,,,,,,
+Hialeah,FL,235388,21.6,"Hialeah, FL",25.826777,-80.281401,,,49531.0,324300.0,,,,,,
+Frisco,TX,235208,68.6,"Frisco, TX",33.1506,-96.823818,,,144567.0,531400.0,,,,,,
+Richmond,VA,233655,59.9,"Richmond, VA",37.538509,-77.43428,1370165.0,"Richmond, VA MSA",59606.0,308300.0,,,,,,
+Cape Coral,FL,233025,106.0,"Cape Coral, FL",26.562574,-81.94388,860959.0,,72474.0,302400.0,,,,,,
+Norfolk,VA,231105,53.3,"Norfolk, VA",36.84937,-76.289954,1794278.0,,60998.0,254200.0,,,,,,
+Spokane,WA,230609,68.8,"Spokane, WA",47.657193,-117.42351,604962.0,,63316.0,286900.0,,,,,,
+Huntsville,AL,230402,218.1,"Huntsville, AL",34.729847,-86.585901,542297.0,"Huntsville, AL MSA",67874.0,236300.0,,,,,,
+Santa Clarita,CA,229159,70.8,"Santa Clarita, CA",34.412796,-118.553809,,,116186.0,669200.0,,,,,,
+Tacoma,WA,228202,49.7,"Tacoma, WA",47.245501,-122.438329,4145494.0,,79085.0,415300.0,,,,,,
+Fremont,CA,228192,78.3,"Fremont, CA",37.54827,-121.988571,4648486.0,,169023.0,1231500.0,,,,,,
+McKinney,TX,227526,67.0,"McKinney, TX",33.19765,-96.615447,,,113286.0,400400.0,,,,,,
+San Bernardino,CA,224775,62.1,"San Bernardino, CA",34.825302,-116.083314,4744214.0,,61323.0,347100.0,,,,,,
+Baton Rouge,LA,220907,86.3,"Baton Rouge, LA",30.449416,-91.186966,882652.0,"Baton Rouge, LA MSA",50155.0,217700.0,,,,,,
+Modesto,CA,220592,43.0,"Modesto, CA",37.639342,-120.996889,556972.0,"Modesto, CA MSA",73375.0,381800.0,,,,,,
+Fontana,CA,218455,43.1,"Fontana, CA",34.092295,-117.43433,,,93230.0,506600.0,,,,,,
+Salt Lake City,UT,217783,110.3,"Salt Lake City, UT",40.75962,-111.886797,1300762.0,,72357.0,458600.0,,,,,,
+Moreno Valley,CA,213919,51.3,"Moreno Valley, CA",33.937518,-117.230579,,,82637.0,421400.0,,,,,,
+Des Moines,IA,213096,88.2,"Des Moines, IA",41.586865,-93.624949,753913.0,,62378.0,170700.0,,,,,,
+Worcester,MA,211286,37.4,"Worcester, MA",42.262562,-71.801888,881248.0,"Worcester, MA MSA",63011.0,305600.0,,,,,,
+Yonkers,NY,211040,18.0,"Yonkers, NY",40.93121,-73.898747,,,78208.0,456500.0,,,,,,
+Fayetteville,NC,209496,148.3,"Fayetteville, NC",35.052576,-78.878292,393812.0,"Fayetteville, NC MSA",53424.0,158500.0,,,,,,
+Sioux Falls,SD,209289,79.1,"Sioux Falls, SD",43.547601,-96.729363,308266.0,"Sioux Falls, SD-MN MSA",71785.0,250000.0,,,,,,
+Grand Prairie,TX,207331,72.6,"Grand Prairie, TX",32.745964,-96.997785,,,76626.0,242900.0,,,,,,
+Rochester,NY,207282,35.8,"Rochester, NY",43.157285,-77.615214,1057218.0,"Rochester, NY MSA",44156.0,111400.0,,,,,,
+Tallahassee,FL,205089,100.9,"Tallahassee, FL",30.438083,-84.280933,397675.0,"Tallahassee, FL MSA",52899.0,256400.0,,,,,,
+Little Rock,AR,204774,120.0,"Little Rock, AR",34.746507,-92.289627,769258.0,,58697.0,205800.0,,,,,,
+Amarillo,TX,203729,102.3,"Amarillo, TX",35.20729,-101.837119,274650.0,"Amarillo, TX MSA",60628.0,172700.0,,,,,,
+Overland Park,KS,202893,75.2,"Overland Park, KS",38.97425,-94.68517,,,100876.0,361800.0,,,,,,
+Columbus,GA,201830,216.5,"Columbus, GA",32.461071,-84.988045,324343.0,"Columbus, GA-AL MSA",54561.0,168400.0,,,,,,
+Augusta,GA,201737,302.3,"Augusta, GA",33.470971,-81.974843,636760.0,"Augusta-Richmond County, GA-SC MSA",,,,,,,,
+Mobile,AL,201367,139.5,"Mobile, AL",30.691346,-88.043751,412339.0,"Mobile, AL MSA",48524.0,158400.0,,,,,,
+Oxnard,CA,200616,26.5,"Oxnard, CA",34.197631,-119.180381,835427.0,,90409.0,587200.0,,,,,,
+Grand Rapids,MI,200117,44.8,"Grand Rapids, MI",42.963242,-85.667864,1178826.0,,61634.0,203900.0,,,,,,
+Peoria,AZ,199924,176.1,"Peoria, AZ",33.580612,-112.237294,,,86759.0,383600.0,,,,,,
+Vancouver,WA,198992,48.7,"Vancouver, WA",45.630695,-122.674456,,,73626.0,403400.0,,,,,,
+Knoxville,TN,198722,98.7,"Knoxville, TN",35.960395,-83.921026,957608.0,"Knoxville, TN MSA",48309.0,184200.0,,,,,,
+Birmingham,AL,196357,147.0,"Birmingham, AL",33.520682,-86.802433,1192583.0,"Birmingham, AL MSA",42464.0,123000.0,,,,,,
+Montgomery,AL,195818,159.9,"Montgomery, AL",32.377711,-86.309078,387885.0,"Montgomery, AL MSA",54166.0,141900.0,,,,,,
+Providence,RI,194706,18.4,"Providence, RI",41.823989,-71.412834,1700901.0,,61365.0,293000.0,,,,,,
+Huntington Beach,CA,193151,27.0,"Huntington Beach, CA",33.678334,-118.000016,,,114747.0,976800.0,,,,,,
+Brownsville,TX,191967,131.5,"Brownsville, TX",25.902429,-97.49817,431874.0,,46735.0,112600.0,,,,,,
+Chattanooga,TN,191496,142.4,"Chattanooga, TN",35.045722,-85.309488,588050.0,"Chattanooga, TN-GA MSA",57703.0,230500.0,,,,,,
+Fort Lauderdale,FL,190641,34.6,"Fort Lauderdale, FL",26.122308,-80.143379,6457988.0,,75376.0,417600.0,,,,,,
+Tempe,AZ,190114,39.9,"Tempe, AZ",33.425512,-111.940016,,,72022.0,382100.0,,,,,,
+Akron,OH,189664,61.9,"Akron, OH",41.083064,-81.518485,702209.0,"Akron, OH MSA",46596.0,99700.0,,,,,,
+Glendale,CA,187823,30.5,"Glendale, CA",34.146942,-118.247847,,,81219.0,992000.0,,,,,,
+Clarksville,TN,185690,99.4,"Clarksville, TN",36.527761,-87.35887,345955.0,"Clarksville, TN-KY MSA",62688.0,213200.0,,,,,,
+Ontario,CA,185285,50.0,"Ontario, CA",34.065846,-117.64843,4744214.0,,78070.0,513000.0,,,,,,
+Newport News,VA,183056,69.0,"Newport News, VA",36.977502,-76.42977,1794278.0,,63355.0,233400.0,,,,,,
+Elk Grove,CA,182797,42.0,"Elk Grove, CA",38.408799,-121.371618,,,115864.0,560500.0,,,,,,
+Cary,NC,182659,59.2,"Cary, NC",35.788289,-78.781208,1562009.0,,125317.0,477400.0,,,,,,
+Aurora,IL,180710,45.0,"Aurora, IL",41.75717,-88.314754,,,85943.0,241600.0,,,,,,
+Salem,OR,180406,48.8,"Salem, OR",44.939157,-123.033121,443416.0,"Salem, OR MSA",67540.0,349500.0,,,,,,
+Pembroke Pines,FL,179326,32.7,"Pembroke Pines, FL",26.006194,-80.287209,,,77657.0,379900.0,,,,,,
+Eugene,OR,178786,44.2,"Eugene, OR",44.050505,-123.095051,382396.0,,61481.0,406000.0,,,,,,
+Santa Rosa,CA,177524,42.5,"Santa Rosa, CA",38.440492,-122.714105,485375.0,,92604.0,661700.0,,,,,,
+Rancho Cucamonga,CA,176675,40.1,"Rancho Cucamonga, CA",34.103319,-117.575173,,,105534.0,657400.0,,,,,,
+Shreveport,LA,176578,107.8,"Shreveport, LA",32.513536,-93.747784,383269.0,,45967.0,168900.0,,,,,,
+Garden Grove,CA,172361,18.0,"Garden Grove, CA",33.774629,-117.946372,,,86139.0,702600.0,,,,,,
+Oceanside,CA,170941,41.3,"Oceanside, CA",33.19587,-117.379483,,,86701.0,644600.0,,,,,,
+Fort Collins,CO,170924,57.2,"Fort Collins, CO",40.587178,-105.077011,374574.0,,78977.0,497400.0,,,,,,
+Springfield,MO,170596,82.4,"Springfield, MO",37.208173,-93.292271,496975.0,"Springfield, MO MSA",43450.0,146400.0,,,,,,
+Murfreesboro,TN,168387,62.9,"Murfreesboro, TN",35.84604,-86.39211,2150553.0,,70451.0,327400.0,,,,,,
+Surprise,AZ,167564,110.3,"Surprise, AZ",33.629247,-112.368143,,,87756.0,352600.0,,,,,,
+Lancaster,CA,167426,94.3,"Lancaster, CA",34.698106,-118.136615,,,71367.0,368800.0,,,,,,
+Denton,TX,165998,96.4,"Denton, TX",33.183879,-97.141342,,,71921.0,296100.0,,,,,,
+Roseville,CA,163304,44.1,"Roseville, CA",38.752124,-121.288006,2463127.0,,112265.0,596700.0,,,,,,
+Palmdale,CA,162536,106.1,"Palmdale, CA",34.579313,-118.11711,,,78414.0,397500.0,,,,,,
+Corona,CA,161540,39.9,"Corona, CA",33.875295,-117.566444,,,103727.0,624200.0,,,,,,
+Salinas,CA,160783,23.5,"Salinas, CA",36.674412,-121.655037,436251.0,"Salinas, CA MSA",84250.0,573600.0,,,,,,
+Killeen,TX,160616,54.8,"Killeen, TX",31.117144,-97.727796,509487.0,,57086.0,175400.0,,,,,,
+Paterson,NJ,160463,8.4,"Paterson, NJ",40.916765,-74.171811,,,52092.0,314100.0,,,,,,
+Alexandria,VA,159102,14.9,"Alexandria, VA",38.80511,-77.047023,,,113179.0,655700.0,,,,,,
+Hollywood,FL,159073,27.3,"Hollywood, FL",26.011201,-80.14949,,,61958.0,345300.0,,,,,,
+Hayward,CA,158440,45.8,"Hayward, CA",37.668821,-122.080796,,,105371.0,775700.0,,,,,,
+Charleston,SC,157665,114.8,"Charleston, SC",32.788436,-79.939931,869940.0,,83891.0,438900.0,,,,,,
+Macon,GA,157056,249.4,"Macon, GA",32.840695,-83.632402,237617.0,"Macon-Bibb County, GA MSA",,,,,,,,
+Lakewood,CO,156868,43.5,"Lakewood, CO",39.708574,-105.084669,,,82786.0,494100.0,,,,,,
+Sunnyvale,CA,156792,22.1,"Sunnyvale, CA",37.36883,-122.036349,1995484.0,,174506.0,1680700.0,,,,,,
+Kansas City,KS,156752,124.7,"Kansas City, KS",39.113456,-94.626497,,,56120.0,133800.0,,,,,,
+Springfield,MA,154888,31.9,"Springfield, MA",42.101876,-72.588673,464151.0,"Springfield, MA MSA",47677.0,198500.0,,,,,,
+Bellevue,WA,154377,33.5,"Bellevue, WA",47.614422,-122.192337,4145494.0,,149551.0,1139500.0,,,,,,
+Naperville,IL,153124,39.1,"Naperville, IL",41.77287,-88.147928,9408576.0,,143754.0,482600.0,,,,,,
+Joliet,IL,151837,64.5,"Joliet, IL",41.52636,-88.084021,,,84971.0,233800.0,,,,,,
+Bridgeport,CT,151599,16.1,"Bridgeport, CT",41.179269,-73.188786,972679.0,,54440.0,227200.0,,,,,,
+Mesquite,TX,150140,48.5,"Mesquite, TX",32.76661,-96.599472,,,69649.0,208800.0,,,,,,
+Mesquite,TX,150140,48.5,"Mesquite, TX",32.76661,-96.599472,,,,128100.0,,,,,,
+Pasadena,TX,149617,43.7,"Pasadena, TX",29.691075,-95.209208,7796182.0,,64698.0,171600.0,,,,,,
+Olathe,KS,149035,61.9,"Olathe, KS",38.883886,-94.81887,,,108077.0,317900.0,,,,,,
+Escondido,CA,148847,37.3,"Escondido, CA",33.121675,-117.081485,,,77554.0,616400.0,,,,,,
+Savannah,GA,148808,106.8,"Savannah, GA",32.079007,-81.092134,431589.0,"Savannah, GA MSA",54748.0,203300.0,,,,,,
+McAllen,TX,148782,62.3,"McAllen, TX",26.204114,-98.23006,914820.0,,56326.0,158700.0,,,,,,
+Gainesville,FL,148720,63.2,"Gainesville, FL",29.651968,-82.324985,359780.0,"Gainesville, FL MSA",43783.0,216600.0,,,,,,
+Pomona,CA,147966,23.0,"Pomona, CA",34.055381,-117.75175,,,73515.0,524700.0,,,,,,
+Rockford,IL,147486,64.5,"Rockford, IL",42.271394,-89.093966,337103.0,"Rockford, IL MSA",50744.0,114100.0,,,,,,
+Thornton,CO,146689,35.9,"Thornton, CO",39.869552,-104.985181,,,95064.0,445200.0,,,,,,
+Waco,TX,146608,88.7,"Waco, TX",31.54919,-97.147463,307123.0,"Waco, TX MSA",47421.0,174100.0,,,,,,
+Visalia,CA,146271,37.9,"Visalia, CA",36.330228,-119.292058,483546.0,"Visalia, CA MSA",75658.0,316600.0,,,,,,
+Syracuse,NY,146097,25.1,"Syracuse, NY",43.048122,-76.147424,655189.0,"Syracuse, NY MSA",43584.0,117900.0,,,,,,
+Columbia,SC,144788,136.8,"Columbia, SC",34.000754,-81.035231,870193.0,"Columbia, SC MSA",54095.0,226200.0,,,,,,
+Midland,TX,143687,75.5,"Midland, TX",31.83688,-102.010377,188766.0,"Midland, TX MSA",90448.0,280700.0,,,,,,
+Miramar,FL,143242,28.9,"Miramar, FL",25.987314,-80.232271,,,81812.0,378200.0,,,,,,
+Palm Bay,FL,142023,86.4,"Palm Bay, FL",27.994697,-80.636614,658447.0,,62538.0,226200.0,,,,,,
+Lakewood,NJ,141985,24.7,"Lakewood, NJ",40.094099,-74.214989,,,54826.0,604600.0,,,,,,
+Jackson,MS,141449,111.7,"Jackson, MS",32.299869,-90.183041,606178.0,"Jackson, MS MSA",42193.0,104900.0,,,,,,
+Coral Springs,FL,140808,22.9,"Coral Springs, FL",26.271192,-80.270604,,,87488.0,453100.0,,,,,,
+Victorville,CA,140721,73.7,"Victorville, CA",34.536107,-117.291156,,,65746.0,300600.0,,,,,,
+Elizabeth,NJ,140413,12.3,"Elizabeth, NJ",40.663992,-74.210701,,,59939.0,358400.0,,,,,,
+Fullerton,CA,140054,22.4,"Fullerton, CA",33.870821,-117.929416,,,99279.0,791000.0,,,,,,
+Meridian,ID,139740,35.1,"Meridian, ID",43.608629,-116.392326,,,93296.0,425800.0,,,,,,
+Torrance,CA,139576,20.5,"Torrance, CA",33.837139,-118.341361,,,109554.0,962300.0,,,,,,
+Stamford,CT,139134,37.6,"Stamford, CT",41.05343,-73.538734,972679.0,,100718.0,584700.0,,,,,,
+West Valley City,UT,138144,35.8,"West Valley City, UT",40.696789,-111.986695,,,81719.0,333600.0,,,,,,
+Orange,CA,137941,25.7,"Orange, CA",33.750631,-117.872231,,,109335.0,848200.0,,,,,,
+Cedar Rapids,IA,137904,72.1,"Cedar Rapids, IA",41.975887,-91.670405,278677.0,"Cedar Rapids, IA MSA",66895.0,167900.0,,,,,,
+Warren,MI,137686,34.4,"Warren, MI",42.493257,-83.006275,4400578.0,,61633.0,169300.0,,,,,,
+Hampton,VA,137596,51.5,"Hampton, VA",37.026441,-76.344285,,,64430.0,219800.0,,,,,,
+New Haven,CT,137562,18.7,"New Haven, CT",41.308214,-72.925052,576718.0,"New Haven, CT MSA",54305.0,236500.0,,,,,,
+Pasadena,CA,137195,23.0,"Pasadena, CA",34.147651,-118.144155,,,97818.0,981600.0,,,,,,
+Kent,WA,136588,33.8,"Kent, WA",47.38269,-122.227027,,,86966.0,478400.0,,,,,,
+Dayton,OH,136346,55.8,"Dayton, OH",39.758948,-84.191607,821740.0,,41443.0,86200.0,,,,,,
+Fargo,ND,136285,49.8,"Fargo, ND",46.877229,-96.789821,267793.0,"Fargo, ND-MN MSA",64432.0,254900.0,,,,,,
+Lewisville,TX,135983,37.0,"Lewisville, TX",33.046233,-96.994174,,,82006.0,328300.0,,,,,,
+Carrollton,TX,135456,36.7,"Carrollton, TX",32.951547,-96.903424,,,95380.0,327300.0,,,,,,
+Round Rock,TX,135359,37.6,"Round Rock, TX",30.508592,-97.678806,2550637.0,,91888.0,337500.0,,,,,,
+Sterling Heights,MI,134342,36.4,"Sterling Heights, MI",42.580312,-83.030203,,,75381.0,243400.0,,,,,,
+Santa Clara,CA,133132,18.3,"Santa Clara, CA",37.354113,-121.955174,1995484.0,,165352.0,1440200.0,,,,,,
+Norman,OK,131010,178.8,"Norman, OK",35.222572,-97.439482,,,62849.0,224900.0,,,,,,
+Columbia,MO,130900,66.5,"Columbia, MO",38.951883,-92.333737,219426.0,"Columbia, MO MSA",60455.0,248600.0,,,,,,
+Abilene,TX,130501,106.7,"Abilene, TX",32.44645,-99.747591,184278.0,"Abilene, TX MSA",59254.0,161800.0,,,,,,
+Pearland,TX,129620,48.7,"Pearland, TX",29.563976,-95.28643,,,111123.0,311100.0,,,,,,
+Athens,GA,128691,116.3,"Athens, GA",33.959768,-83.376398,223689.0,"Athens-Clarke County, GA MSA",,,,,,,,
+College Station,TX,128023,51.2,"College Station, TX",30.618394,-96.345599,287462.0,,52397.0,305800.0,,,,,,
+Clovis,CA,127993,25.4,"Clovis, CA",36.825228,-119.702919,,,98554.0,420700.0,,,,,,
+West Palm Beach,FL,127744,53.8,"West Palm Beach, FL",26.715364,-80.053294,6457988.0,,64044.0,324800.0,,,,,,
+Allentown,PA,127138,17.6,"Allentown, PA",40.602255,-75.471611,886418.0,,52449.0,168800.0,,,,,,
+North Charleston,SC,126005,77.6,"North Charleston, SC",32.85462,-79.97481,869940.0,,58534.0,243300.0,,,,,,
+Simi Valley,CA,125778,41.5,"Simi Valley, CA",34.26774,-118.753807,,,112144.0,704200.0,,,,,,
+Topeka,KS,125467,61.4,"Topeka, KS",39.049011,-95.677556,232648.0,"Topeka, KS MSA",54052.0,124700.0,,,,,,
+Wilmington,NC,125284,51.4,"Wilmington, NC",34.235285,-77.948728,480522.0,"Wilmington, NC MSA",58908.0,318600.0,,,,,,
+Lakeland,FL,124990,66.2,"Lakeland, FL",28.039465,-81.949804,852878.0,,58290.0,207800.0,,,,,,
+Thousand Oaks,CA,124229,55.3,"Thousand Oaks, CA",34.170561,-118.837594,835427.0,,125399.0,900600.0,,,,,,
+Concord,CA,124016,30.6,"Concord, CA",37.976852,-122.033562,,,107789.0,706700.0,,,,,,
+Rochester,MN,123624,55.5,"Rochester, MN",44.023439,-92.463018,230742.0,"Rochester, MN MSA",83973.0,268800.0,,,,,,
+Vallejo,CA,123475,30.4,"Vallejo, CA",38.104086,-122.256637,455101.0,"Vallejo, CA MSA",86112.0,515500.0,,,,,,
+Ann Arbor,MI,122925,28.2,"Ann Arbor, MI",42.281372,-83.748462,373875.0,"Ann Arbor, MI MSA",78546.0,416500.0,,,,,,
+Broken Arrow,OK,122756,63.0,"Broken Arrow, OK",36.052599,-95.790819,,,82547.0,210800.0,,,,,,
+Fairfield,CA,122646,41.6,"Fairfield, CA",38.249358,-122.039966,,,98857.0,546200.0,,,,,,
+Lafayette,LA,122280,55.8,"Lafayette, LA",30.226219,-92.01782,419704.0,"Lafayette, LA MSA",58850.0,234900.0,,,,,,
+Hartford,CT,122129,17.4,"Hartford, CT",41.764582,-72.690855,1169048.0,,41841.0,198900.0,,,,,,
+Arvada,CO,121873,38.9,"Arvada, CO",39.80055,-105.081157,,,106014.0,553000.0,,,,,,
+Berkeley,CA,121749,10.4,"Berkeley, CA",37.870839,-122.272863,,,104716.0,1280300.0,,,,,,
+Independence,MO,121629,78.0,"Independence, MO",39.092479,-94.413792,,,57415.0,150800.0,,,,,,
+Billings,MT,121483,44.8,"Billings, MT",45.787496,-108.49607,192531.0,"Billings, MT MSA",69692.0,285300.0,,,,,,
+Cambridge,MA,121186,6.4,"Cambridge, MA",42.365635,-71.104002,5025517.0,,121539.0,997600.0,,,,,,
+Lowell,MA,120418,13.6,"Lowell, MA",42.641444,-71.308533,,,73008.0,362800.0,,,,,,
+Odessa,TX,119748,51.1,"Odessa, TX",31.845715,-102.367687,170022.0,"Odessa, TX MSA",71293.0,193500.0,,,,,,
+High Point,NC,118601,56.4,"High Point, NC",35.955692,-80.005318,800722.0,,58582.0,196500.0,,,,,,
+League City,TX,118456,51.3,"League City, TX",29.507454,-95.09493,,,117316.0,312500.0,,,,,,
+Antioch,CA,118453,29.2,"Antioch, CA",38.00933,-121.810693,,,90709.0,570900.0,,,,,,
+Richardson,TX,118221,28.6,"Richardson, TX",32.948179,-96.729721,,,94362.0,379800.0,,,,,,
+Goodyear,AZ,118186,191.3,"Goodyear, AZ",33.467228,-112.385349,,,97307.0,396100.0,,,,,,
+Pompano Beach,FL,118104,24.0,"Pompano Beach, FL",26.23786,-80.124767,,,61155.0,293300.0,,,,,,
+Nampa,ID,117350,33.5,"Nampa, ID",43.578038,-116.561689,,,67346.0,289400.0,,,,,,
+Menifee,CA,117041,46.5,"Menifee, CA",33.686443,-117.177044,,,87871.0,442600.0,,,,,,
+Las Cruces,NM,116998,76.9,"Las Cruces, NM",32.314035,-106.779807,229366.0,"Las Cruces, NM MSA",51013.0,197200.0,,,,,,
+Clearwater,FL,116811,26.1,"Clearwater, FL",27.965853,-82.800103,3424560.0,,59358.0,287900.0,,,,,,
+West Jordan,UT,116688,32.3,"West Jordan, UT",40.606134,-111.939521,,,99002.0,412100.0,,,,,,
+New Braunfels,TX,116477,45.2,"New Braunfels, TX",29.702827,-98.125735,2763006.0,,85827.0,290800.0,,,,,,
+Manchester,NH,116386,33.1,"Manchester, NH",42.99564,-71.454789,430462.0,,74040.0,304700.0,,,,,,
+Miami Gardens,FL,116173,18.2,"Miami Gardens, FL",25.942038,-80.245604,,,56071.0,299700.0,,,,,,
+Waterbury,CT,115908,28.5,"Waterbury, CT",41.553809,-73.043836,462220.0,,51451.0,162800.0,,,,,,
+Provo,UT,115479,41.7,"Provo, UT",40.233729,-111.658709,760531.0,,57943.0,391500.0,,,,,,
+Evansville,IN,115395,47.4,"Evansville, IN",37.970495,-87.571564,271793.0,"Evansville, IN MSA",49853.0,121100.0,,,,,,
+Richmond,CA,115353,30.1,"Richmond, CA",37.935758,-122.347748,,,86618.0,624800.0,,,,,,
+Westminster,CO,115302,31.6,"Westminster, CO",39.836653,-105.037205,,,90651.0,467200.0,,,,,,
+Elgin,IL,114701,38.0,"Elgin, IL",42.03726,-88.281099,9408576.0,,85998.0,242500.0,,,,,,
+Conroe,TX,114581,72.0,"Conroe, TX",30.311877,-95.456051,,,71630.0,262500.0,,,,,,
+Greeley,CO,114363,48.9,"Greeley, CO",40.423314,-104.709132,369745.0,"Greeley, CO MSA",65525.0,346400.0,,,,,,
+Lansing,MI,114336,39.1,"Lansing, MI",42.733825,-84.55463,479971.0,,50747.0,112200.0,,,,,,
+Buckeye,AZ,114334,393.0,"Buckeye, AZ",33.37032,-112.583776,,,94188.0,341700.0,,,,,,
+Tuscaloosa,AL,114288,61.9,"Tuscaloosa, AL",33.209561,-87.567526,281963.0,"Tuscaloosa, AL MSA",47257.0,228300.0,,,,,,
+Allen,TX,113746,26.4,"Allen, TX",33.103174,-96.67055,,,121259.0,390200.0,,,,,,
+Carlsbad,CA,113575,37.8,"Carlsbad, CA",33.158093,-117.350597,3298799.0,,134139.0,1070500.0,,,,,,
+Everett,WA,113011,33.2,"Everett, WA",47.979344,-122.212701,,,77806.0,471200.0,,,,,,
+Springfield,IL,112949,61.1,"Springfield, IL",39.799017,-89.643957,206308.0,"Springfield, IL MSA",62419.0,147700.0,,,,,,
+Beaumont,TX,112893,82.5,"Beaumont, TX",30.082934,-94.098428,398733.0,,53745.0,150400.0,,,,,,
+Murrieta,CA,112539,33.6,"Murrieta, CA",33.560832,-117.210656,,,106925.0,567700.0,,,,,,
+Rio Rancho,NM,112524,103.4,"Rio Rancho, NM",35.310823,-106.684745,,,78978.0,246700.0,,,,,,
+Temecula,CA,112431,37.3,"Temecula, CA",33.494635,-117.147366,,,111881.0,604300.0,,,,,,
+Concord,NC,112395,63.5,"Concord, NC",35.409418,-80.580005,2883370.0,,83480.0,288100.0,,,,,,
+Tyler,TX,112219,57.5,"Tyler, TX",32.35126,-95.301062,249091.0,"Tyler, TX MSA",63056.0,205200.0,,,,,,
+Davie,FL,112052,34.9,"Davie, FL",26.062866,-80.233104,,,84346.0,405100.0,,,,,,
+South Fulton,GA,112003,85.2,"South Fulton, GA",33.590266,-84.671229,,,77488.0,242200.0,,,,,,
+Peoria,IL,111696,48.0,"Peoria, IL",40.693861,-89.589101,364565.0,"Peoria, IL MSA",58068.0,146700.0,,,,,,
+Sparks,NV,111520,36.4,"Sparks, NV",39.540468,-119.748723,,,82938.0,423500.0,,,,,,
+Gresham,OR,111507,23.5,"Gresham, OR",45.497862,-122.432988,,,69437.0,411700.0,,,,,,
+Santa Maria,CA,111346,22.8,"Santa Maria, CA",34.95313,-120.435857,444500.0,,81237.0,438100.0,,,,,,
+Pueblo,CO,111166,55.4,"Pueblo, CO",38.263995,-104.614187,169866.0,"Pueblo, CO MSA",52794.0,197700.0,,,,,,
+Hillsboro,OR,110337,25.7,"Hillsboro, OR",45.522894,-122.989827,2537904.0,,98891.0,452300.0,,,,,,
+Edison,NJ,110002,30.1,"Edison, NJ",40.500535,-74.398394,,,,,,,,,,
+Sugar Land,TX,109851,40.5,"Sugar Land, TX",29.619679,-95.634946,,,132247.0,387900.0,,,,,,
+Ventura,CA,109831,21.9,"Ventura, CA",34.445825,-119.077936,835427.0,,,,,,,,,
+Downey,CA,109368,12.4,"Downey, CA",33.940444,-118.129285,,,84236.0,679000.0,,,,,,
+Costa Mesa,CA,109131,15.8,"Costa Mesa, CA",33.663339,-117.903317,,,104981.0,959800.0,,,,,,
+Centennial,CO,108853,29.7,"Centennial, CO",39.579155,-104.876923,3052498.0,,124617.0,586500.0,,,,,,
+Edinburg,TX,108733,44.7,"Edinburg, TX",26.301398,-98.16245,914820.0,,54139.0,159600.0,,,,,,
+Spokane Valley,WA,108267,37.7,"Spokane Valley, WA",47.65711,-117.261394,604962.0,,66483.0,307700.0,,,,,,
+Jurupa Valley,CA,108154,42.9,"Jurupa Valley, CA",33.979847,-117.451575,,,91562.0,481500.0,,,,,,
+Bend,OR,106926,33.6,"Bend, OR",44.058173,-121.31531,264407.0,"Bend, OR MSA",82671.0,576900.0,,,,,,
+West Covina,CA,106920,16.0,"West Covina, CA",34.068621,-117.938953,,,96219.0,664500.0,,,,,,
+Boulder,CO,106803,26.3,"Boulder, CO",40.014986,-105.270545,330262.0,"Boulder, CO MSA",80243.0,919700.0,,,,,,
+Palm Coast,FL,106729,95.4,"Palm Coast, FL",29.554143,-81.220767,,,68824.0,283300.0,,,,,,
+Lee's Summit,MO,106419,63.9,"Lee's Summit, MO",38.910716,-94.38213,,,103447.0,291400.0,,,,,,
+Dearborn,MI,106377,24.2,"Dearborn, MI",42.32226,-83.176315,4400578.0,,64600.0,189400.0,,,,,,
+Green Bay,WI,106311,45.5,"Green Bay, WI",44.512638,-88.012579,334697.0,"Green Bay, WI MSA",59174.0,172700.0,,,,,,
+St. George,UT,106288,78.5,"St. George, UT",37.109877,-113.583206,207943.0,"St. George, UT MSA",69333.0,415200.0,,,,,,
+Woodbridge,NJ,106101,23.3,"Woodbridge, NJ",40.55418,-74.286001,,,103481.0,344200.0,,,,,,
+Brockton,MA,105788,21.3,"Brockton, MA",42.083433,-71.018379,,,74016.0,364700.0,,,,,,
+Renton,WA,105543,23.5,"Renton, WA",47.479908,-122.20345,,,92292.0,576800.0,,,,,,
+Sandy Springs,GA,105505,37.7,"Sandy Springs, GA",33.924269,-84.378538,6411149.0,,93303.0,556300.0,,,,,,
+Rialto,CA,104918,24.1,"Rialto, CA",34.1064,-117.370323,,,80750.0,418300.0,,,,,,
+El Monte,CA,104639,9.6,"El Monte, CA",34.075157,-118.036849,,,59929.0,597200.0,,,,,,
+Vacaville,CA,103994,29.9,"Vacaville, CA",38.356577,-121.987744,,,106764.0,560400.0,,,,,,
+Fishers,IN,103986,35.6,"Fishers, IN",39.955593,-86.013873,,,126548.0,339000.0,,,,,,
+South Bend,IN,103713,42.0,"South Bend, IN",41.683381,-86.250007,325294.0,,49056.0,113800.0,,,,,,
+Carmel,IN,103606,49.1,"Carmel, IN",39.978419,-86.128368,2174833.0,,132859.0,425900.0,,,,,,
+Yuma,AZ,103559,120.7,"Yuma, AZ",32.725422,-114.619809,220310.0,"Yuma, AZ MSA",59312.0,186500.0,,,,,,
+Burbank,CA,103533,17.3,"Burbank, CA",34.181209,-118.307201,,,91455.0,959700.0,,,,,,
+Burbank,CA,103533,17.3,"Burbank, CA",34.181209,-118.307201,,,137929.0,1086100.0,,,,,,
+Lynn,MA,103489,10.7,"Lynn, MA",42.466763,-70.949494,,,70046.0,442800.0,,,,,,
+Quincy,MA,103434,16.6,"Quincy, MA",42.250991,-71.003737,,,90668.0,563200.0,,,,,,
+El Cajon,CA,103291,14.5,"El Cajon, CA",32.794773,-116.962526,,,64128.0,593500.0,,,,,,
+Fayetteville,AR,103134,54.1,"Fayetteville, AR",36.062584,-94.157433,605615.0,,56881.0,291300.0,,,,,,
+Suffolk,VA,103105,399.2,"Suffolk, VA",36.728134,-76.583468,,,87758.0,314400.0,,,,,,
+San Mateo,CA,103006,12.1,"San Mateo, CA",37.496904,-122.333057,,,149152.0,1508900.0,,,,,,
+Chico,CA,102911,34.1,"Chico, CA",39.728494,-121.837478,208334.0,"Chico, CA MSA",65932.0,427600.0,,,,,,
+Inglewood,CA,102774,9.1,"Inglewood, CA",33.9562,-118.353132,,,67563.0,689700.0,,,,,,
+Wichita Falls,TX,102372,72.0,"Wichita Falls, TX",33.900457,-98.502078,149869.0,"Wichita Falls, TX MSA",55584.0,128800.0,,,,,,
+Boca Raton,FL,102238,29.2,"Boca Raton, FL",26.358688,-80.083098,,,95570.0,597100.0,,,,,,
+Hesperia,CA,101836,72.7,"Hesperia, CA",34.422036,-117.304687,,,67698.0,337600.0,,,,,,
+Daly City,CA,101418,7.6,"Daly City, CA",37.690483,-122.47267,,,114910.0,1073100.0,,,,,,
+Clinton,MI,101359,28.0,"Clinton, MI",42.943524,-84.612534,,,78472.0,164100.0,,,,,,
+Georgetown,TX,101344,57.3,"Georgetown, TX",30.637015,-97.677563,,,87465.0,361700.0,,,,,,
+New Bedford,MA,101318,20.0,"New Bedford, MA",41.636215,-70.934205,,,54604.0,291300.0,,,,,,
+Albany,NY,101317,21.4,"Albany, NY",42.651167,-73.754968,913485.0,,54736.0,213400.0,,,,,,
+Davenport,IA,100938,63.8,"Davenport, IA",41.523581,-90.577097,381801.0,,59890.0,155100.0,,,,,,
+Plantation,FL,100694,21.8,"Plantation, FL",26.127586,-80.233104,,,83074.0,412000.0,,,,,,
+Plantation,FL,100694,21.8,"Plantation, FL",26.127586,-80.233104,,,72209.0,344500.0,,,,,,
+Deltona,FL,100513,37.3,"Deltona, FL",28.904843,-81.227312,739516.0,,69074.0,226800.0,,,,,,
+Federal Way,WA,100252,22.3,"Federal Way, WA",47.313494,-122.33931,,,80360.0,454300.0,,,,,,
+San Angelo,TX,100159,59.7,"San Angelo, TX",31.464969,-100.440509,121629.0,"San Angelo, TX MSA",65040.0,171700.0,,,,,,
+Tracy,CA,100136,25.9,"Tracy, CA",37.738551,-121.420139,,,111717.0,617300.0,,,,,,
+Sunrise,FL,100128,16.2,"Sunrise, FL",26.166689,-80.278757,,,66001.0,296100.0,,,,,,
