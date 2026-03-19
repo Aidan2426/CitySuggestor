@@ -269,6 +269,7 @@ with st.sidebar:
     # ── Coastline
     st.markdown('<div class="section-header">Coastline</div>', unsafe_allow_html=True)
     coastline_options = ["Any", "ocean", "great_lakes", "none"]
+    # coastline_type is now "none" for inland cities (fixed threshold)
     coastline_filter = st.selectbox(
         "Coastline type",
         options=coastline_options,
@@ -293,6 +294,12 @@ with st.sidebar:
     # ── Reset
     st.markdown("---")
     if st.button("Reset all filters", use_container_width=True):
+        for key in ["pop", "metro", "income", "home", "temp", "summer", "winter",
+                    "seasons", "walk", "airport", "zoo", "park", "natl_park",
+                    "nature", "coast", "sports_total", "nfl", "mlb", "nba", "nhl",
+                    "mls", "city_search"]:
+            if key in st.session_state:
+                del st.session_state[key]
         st.rerun()
 
 # ── apply filters ─────────────────────────────────────────────────────────────
@@ -383,7 +390,9 @@ with col_list:
                 pills.append(f"{int(row['seasons_count'])} seasons")
             if pd.notna(row.get("total_pro_teams")) and row.get("total_pro_teams", 0) > 0:
                 pills.append(f"{int(row['total_pro_teams'])} pro teams")
-            if row.get("coastline_type") in ("ocean", "great_lakes"):
+            if pd.notna(row.get("environment_type")):
+                pills.append(str(row["environment_type"]).replace("_", " ").title())
+            elif row.get("coastline_type") in ("ocean", "great_lakes"):
                 ct = "Ocean" if row["coastline_type"] == "ocean" else "Great Lakes"
                 pills.append(ct)
 

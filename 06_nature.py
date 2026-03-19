@@ -155,12 +155,22 @@ STATE_PARKS = [
     ("White Mountain NF NH",               44.1,   -71.5),
     ("Green Mountain NF VT",               43.8,   -73.0),
     ("Mohawk Trail SP MA",                 42.6,   -72.9),
-    # Mid-Atlantic
+    ("Letchworth SP NY",                   42.6,   -78.0),
+    ("Watkins Glen SP NY",                 42.4,   -76.9),
+    # Mid-Atlantic / Pennsylvania
     ("Shenandoah SP VA",                   38.9,   -78.2),
     ("Assateague SP MD",                   38.1,   -75.2),
     ("Patuxent River SP MD",               39.1,   -76.8),
     ("Pocono Mountains PA",                41.2,   -75.3),
     ("Delaware State Forest PA",           41.1,   -75.2),
+    ("Ohiopyle SP PA",                     39.9,   -79.5),
+    ("Laurel Hill SP PA",                  40.1,   -79.3),
+    ("Ricketts Glen SP PA",                41.3,   -76.3),
+    ("McConnells Mill SP PA",              40.9,   -80.2),
+    ("Presque Isle SP PA",                 42.2,   -80.1),
+    ("Hickory Run SP PA",                  41.0,   -75.6),
+    ("Black Moshannon SP PA",              40.9,   -78.1),
+    ("Worlds End SP PA",                   41.5,   -76.6),
     # Southeast
     ("Cheraw SP SC",                       34.7,   -79.9),
     ("Stone Mountain SP GA",               33.8,   -84.2),
@@ -241,6 +251,16 @@ COASTLINES = {
         (43.4,-124.3),(42.0,-124.2),(40.4,-124.4),(38.3,-123.1),(37.8,-122.5),
         (36.6,-121.9),(35.4,-120.9),(34.4,-120.5),(34.0,-118.5),(33.7,-118.3),
         (33.2,-117.4),(32.7,-117.2),(21.3,-157.8),(19.7,-155.1),
+        # Puget Sound / inland sea (WA)
+        (47.6,-122.3),(47.5,-122.4),(47.4,-122.4),(47.3,-122.4),(47.2,-122.5),
+        (47.8,-122.5),(48.1,-122.8),(48.4,-122.6),(47.9,-122.7),(47.1,-122.6),
+        # San Francisco Bay
+        (37.8,-122.4),(37.7,-122.4),(37.6,-122.4),(37.5,-122.2),(37.9,-122.5),
+        # Chesapeake Bay
+        (39.3,-76.5),(38.9,-76.5),(38.5,-76.4),(37.9,-76.3),(37.2,-76.2),
+        (38.3,-76.5),(39.0,-76.4),(36.9,-76.3),
+        # Tampa Bay / Charlotte Harbor
+        (27.9,-82.5),(27.7,-82.6),(27.5,-82.7),(26.9,-82.1),
     ],
     "great_lakes": [
         (42.0,-87.6),(42.5,-87.8),(43.0,-87.9),(43.9,-87.5),(44.5,-86.4),
@@ -295,6 +315,8 @@ def count_within_radius(lat, lon, locations, radius_miles):
         if geodesic((lat, lon), (plat, plon)).miles <= radius_miles
     )
 
+COASTAL_THRESHOLD = 50.0  # miles — beyond this, city is not considered coastal
+
 def nearest_coast(lat, lon):
     best_dist = float("inf")
     best_type = "none"
@@ -304,11 +326,95 @@ def nearest_coast(lat, lon):
             if dist < best_dist:
                 best_dist = dist
                 best_type = coast_type
-    return round(best_dist, 1), best_type
+    coast_type_result = best_type if best_dist <= COASTAL_THRESHOLD else "none"
+    return round(best_dist, 1), coast_type_result
+
+
+def classify_environment(lat, lon, elev_ft, dist_coast, coast_type, state):
+    """Classify a city's natural environment into a descriptive category."""
+    elev = elev_ft or 0
+    dist_c = dist_coast if dist_coast is not None else 999
+
+    # Coastal ocean
+    if coast_type == "ocean":
+        return "coastal"
+
+    # Great Lakes shoreline
+    if coast_type == "great_lakes":
+        return "great_lakes"
+
+    # Desert Southwest
+    if state in ("AZ", "NM"):
+        return "desert"
+    if state == "NV" and not (lat and lat > 39.5 and elev > 4000):
+        return "desert"
+    if state == "CA" and lat and lat < 35.5 and lon and lon > -117.5:
+        return "desert"
+    if state == "TX" and lon and lon < -103:
+        return "desert"
+    if state == "UT" and lat and lat < 38.5 and elev < 4500:
+        return "desert"
+
+    # High mountains (Rockies, Cascades, Sierra)
+    mountain_west = ("CO", "WY", "MT", "ID")
+    if state in mountain_west and elev > 4500:
+        return "mountains"
+    if state == "UT" and elev > 4000:
+        return "mountains"
+    if state in ("WA", "OR") and elev > 900 and dist_c > 40:
+        return "mountains"
+    if state == "CA" and elev > 1500 and lon and lon > -121:
+        return "mountains"
+    if state == "NV" and lat and lat > 39.5 and elev > 4000:
+        return "mountains"
+
+    # Rocky Mountain foothills
+    if state in mountain_west and 2000 < elev <= 4500:
+        return "foothills"
+    if state == "CO" and elev > 1500:
+        return "foothills"
+    if state in ("NM", "AZ") and elev > 5000:
+        return "foothills"
+
+    # Appalachian hills / Ozarks
+    appalachian = ("WV", "KY", "TN", "VA", "PA", "MD", "NC", "AL")
+    if state in appalachian and elev > 500:
+        return "hills"
+    if state == "NY" and lon and lon < -74.5 and elev > 500:
+        return "hills"
+    if state in ("AR", "MO") and elev > 500:
+        return "hills"
+    if state == "GA" and elev > 800:
+        return "hills"
+    if state in ("OH", "IN") and elev > 900:
+        return "hills"
+
+    # Pacific NW / California valleys
+    if state in ("WA", "OR") and elev < 500:
+        return "valley"
+    if state == "CA" and lat and lat > 35.5 and elev < 500:
+        return "valley"
+
+    # Great Plains / Midwest
+    plains = ("KS", "NE", "ND", "SD", "OK", "IA", "IL", "IN", "MI", "WI", "MN")
+    if state in plains:
+        return "plains"
+    if state == "TX":
+        return "plains"
+    if state in ("OH", "MO", "MI") and elev < 900:
+        return "plains"
+
+    # Southeast lowlands
+    southeast = ("FL", "LA", "MS", "SC", "GA", "AL")
+    if state in southeast and elev < 300:
+        return "lowlands"
+
+    return "plains"
 
 # ── scoring ───────────────────────────────────────────────────────────────────
 
-def compute_nature_score(dist_np, dist_nf, dist_sp, dist_coast, elev_ft, parks_100):
+def compute_nature_score(dist_np, dist_nf, dist_sp, dist_coast, elev_ft, parks_100,
+                         lat=None, lon=None):
     score = 0.0
 
     # National park proximity (0-25 pts)
@@ -317,6 +423,13 @@ def compute_nature_score(dist_np, dist_nf, dist_sp, dist_coast, elev_ft, parks_1
         elif dist_np < 50:  score += 18
         elif dist_np < 100: score += 10
         elif dist_np < 200: score += 4
+
+    # Bonus for multiple national parks within 150 miles (0-10 pts)
+    if lat is not None and lon is not None:
+        nps_nearby = count_within_radius(lat, lon, NATIONAL_PARKS, 150)
+        if nps_nearby >= 4:   score += 10
+        elif nps_nearby == 3: score += 7
+        elif nps_nearby == 2: score += 4
 
     # National forest proximity (0-20 pts)
     if dist_nf is not None:
@@ -339,12 +452,19 @@ def compute_nature_score(dist_np, dist_nf, dist_sp, dist_coast, elev_ft, parks_1
         elif dist_coast < 50: score += 9
         elif dist_coast < 100: score += 4
 
-    # Elevation bonus (0-10 pts)
+    # Elevation bonus (0-10 pts) — only meaningful if near mountains/forests,
+    # so halve the bonus if the city is far from both national parks and forests
     if elev_ft is not None:
-        if elev_ft > 5000:   score += 10
-        elif elev_ft > 3000: score += 7
-        elif elev_ft > 1500: score += 4
-        elif elev_ft > 500:  score += 1
+        if elev_ft > 5000:   elev_pts = 10
+        elif elev_ft > 3000: elev_pts = 7
+        elif elev_ft > 1500: elev_pts = 4
+        elif elev_ft > 500:  elev_pts = 1
+        else:                elev_pts = 0
+        near_terrain = (
+            (dist_np is not None and dist_np < 200) or
+            (dist_nf is not None and dist_nf < 100)
+        )
+        score += elev_pts if near_terrain else elev_pts // 2
 
     # Parks density within 100 miles (0-10 pts)
     if parks_100 is not None:
@@ -370,14 +490,17 @@ def main():
                 "dist_natl_forest_miles", "nearest_natl_forest",
                 "dist_state_park_miles", "nearest_state_park",
                 "coastline_type", "dist_coast_miles",
-                "elevation_ft", "parks_within_100mi", "nature_score"]
+                "elevation_ft", "parks_within_100mi", "nature_score",
+                "environment_type"]
     for col in new_cols:
         if col not in cities.columns:
             cities[col] = None
 
-    needs_fetch = cities[
-        cities["nature_score"].isna() & cities["lat"].notna()
-    ].index.tolist()
+    # Clear ALL scores so every city is recalculated with updated thresholds/rules
+    cities["nature_score"] = None
+    cities["environment_type"] = None
+
+    needs_fetch = cities[cities["lat"].notna()].index.tolist()
 
     total = len(needs_fetch)
     all_parks = NATIONAL_PARKS + NATIONAL_FORESTS + STATE_PARKS
@@ -420,7 +543,12 @@ def main():
         parks_100 = count_within_radius(lat, lon, all_parks, 100)
 
         score = compute_nature_score(
-            dist_np, dist_nf, dist_sp, dist_coast, elev, parks_100
+            dist_np, dist_nf, dist_sp, dist_coast, elev, parks_100,
+            lat=lat, lon=lon
+        )
+
+        env_type = classify_environment(
+            lat, lon, elev, dist_coast, c_type, str(row.get("state", ""))
         )
 
         cities.at[idx, "dist_natl_park_miles"]   = dist_np
@@ -434,6 +562,7 @@ def main():
         cities.at[idx, "elevation_ft"]            = elev
         cities.at[idx, "parks_within_100mi"]      = parks_100
         cities.at[idx, "nature_score"]            = score
+        cities.at[idx, "environment_type"]        = env_type
 
     cities.to_csv(MASTER_FILE, index=False)
 

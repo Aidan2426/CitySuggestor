@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(grep -r \"streamlit\\\\|app\\\\|flask\\\\|django\" /c/Users/aidan/OneDrive/Documents/CitySuggestor --include=*.py)",
-      "Bash(python -c \"import pandas as pd; df = pd.read_csv\\(''c:/Users/aidan/OneDrive/Documents/CitySuggestor/cities_master.csv''\\); chicago = df[df[''city''].str.contains\\(''Chicago'', case=False\\)][[''city'',''state'',''avg_summer_high_f'',''avg_winter_low_f'',''temp_range_f'',''seasons_count'']]; print\\(chicago.to_string\\(\\)\\)\")"
+      "Bash(python -c \"import pandas as pd; df = pd.read_csv\\(''c:/Users/aidan/OneDrive/Documents/CitySuggestor/cities_master.csv''\\); chicago = df[df[''city''].str.contains\\(''Chicago'', case=False\\)][[''city'',''state'',''avg_summer_high_f'',''avg_winter_low_f'',''temp_range_f'',''seasons_count'']]; print\\(chicago.to_string\\(\\)\\)\")",
+      "Bash(python -c \"import pandas as pd; df = pd.read_csv\\(''c:/Users/aidan/OneDrive/Documents/CitySuggestor/cities_master.csv''\\); s = df[df[''city''].str.contains\\(''Seattle'', case=False\\)][[''city'',''nature_score'',''dist_natl_park_miles'',''nearest_natl_park'',''dist_natl_forest_miles'',''dist_state_park_miles'',''coastline_type'',''dist_coast_miles'',''elevation_ft'',''parks_within_100mi'']]; print\\(s.to_string\\(\\)\\)\")",
+      "Bash(python -c \":*)"
     ]
   }
 }
