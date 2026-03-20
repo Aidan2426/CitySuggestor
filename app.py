@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
+import requests
 
 # ── pro sports team lookup ────────────────────────────────────────────────────
 # Keyed by metro name; cities map to a metro below.
@@ -225,7 +226,39 @@ st.markdown("""
         border-radius: 10px;
         padding: 14px 16px;
         margin-bottom: 8px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
     }
+    .city-card-body { flex: 1; min-width: 0; }
+    .city-photo-wrap { flex-shrink: 0; }
+    .photo-carousel { position: relative; width: 160px; }
+    .cr-img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+    }
+    /* CSS-only carousel: radio + adjacent slide */
+    .cr-slide { display: none; }
+    input[type="radio"]:checked + .cr-slide { display: block; }
+    .cr-dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 5px;
+    }
+    .cr-dots label {
+        width: 7px;
+        height: 7px;
+        background: #4b5280;
+        border-radius: 50%;
+        cursor: pointer;
+        display: inline-block;
+        transition: background 0.2s;
+    }
+    .cr-dots label:hover { background: #818cf8; }
     /* Sports pill — inline <details> element styled like a stat-pill */
     details.sports-pill {
         display: inline-block;
@@ -351,6 +384,74 @@ def load_data():
     return df
 
 df = load_data()
+
+
+_STATE_NAMES = {
+    "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California",
+    "CO":"Colorado","CT":"Connecticut","DE":"Delaware","FL":"Florida","GA":"Georgia",
+    "HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa",
+    "KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland",
+    "MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi",
+    "MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire",
+    "NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina",
+    "ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania",
+    "RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee",
+    "TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington",
+    "WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming","DC":"District of Columbia",
+}
+
+@st.cache_data(show_spinner=False, ttl=86400)
+def get_city_images(city: str, state: str, n: int = 4) -> list:
+    """Return up to n photo URLs for a city (Wikimedia Commons + Wikipedia fallback)."""
+    state_name = _STATE_NAMES.get(state, state)
+    urls, seen = [], set()
+
+    # 1. Wikimedia Commons image search
+    for search_term in [f"{city} {state_name}", f"{city} skyline", f"{city} downtown"]:
+        if len(urls) >= n:
+            break
+        try:
+            resp = requests.get(
+                "https://commons.wikimedia.org/w/api.php",
+                params={
+                    "action": "query", "generator": "search",
+                    "gsrsearch": search_term, "gsrnamespace": 6,
+                    "prop": "imageinfo", "iiprop": "url|mime|size",
+                    "iiurlwidth": 600, "format": "json", "gsrlimit": 10,
+                },
+                timeout=6, headers={"User-Agent": "CitySuggestor/1.0"},
+            )
+            if resp.status_code == 200:
+                pages = resp.json().get("query", {}).get("pages", {})
+                for page in sorted(pages.values(), key=lambda p: p.get("index", 999)):
+                    info = (page.get("imageinfo") or [{}])[0]
+                    url = info.get("thumburl") or info.get("url", "")
+                    mime = info.get("mime", "")
+                    if url and mime in ("image/jpeg", "image/png") and url not in seen:
+                        seen.add(url)
+                        urls.append(url)
+                        if len(urls) >= n:
+                            break
+        except Exception:
+            pass
+
+    # 2. Wikipedia page thumbnail fallback
+    if not urls:
+        for slug in [f"{city},_{state_name}".replace(" ", "_"), city.replace(" ", "_")]:
+            try:
+                resp = requests.get(
+                    f"https://en.wikipedia.org/api/rest_v1/page/summary/{slug}",
+                    timeout=4, headers={"User-Agent": "CitySuggestor/1.0"},
+                )
+                if resp.status_code == 200:
+                    url = resp.json().get("thumbnail", {}).get("source", "")
+                    if url:
+                        urls.append(url)
+                        break
+            except Exception:
+                pass
+
+    return urls
 
 # ── helper: safe min/max ──────────────────────────────────────────────────────
 
@@ -646,12 +747,30 @@ with col_list:
             pop_str = f"{row['population']:,.0f}" if pd.notna(row.get("population")) else "N/A"
             metro_str = f"{row['metro_population']:,.0f}" if pd.notna(row.get("metro_population")) else "N/A"
 
+            imgs = get_city_images(row["city"], row["state"])
+            cid = f"c{rank}"
+            if len(imgs) > 1:
+                slides = "".join(
+                    f'<input type="radio" name="{cid}" id="{cid}_{i}" {"checked" if i == 0 else ""} hidden>'
+                    f'<div class="cr-slide"><img class="cr-img" src="{url}" alt="{row["city"]}"></div>'
+                    for i, url in enumerate(imgs)
+                )
+                dots = "".join(f'<label for="{cid}_{i}"></label>' for i in range(len(imgs)))
+                carousel_html = f'<div class="photo-carousel">{slides}<div class="cr-dots">{dots}</div></div>'
+            elif len(imgs) == 1:
+                carousel_html = f'<img class="cr-img" src="{imgs[0]}" alt="{row["city"]}">'
+            else:
+                carousel_html = ""
+
             st.markdown(f"""
             <div class="city-card">
-                <div class="city-rank">#{rank}</div>
-                <div class="city-name">{row['city']}</div>
-                <div class="city-state">{row['state']} &nbsp;·&nbsp; Pop: {pop_str} &nbsp;·&nbsp; Metro: {metro_str}</div>
-                <div style="margin-top:8px">{pills_html}{sports_pill}</div>
+                <div class="city-card-body">
+                    <div class="city-rank">#{rank}</div>
+                    <div class="city-name">{row['city']}</div>
+                    <div class="city-state">{row['state']} &nbsp;·&nbsp; Pop: {pop_str} &nbsp;·&nbsp; Metro: {metro_str}</div>
+                    <div style="margin-top:8px">{pills_html}{sports_pill}</div>
+                </div>
+                {f'<div class="city-photo-wrap">{carousel_html}</div>' if carousel_html else ""}
             </div>
             """, unsafe_allow_html=True)
 
