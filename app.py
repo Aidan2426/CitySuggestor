@@ -415,6 +415,7 @@ def load_data():
         "seasons_count", "total_pro_teams", "lat", "lon",
         "nfl_teams", "mlb_teams", "nba_teams", "nhl_teams", "mls_teams",
         "temp_range_f", "transit_score",
+        "tech_workforce_pct",
     ]
     for col in numeric_cols:
         if col in df.columns:
@@ -423,6 +424,11 @@ def load_data():
     if "coastline_type" not in df.columns:
         df["coastline_type"] = "none"
     df["coastline_type"] = df["coastline_type"].fillna("none")
+
+    # Clean tech_workforce_pct — null out impossible values
+    if "tech_workforce_pct" in df.columns:
+        bad = (df["tech_workforce_pct"] > 100) | (df["tech_workforce_pct"] < 0)
+        df.loc[bad, "tech_workforce_pct"] = np.nan
 
     return df
 
@@ -485,7 +491,10 @@ def fmt_money(n, short=True):
 def safe_range(col, default_min=0, default_max=100):
     if col not in df.columns or df[col].isna().all():
         return default_min, default_max
-    return float(df[col].min()), float(df[col].max())
+    series = df[col].replace([np.inf, -np.inf], np.nan).dropna()
+    if series.empty:
+        return default_min, default_max
+    return float(series.min()), float(series.max())
 
 # ── sidebar filters ───────────────────────────────────────────────────────────
 
@@ -618,6 +627,15 @@ with st.sidebar:
         step=1.0, format="%.0f", key="nature"
     )
 
+    # ── Tech Workforce
+    st.markdown('<div class="section-header">Tech Workforce</div>', unsafe_allow_html=True)
+    tech_range = st.slider(
+        "Tech workforce % (0-40%)",
+        min_value=0.0, max_value=40.0,
+        value=(0.0, 40.0),
+        step=0.5, format="%.1f%%", key="tech"
+    )
+
     # ── Coastline
     st.markdown('<div class="section-header">Coastline</div>', unsafe_allow_html=True)
     coastline_options = ["Any", "ocean", "great_lakes", "none"]
@@ -649,7 +667,7 @@ with st.sidebar:
         for key in ["pop", "metro", "income", "home", "temp", "summer", "winter",
                     "seasons", "walk", "airport", "zoo", "park", "natl_park",
                     "nature", "coast", "sports_total", "nfl", "mlb", "nba", "nhl",
-                    "mls", "city_search"]:
+                    "mls", "tech", "city_search"]:
             if key in st.session_state:
                 del st.session_state[key]
         st.rerun()
@@ -677,6 +695,7 @@ filtered = apply_range(filtered, "dist_zoo_miles",          zoo_range)
 filtered = apply_range(filtered, "dist_theme_park_miles",   park_range)
 filtered = apply_range(filtered, "dist_natl_park_miles",    natl_park_range)
 filtered = apply_range(filtered, "nature_score",            nature_range)
+filtered = apply_range(filtered, "tech_workforce_pct",      tech_range)
 filtered = apply_range(filtered, "total_pro_teams",         total_sports_range)
 
 if "seasons_count" in filtered.columns:
@@ -711,7 +730,6 @@ if city_search.strip():
     search_mask = filtered["city"].str.contains(city_search.strip(), case=False, na=False)
     filtered = filtered[search_mask].reset_index(drop=True)
 
-st.markdown(f"**{len(filtered)}** cities match your filters")
 display_df = filtered
 
 st.markdown("---")
@@ -768,9 +786,17 @@ st.markdown("---")
 
 # ── city list ─────────────────────────────────────────────────────────────────
 
-heading_col, toggle_col = st.columns([5, 1])
+heading_col, count_col, toggle_col = st.columns([4, 1, 1])
 with heading_col:
     st.markdown("### Matching Cities")
+with count_col:
+    st.markdown(
+        f"<div style='padding-top:10px;'>"
+        f"<span style='background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;"
+        f"padding:2px 10px;font-size:13px;font-weight:600;color:#1D4ED8'>"
+        f"{len(display_df)}</span></div>",
+        unsafe_allow_html=True,
+    )
 with toggle_col:
     card_view = st.radio(
         "display",
@@ -793,6 +819,7 @@ elif card_view == "Table":
         "coastline_type", "dist_coast_miles", "elevation_ft",
         "seasons_count", "total_pro_teams",
         "nfl_teams", "mlb_teams", "nba_teams", "nhl_teams", "mls_teams",
+        "tech_workforce_pct",
     ] if c in display_df.columns]
     tbl = display_df[["city"] + data_cols].copy().reset_index(drop=True)
     tbl.insert(0, "#", range(1, len(tbl) + 1))
@@ -873,13 +900,16 @@ else:
             tags_html += f'<span class="ctag">Theme Park {row["dist_theme_park_miles"]:.0f} mi</span>'
         if pd.notna(row.get("dist_natl_park_miles")):
             tags_html += f'<span class="ctag">Natl Park {row["dist_natl_park_miles"]:.0f} mi</span>'
+        if pd.notna(row.get("tech_workforce_pct")):
+            tags_html += f'<span class="ctag">Tech {row["tech_workforce_pct"]:.1f}%</span>'
         coast = row.get("coastline_type", "none")
         if coast == "ocean":
             tags_html += '<span class="ctag">Ocean</span>'
         elif coast == "great_lakes":
             tags_html += '<span class="ctag-lakes">Great Lakes</span>'
 
-        total_teams = int(row.get("total_pro_teams", 0) or 0)
+        _tp = row.get("total_pro_teams", 0)
+        total_teams = int(_tp) if pd.notna(_tp) else 0
         if total_teams > 0:
             teams_by_league = get_teams(row["city"], row)
             teams_rows = "".join(

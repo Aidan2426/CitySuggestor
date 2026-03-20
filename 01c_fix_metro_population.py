@@ -67,7 +67,7 @@ def download_cbsa_crosswalk() -> pd.DataFrame:
     # Find the relevant columns (names vary slightly between file versions)
     cbsa_col   = next(c for c in df.columns if "cbsa" in c and "code" in c)
     title_col  = next(c for c in df.columns if "cbsa" in c and "title" in c)
-    type_col   = next(c for c in df.columns if "metropolitan" in c or "metro/micro" in c or "statistical_area" in c.replace(" ","_"))
+    type_col   = next(c for c in df.columns if "micropolitan" in c and "statistical" in c)
     state_col  = next(c for c in df.columns if "state" in c and "fips" in c)
     county_col = next(c for c in df.columns if "county" in c and "fips" in c)
 
@@ -96,38 +96,45 @@ def download_cbsa_crosswalk() -> pd.DataFrame:
 
 def geocode_city_to_county(city: str, state: str) -> tuple:
     """
-    Uses the Census Geocoder API to find the county FIPS code for a city.
+    Uses Nominatim to get lat/lon, then FCC Area API to get county FIPS.
     Returns (state_fips, county_fips) or (None, None) if not found.
-
-    Free API, no key required. Rate limit: be polite with delays.
     """
-    url = "https://geocoding.geo.census.gov/geocoder/geographies/address"
-    params = {
-        "street":     "",
-        "city":       city,
-        "state":      state,
-        "benchmark":  "Public_AR_Current",
-        "vintage":    "Current_Current",
-        "format":     "json",
-        "layers":     "Counties"
-    }
-
+    # Step 1: Nominatim lat/lon for the city
     try:
-        resp = requests.get(url, params=params, timeout=10)
-        resp.raise_for_status()
-        data = resp.json()
+        nom = requests.get(
+            "https://nominatim.openstreetmap.org/search",
+            params={"city": city, "state": state, "country": "US",
+                    "format": "json", "limit": 1},
+            headers={"User-Agent": "CitySuggestor/1.0"},
+            timeout=10,
+        )
+        nom.raise_for_status()
+        results = nom.json()
+        if not results:
+            return None, None
+        lat = results[0]["lat"]
+        lon = results[0]["lon"]
+    except Exception:
+        return None, None
 
-        matches = data.get("result", {}).get("addressMatches", [])
-        if not matches:
+    # Step 2: FCC Area API → county FIPS
+    try:
+        fcc = requests.get(
+            "https://geo.fcc.gov/api/census/block/find",
+            params={"latitude": lat, "longitude": lon, "format": "json"},
+            timeout=10,
+        )
+        fcc.raise_for_status()
+        data = fcc.json()
+
+        # FCC response: {"County": {"FIPS": "42003"}, "State": {"FIPS": "42"}}
+        county_block = data.get("County", {})
+        fips_full = county_block.get("FIPS", "")
+        if not fips_full or len(fips_full) < 5:
             return None, None
 
-        geo = matches[0].get("geographies", {})
-        counties = geo.get("Counties", [])
-        if not counties:
-            return None, None
-
-        state_fips  = counties[0].get("STATE")
-        county_fips = counties[0].get("COUNTY")
+        state_fips  = fips_full[:2]
+        county_fips = fips_full[2:]
         return state_fips, county_fips
 
     except Exception:
@@ -227,43 +234,83 @@ def main():
     # Step 2: Scrape Wikipedia MSA populations
     msa_pops = scrape_msa_populations()
 
-    # Step 3: For each unmatched city, geocode → county → CBSA → population
-    print(f"\nGeocoding {len(unmatched)} unmatched cities to counties...")
-    print("  This takes ~1-2 minutes.\n")
+    # Build a fast lookup: (first_city_lower, state_abbr_lower) → cbsa_title
+    # CBSA titles look like "Pittsburgh, PA Metropolitan Statistical Area"
+    # or "New York-Newark-Jersey City, NY-NJ-PA Metropolitan Statistical Area"
+    def norm_city(s):
+        """Normalize city name for matching: lowercase, strip dots, collapse spaces."""
+        return re.sub(r"\s+", " ", s.lower().replace(".", "").replace("-", " ")).strip()
 
+    cbsa_city_lookup = {}  # (norm_city, state_lower) → cbsa_title
+    for _, cw_row in crosswalk.drop_duplicates("cbsa_code").iterrows():
+        title = cw_row["cbsa_title"]
+        # state abbrs come before " Metropolitan" — e.g. "NY-NJ-PA"
+        # we want only the PRIMARY state (first one)
+        state_match = re.search(r",\s*([A-Z]{2})", title)
+        if not state_match:
+            continue
+        primary_state = state_match.group(1).lower()
+        # city portion is everything before the first comma
+        city_part = title.split(",")[0]
+        # split on hyphens to get each city in the name
+        # e.g. "New York-Newark-Jersey City" → ["New York","Newark","Jersey City"]
+        for city_token in city_part.split("-"):
+            key = (norm_city(city_token), primary_state)
+            cbsa_city_lookup[key] = title
+
+    # Step 3a: Fast CBSA title match — no API call
+    print(f"\nStep 3a: Direct CBSA title match for {len(unmatched)} cities...")
+    needs_geocode = []
     fixed = 0
     still_missing = []
 
     for idx, row in unmatched.iterrows():
         city  = row["city"]
         state = row["state"]
+        key   = (city.lower(), state.lower())
 
-        # Geocode city → county FIPS
-        state_fips, county_fips = geocode_city_to_county(city, state)
-        time.sleep(GEOCODER_DELAY)
+        cbsa_title = cbsa_city_lookup.get(key)
+        if cbsa_title:
+            pop = match_cbsa_to_population(cbsa_title, msa_pops)
+            if pop:
+                cities.at[idx, "metro_population"] = pop
+                fixed += 1
+                continue
+        needs_geocode.append((idx, city, state))
 
-        if not state_fips or not county_fips:
-            still_missing.append(f"{city}, {state}")
-            continue
+    print(f"  Matched via title: {fixed}")
+    print(f"  Still need geocoding: {len(needs_geocode)}")
 
-        fips = state_fips.zfill(2) + county_fips.zfill(3)
+    # Step 3b: Geocode remaining cities
+    if needs_geocode:
+        print(f"\nStep 3b: Geocoding {len(needs_geocode)} remaining cities...")
+        for i, (idx, city, state) in enumerate(needs_geocode, 1):
+            print(f"  [{i}/{len(needs_geocode)}] {city}, {state}", end=" ... ", flush=True)
 
-        # Look up county in CBSA crosswalk
-        match = crosswalk[crosswalk["fips"] == fips]
-        if match.empty:
-            still_missing.append(f"{city}, {state} (county {fips} not in MSA)")
-            continue
+            state_fips, county_fips = geocode_city_to_county(city, state)
+            time.sleep(GEOCODER_DELAY)
 
-        cbsa_title = match.iloc[0]["cbsa_title"]
+            if not state_fips or not county_fips:
+                print("no geocode result")
+                still_missing.append(f"{city}, {state}")
+                continue
 
-        # Match CBSA title to Wikipedia population
-        pop = match_cbsa_to_population(cbsa_title, msa_pops)
+            fips = state_fips.zfill(2) + county_fips.zfill(3)
+            match = crosswalk[crosswalk["fips"] == fips]
+            if match.empty:
+                print(f"county {fips} not in MSA")
+                still_missing.append(f"{city}, {state} (county {fips} not in MSA)")
+                continue
 
-        if pop:
-            cities.at[idx, "metro_population"] = pop
-            fixed += 1
-        else:
-            still_missing.append(f"{city}, {state} (CBSA: {cbsa_title} — no pop match)")
+            cbsa_title = match.iloc[0]["cbsa_title"]
+            pop = match_cbsa_to_population(cbsa_title, msa_pops)
+            if pop:
+                cities.at[idx, "metro_population"] = pop
+                fixed += 1
+                print(f"→ {cbsa_title} ({pop:,})")
+            else:
+                print(f"no pop for {cbsa_title}")
+                still_missing.append(f"{city}, {state} (CBSA: {cbsa_title} — no pop match)")
 
     print(f"\nResults:")
     print(f"  Fixed:         {fixed}")

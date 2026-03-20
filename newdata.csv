@@ -1,0 +1,1001 @@
+Rank	City	Population
+1	New York, NY	8804190
+2	Los Angeles, CA	3898747
+3	Chicago, IL	2746388
+4	Houston, TX	2304580
+5	Phoenix, AZ	1608139
+6	Philadelphia, PA	1603797
+7	San Antonio, TX	1434625
+8	San Diego, CA	1386932
+9	Dallas, TX	1304379
+10	San Jose, CA	1013240
+11	Austin, TX	961855
+12	Jacksonville, FL	949611
+13	Fort Worth, TX	918915
+14	Columbus, OH	905748
+15	Indianapolis, IN	887642
+16	Charlotte, NC	874579
+17	San Francisco, CA	873965
+18	Seattle, WA	737015
+19	Denver, CO	715522
+20	Washington, DC	689545
+21	Nashville, TN	689447
+22	Oklahoma City, OK	681054
+23	El Paso, TX	678815
+24	Boston, MA	675647
+25	Portland, OR	652503
+26	Las Vegas, NV	641903
+27	Detroit, MI	639111
+28	Memphis, TN	633104
+29	Louisville, KY	633045
+30	Baltimore, MD	585708
+31	Milwaukee, WI	577222
+32	Albuquerque, NM	564559
+33	Tucson, AZ	542629
+34	Fresno, CA	542107
+35	Sacramento, CA	524943
+36	Kansas City, MO	508090
+37	Mesa, AZ	504258
+38	Atlanta, GA	498715
+39	Omaha, NE	486051
+40	Colorado Springs, CO	478961
+41	Raleigh, NC	467665
+42	Long Beach, CA	466742
+43	Virginia Beach, VA	459470
+44	Miami, FL	442241
+45	Oakland, CA	440646
+46	Minneapolis, MN	429954
+47	Tulsa, OK	413066
+48	Bakersfield, CA	403455
+49	Wichita, KS	397532
+50	Arlington, TX	394266
+51	Aurora, CO	386261
+52	Tampa, FL	384959
+53	New Orleans, LA	383997
+54	Cleveland, OH	372624
+55	Honolulu, HI	350964
+56	Anaheim, CA	346824
+57	Lexington, KY	322570
+58	Stockton, CA	320804
+59	Corpus Christi, TX	317863
+60	Henderson, NV	317610
+61	Riverside, CA	314998
+62	Newark, NJ	311549
+63	St Paul, MN	311527
+64	Santa Ana, CA	310227
+65	Cincinnati, OH	309317
+66	Irvine, CA	307670
+67	Orlando, FL	307573
+68	Pittsburgh, PA	302971
+69	St Louis, MO	301578
+70	Greensboro, NC	299035
+71	Jersey City, NJ	292449
+72	Anchorage, AK	291247
+73	Lincoln, NE	291082
+74	Plano, TX	285494
+75	Durham, NC	283506
+76	Buffalo, NY	278349
+77	Chandler, AZ	275987
+78	Chula Vista, CA	275487
+79	Toledo, OH	270871
+80	Madison, WI	269840
+81	Gilbert, AZ	267918
+82	Reno, NV	264165
+83	Fort Wayne, IN	263886
+84	North Las Vegas, NV	262527
+85	St Petersburg, FL	258308
+86	Lubbock, TX	257141
+87	Irving, TX	256684
+88	Laredo, TX	255205
+89	Winston Salem, NC	249545
+90	Chesapeake, VA	249422
+91	Glendale, AZ	248325
+92	Garland, TX	246018
+93	Scottsdale, AZ	241361
+94	Norfolk, VA	238005
+95	Boise, ID	235684
+96	Fremont, CA	230504
+97	Spokane, WA	228989
+98	Santa Clarita, CA	228673
+99	Baton Rouge, LA	227470
+100	Richmond, VA	226610
+101	Hialeah, FL	223109
+102	San Bernardino, CA	222101
+103	Tacoma, WA	219346
+104	Modesto, CA	218464
+105	Huntsville, AL	215006
+106	Des Moines, IA	214133
+107	Yonkers, NY	211569
+108	Rochester, NY	211328
+109	Moreno Valley, CA	208634
+110	Fayetteville, NC	208501
+111	Fontana, CA	208393
+112	Columbus, GA	206922
+113	Worcester, MA	206518
+114	Port St Lucie, FL	204851
+115	Little Rock, AR	202591
+116	Augusta, GA	202081
+117	Oxnard, CA	202063
+118	Birmingham, AL	200733
+119	Montgomery, AL	200603
+120	Frisco, TX	200509
+121	Amarillo, TX	200393
+122	Salt Lake City, UT	199723
+123	Grand Rapids, MI	198917
+124	Huntington Beach, CA	198711
+125	Overland Park, KS	197238
+126	Glendale, CA	196543
+127	Tallahassee, FL	196169
+128	Grand Prairie, TX	196100
+129	McKinney, TX	195308
+130	Cape Coral, FL	194016
+131	Sioux Falls, SD	192517
+132	Peoria, AZ	190985
+133	Providence, RI	190934
+134	Vancouver, WA	190915
+135	Knoxville, TN	190740
+136	Akron, OH	190469
+137	Shreveport, LA	187593
+138	Mobile, AL	187041
+139	Brownsville, TX	186738
+140	Newport News, VA	186247
+141	Fort Lauderdale, FL	182760
+142	Chattanooga, TN	181099
+143	Tempe, AZ	180587
+144	Aurora, IL	180542
+145	Santa Rosa, CA	178127
+146	Eugene, OR	176654
+147	Elk Grove, CA	176124
+148	Salem, OR	175535
+149	Ontario, CA	175265
+150	Cary, NC	174721
+151	Rancho Cucamonga, CA	174453
+152	Oceanside, CA	174068
+153	Lancaster, CA	173516
+154	Garden Grove, CA	171949
+155	Pembroke Pines, FL	171178
+156	Fort Collins, CO	169810
+157	Palmdale, CA	169450
+158	Springfield, MO	169176
+159	Clarksville, TN	166722
+160	Salinas, CA	163542
+161	Hayward, CA	162954
+162	Paterson, NJ	159732
+163	Alexandria, VA	159467
+164	Macon, GA	157346
+165	Corona, CA	157136
+166	Kansas City, KS	156607
+167	Lakewood, CO	155984
+168	Springfield, MA	155929
+169	Sunnyvale, CA	155805
+170	Jackson, MS	153701
+171	Killeen, TX	153095
+172	Hollywood, FL	153067
+173	Murfreesboro, TN	152769
+174	Pasadena, TX	151950
+175	Bellevue, WA	151854
+176	Pomona, CA	151713
+177	Escondido, CA	151038
+178	Joliet, IL	150362
+179	Charleston, SC	150227
+180	Mesquite, TX	150108
+181	Naperville, IL	149540
+182	Rockford, IL	148655
+183	Bridgeport, CT	148654
+184	Syracuse, NY	148620
+185	Savannah, GA	147780
+186	Roseville, CA	147773
+187	Torrance, CA	147067
+188	Fullerton, CA	143617
+189	Surprise, AZ	143148
+190	McAllen, TX	142210
+191	Thornton, CO	141867
+192	Visalia, CA	141384
+193	Olathe, KS	141290
+194	Gainesville, FL	141085
+195	West Valley City, UT	140230
+196	Orange, CA	139911
+197	Denton, TX	139869
+198	Warren, MI	139387
+199	Pasadena, CA	138699
+200	Waco, TX	138486
+201	Cedar Rapids, IA	137710
+202	Dayton, OH	137644
+203	Elizabeth, NJ	137298
+204	Hampton, VA	137148
+205	Columbia, SC	136632
+206	Kent, WA	136588
+207	Stamford, CT	135470
+208	Lakewood, NJ	135158
+209	Victorville, CA	134810
+210	Miramar, FL	134721
+211	Coral Springs, FL	134394
+212	Sterling Heights, MI	134346
+213	New Haven, CT	134023
+214	Carrollton, TX	133434
+215	Midland, TX	132524
+216	Norman, OK	128026
+217	Santa Clara, CA	127647
+218	Athens, GA	127315
+219	Thousand Oaks, CA	126966
+220	Topeka, KS	126587
+221	Simi Valley, CA	126356
+222	Columbia, MO	126254
+223	Vallejo, CA	126090
+224	Fargo, ND	125990
+225	Allentown, PA	125845
+226	Pearland, TX	125828
+227	Concord, CA	125410
+228	Abilene, TX	125182
+229	Arvada, CO	124402
+230	Berkeley, CA	124321
+231	Ann Arbor, MI	123851
+232	Independence, MO	123011
+233	Rochester, MN	121395
+234	Lafayette, LA	121374
+235	Hartford, CT	121054
+236	College Station, TX	120511
+237	Clovis, CA	120124
+238	Fairfield, CA	119881
+239	Palm Bay, FL	119760
+240	Richardson, TX	119469
+241	Round Rock, TX	119468
+242	Cambridge, MA	118403
+243	Meridian, ID	117635
+244	West Palm Beach, FL	117415
+245	Evansville, IN	117298
+246	Clearwater, FL	117292
+247	Billings, MT	117116
+248	West Jordan, UT	116961
+249	Richmond, CA	116448
+250	Westminster, CO	116317
+251	Manchester, NH	115644
+252	Lowell, MA	115554
+253	Wilmington, NC	115451
+254	Antioch, CA	115291
+255	Beaumont, TX	115282
+256	Provo, UT	115162
+257	North Charleston, SC	114852
+258	Elgin, IL	114797
+259	Carlsbad, CA	114746
+260	Odessa, TX	114428
+261	Waterbury, CT	114403
+262	Springfield, IL	114394
+263	League City, TX	114392
+264	Downey, CA	114355
+265	Gresham, OR	114247
+266	High Point, NC	114059
+267	Broken Arrow, OK	113540
+268	Peoria, IL	113150
+269	Lansing, MI	112644
+270	Lakeland, FL	112641
+271	Pompano Beach, FL	112046
+272	Costa Mesa, CA	111918
+273	Pueblo, CO	111876
+274	Lewisville, TX	111822
+275	Miami Gardens, FL	111640
+276	Las Cruces, NM	111385
+277	Sugar Land, TX	111026
+278	Murrieta, CA	110949
+279	Ventura, CA	110763
+280	Everett, WA	110629
+281	Temecula, CA	110003
+282	Dearborn, MI	109976
+283	Santa Maria, CA	109707
+284	West Covina, CA	109501
+285	El Monte, CA	109450
+286	Greeley, CO	108795
+287	Sparks, NV	108445
+288	Centennial, CO	108418
+289	Boulder, CO	108250
+290	Sandy Springs, GA	108080
+291	Inglewood, CA	107762
+292	Edison, NJ	107588
+293	South Fulton, GA	107436
+294	Green Bay, WI	107395
+295	Burbank, CA	107337
+296	Renton, WA	106785
+297	Hillsboro, OR	106447
+298	El Cajon, CA	106215
+299	Tyler, TX	105995
+300	Davie, FL	105691
+301	San Mateo, CA	105661
+302	Brockton, MA	105643
+303	Concord, NC	105240
+304	Jurupa Valley, CA	105053
+305	Daly City, CA	104901
+306	Allen, TX	104627
+307	Rio Rancho, NM	104046
+308	Rialto, CA	104026
+309	Woodbridge, NJ	103639
+310	South Bend, IN	103453
+311	Spokane Valley, WA	102976
+312	Norwalk, CA	102773
+313	Menifee, CA	102527
+314	Vacaville, CA	102386
+315	Wichita Falls, TX	102316
+316	Davenport, IA	101724
+317	Quincy, MA	101636
+318	Chico, CA	101475
+319	Lynn, MA	101253
+320	Lees Summit, MO	101108
+321	New Bedford, MA	101079
+322	Federal Way, WA	101030
+323	Clinton, MI	100513
+324	Edinburg, TX	100243
+325	Nampa, ID	100200
+326	Roanoke, VA	100011
+327	Kenosha, WI	99986
+328	San Angelo, TX	99893
+329	Hesperia, CA	99818
+330	Carmel, IN	99757
+331	Tuscaloosa, AL	99600
+332	Albany, NY	99224
+333	Bend, OR	99178
+334	Fishers, IN	98977
+335	Longmont, CO	98885
+336	Canton, MI	98659
+337	Vista, CA	98381
+338	Orem, UT	98129
+339	Portsmouth, VA	97915
+340	Beaverton, OR	97494
+341	Boca Raton, FL	97422
+342	Sunrise, FL	97335
+343	Yakima, WA	96968
+344	Sandy, UT	96904
+345	Compton, CA	95740
+346	Carson, CA	95558
+347	Yuma, AZ	95548
+348	Livonia, MI	95535
+349	Toms River, NJ	95438
+350	St George, UT	95342
+351	Goodyear, AZ	95294
+352	Reading, PA	95112
+353	Lawrence, KS	94934
+354	San Marcos, CA	94833
+355	Erie, PA	94831
+356	Asheville, NC	94589
+357	Edmond, OK	94428
+358	Suffolk, VA	94324
+359	Fall River, MA	94000
+360	Fayetteville, AR	93949
+361	Deltona, FL	93692
+362	Mission Viejo, CA	93653
+363	Redding, CA	93611
+364	Santa Monica, CA	93076
+365	Tracy, CA	93000
+366	Roswell, GA	92833
+367	South Gate, CA	92726
+368	Hoover, AL	92606
+369	Hamilton, NJ	92297
+370	Kirkland, WA	92175
+371	Plantation, FL	91750
+372	Buckeye, AZ	91502
+373	Bellingham, WA	91482
+374	Chino, CA	91403
+375	Nashua, NH	91322
+376	OFallon, MO	91316
+377	Norwalk, CT	91184
+378	San Leandro, CA	91008
+379	Westminster, CA	90911
+380	Trenton, NJ	90871
+381	Mount Pleasant, SC	90801
+382	New Braunfels, TX	90403
+383	Lawton, OK	90381
+384	Clifton, NJ	90296
+385	Bloomington, MN	89987
+386	Conroe, TX	89956
+387	Hemet, CA	89833
+388	Avondale, AZ	89334
+389	Waukegan, IL	89321
+390	Palm Coast, FL	89258
+391	Lawrence, MA	89143
+392	Fort Smith, AR	89142
+393	Indio, CA	89137
+394	Newton, MA	88923
+395	Santa Barbara, CA	88665
+396	Champaign, IL	88302
+397	Hawthorne, CA	88083
+398	Livermore, CA	87955
+399	Citrus Heights, CA	87583
+400	Greenville, NC	87521
+401	Santa Fe, NM	87505
+402	Ogden, UT	87321
+403	Whittier, CA	87306
+404	Troy, MI	87294
+405	Auburn, WA	87256
+406	Deerfield Beach, FL	86859
+407	Duluth, MN	86697
+408	Danbury, CT	86518
+409	Brooklyn Park, MN	86478
+410	Fort Myers, FL	86395
+411	Merced, CA	86333
+412	Lake Forest, CA	85858
+413	Medford, OR	85824
+414	Sioux City, IA	85797
+415	Mission, TX	85778
+416	Westland, MI	85420
+417	Cicero, IL	85268
+418	Newport Beach, CA	85239
+419	Lake Charles, LA	84872
+420	Melbourne, FL	84678
+421	San Ramon, CA	84605
+422	Redwood City, CA	84292
+423	Springdale, AR	84161
+424	Buena Park, CA	84034
+425	Farmington Hills, MI	83986
+426	Bryan, TX	83980
+427	Kennewick, WA	83921
+428	Baytown, TX	83701
+429	Manteca, CA	83498
+430	Franklin, TN	83454
+431	Cranston, RI	82934
+432	Miami Beach, FL	82890
+433	Alhambra, CA	82868
+434	Warwick, RI	82823
+435	Lakewood, CA	82496
+436	Largo, FL	82485
+437	Johns Creek, GA	82453
+438	Mountain View, CA	82376
+439	Temple, TX	82073
+440	Layton, UT	81773
+441	Longview, TX	81638
+442	Flint, MI	81252
+443	Parma, OH	81146
+444	Somerville, MA	81045
+445	Plymouth, MN	81026
+446	Homestead, FL	80737
+447	Folsom, CA	80454
+448	Gastonia, NC	80411
+449	Boynton Beach, FL	80380
+450	Warner Robins, GA	80308
+451	Tustin, CA	80276
+452	Milpitas, CA	80273
+453	Pleasanton, CA	79871
+454	New Rochelle, NY	79726
+455	Pharr, TX	79715
+456	Shelby, MI	79408
+457	Rancho Cordova, CA	79332
+458	Napa, CA	79246
+459	Kissimmee, FL	79226
+460	Bellflower, CA	79190
+461	Bloomington, IN	79168
+462	Upland, CA	79040
+463	Lynchburg, VA	79009
+464	Schaumburg, IL	78723
+465	Perris, CA	78700
+466	Bloomington, IL	78680
+467	Jonesboro, AR	78576
+468	Chino Hills, CA	78411
+469	Alameda, CA	78280
+470	Frederick, MD	78171
+471	Evanston, IL	78110
+472	Hammond, IN	77879
+473	Racine, WI	77816
+474	Arlington Heights, IL	77676
+475	Cedar Park, TX	77595
+476	South Jordan, UT	77487
+477	Pasco, WA	77108
+478	Flagstaff, AZ	76831
+479	Southfield, MI	76618
+480	Wyoming, MI	76501
+481	Pittsburg, CA	76416
+482	Loveland, CO	76378
+483	Scranton, PA	76328
+484	Rochester Hills, MI	76300
+485	Auburn, AL	76143
+486	Flower Mound, TX	75956
+487	Lehi, UT	75907
+488	Doral, FL	75874
+489	Apple Valley, CA	75791
+490	Bethlehem, PA	75781
+491	Appleton, WI	75644
+492	Pawtucket, RI	75604
+493	Woodbury, MN	75102
+494	Iowa City, IA	74828
+495	North Port, FL	74793
+496	Rapid City, SD	74703
+497	Cherry Hill, NJ	74553
+498	Lauderhill, FL	74482
+499	Rock Hill, SC	74372
+500	Missouri City, TX	74259
+501	New Britain, CT	74135
+502	Broomfield, CO	74112
+503	Bolingbrook, IL	73922
+504	Mount Vernon, NY	73893
+505	Bismarck, ND	73622
+506	Brick, NJ	73620
+507	Kalamazoo, MI	73598
+508	Missoula, MT	73489
+509	Redmond, WA	73256
+510	Redlands, CA	73168
+511	Castle Rock, CO	73158
+512	Gulfport, MS	72926
+513	Turlock, CA	72740
+514	Jacksonville, NC	72723
+515	Daytona Beach, FL	72647
+516	Mansfield, TX	72602
+517	Dublin, CA	72589
+518	St Joseph, MO	72473
+519	Framingham, MA	72362
+520	Bowling Green, KY	72294
+521	Baldwin Park, CA	72176
+522	Tamarac, FL	71897
+523	Harlingen, TX	71829
+524	Camden, NJ	71791
+525	Bayonne, NJ	71686
+526	Rocklin, CA	71601
+527	Redondo Beach, CA	71576
+528	Waukesha, WI	71158
+529	Dothan, AL	71072
+530	Johnson City, TN	71046
+531	Wilmington, DE	70898
+532	Canton, OH	70872
+533	Lafayette, IN	70783
+534	Camarillo, CA	70741
+535	Greenville, SC	70720
+536	Marysville, WA	70714
+537	Waterford, MI	70565
+538	Passaic, NJ	70537
+539	Decatur, IL	70522
+540	St Charles, MO	70493
+541	Lake Elsinore, CA	70265
+542	Maple Grove, MN	70253
+543	Blaine, MN	70222
+544	Union City, CA	70143
+545	Walnut Creek, CA	70127
+546	Yuba City, CA	70117
+547	North Richland Hills, TX	69917
+548	Rogers, AR	69908
+549	Eastvale, CA	69757
+550	Gaithersburg, MD	69657
+551	Albany, GA	69647
+552	East Orange, NJ	69612
+553	Noblesville, IN	69604
+554	Lakeville, MN	69490
+555	Eau Claire, WI	69421
+556	Gary, IN	69093
+557	St Cloud, MN	68881
+558	Tulare, CA	68875
+559	Eagan, MN	68855
+560	West Des Moines, IA	68723
+561	Union City, NJ	68589
+562	Palo Alto, CA	68572
+563	Portland, ME	68408
+564	Franklin, NJ	68364
+565	Yorba Linda, CA	68336
+566	Jackson, TN	68205
+567	Weston, FL	68107
+568	Palatine, IL	67908
+569	Ankeny, IA	67887
+570	Skokie, IL	67824
+571	Haverhill, MA	67787
+572	San Marcos, TX	67553
+573	Sammamish, WA	67455
+574	Waterloo, IA	67314
+575	Shawnee, KS	67311
+576	Lynwood, CA	67265
+577	Georgetown, TX	67176
+578	Rockville, MD	67117
+579	Middletown, NJ	67106
+580	Schenectady, NY	67047
+581	Old Bridge, NJ	66876
+582	Davis, CA	66850
+583	Delray Beach, FL	66846
+584	Oshkosh, WI	66816
+585	Kenner, LA	66448
+586	Ames, IA	66427
+587	Lodi, CA	66348
+588	Malden, MA	66263
+589	Novi, MI	66243
+590	Madera, CA	66224
+591	South San Francisco, CA	66105
+592	Gloucester, NJ	66034
+593	West Bloomfield, MI	65888
+594	Alpharetta, GA	65818
+595	Janesville, WI	65615
+596	Grand Junction, CO	65560
+597	Victoria, TX	65534
+598	Utica, NY	65283
+599	Waltham, MA	65218
+600	Lorain, OH	65211
+601	Muncie, IN	65194
+602	Pflugerville, TX	65191
+603	Cheyenne, WY	65132
+604	Idaho Falls, ID	64818
+605	North Little Rock, AR	64591
+606	Laguna Niguel, CA	64355
+607	Burnsville, MN	64317
+608	San Clemente, CA	64293
+609	Brentwood, CA	64292
+610	Eden Prairie, MN	64198
+611	Bellevue, NE	64176
+612	Conway, AR	64134
+613	West Hartford, CT	64083
+614	Greenwood, IN	63830
+615	Lakewood, WA	63612
+616	Coon Rapids, MN	63599
+617	Ocala, FL	63591
+618	Greenwich, CT	63518
+619	Taylor, MI	63409
+620	Hamilton, OH	63399
+621	Millcreek, UT	63380
+622	North Bergen, NJ	63361
+623	Dearborn Heights, MI	63292
+624	Brookline, MA	63191
+625	La Habra, CA	63097
+626	Santa Cruz, CA	62956
+627	Council Bluffs, IA	62799
+628	Moore, OK	62793
+629	Bossier City, LA	62701
+630	Montebello, CA	62640
+631	Porterville, CA	62623
+632	Port Orange, FL	62596
+633	Rowlett, TX	62535
+634	Commerce City, CO	62418
+635	Revere, MA	62186
+636	Pico Rivera, CA	62088
+637	Encinitas, CA	62007
+638	Chapel Hill, NC	61960
+639	Springfield, OR	61851
+640	Hendersonville, TN	61753
+641	Wellington, FL	61637
+642	Pontiac, MI	61606
+643	Fairfield, CT	61512
+644	Huntersville, NC	61376
+645	San Rafael, CA	61271
+646	Plymouth, MA	61217
+647	Irvington, NJ	61176
+648	Hamden, CT	61169
+649	La Mesa, CA	61121
+650	Monterey Park, CA	61096
+651	Sanford, FL	61051
+652	Jupiter, FL	61047
+653	Woodland, CA	61032
+654	Euless, TX	61032
+655	Gardena, CA	61027
+656	Marietta, GA	60972
+657	Meriden, CT	60850
+658	Bristol, CT	60833
+659	Piscataway, NJ	60804
+660	Vineland, NJ	60780
+661	Des Plaines, IL	60675
+662	Richland, WA	60560
+663	Taylorsville, UT	60448
+664	Great Falls, MT	60442
+665	Hoboken, NJ	60419
+666	Cupertino, CA	60381
+667	West Allis, WI	60325
+668	North Miami, FL	60191
+669	Owensboro, KY	60183
+670	Youngstown, OH	60068
+671	Santee, CA	60037
+672	Caldwell, ID	59996
+673	Corvallis, OR	59922
+674	Petaluma, CA	59776
+675	Union, NJ	59728
+676	Manchester, CT	59713
+677	Dubuque, IA	59667
+678	Medford, MA	59659
+679	Kokomo, IN	59604
+680	White Plains, NY	59559
+681	Gilroy, CA	59520
+682	Queen Creek, AZ	59519
+683	Taunton, MA	59408
+684	Leander, TX	59202
+685	Stonecrest, GA	59194
+686	Palm Beach Gardens, FL	59182
+687	Hempstead, NY	59169
+688	Grand Forks, ND	59166
+689	Casper, WY	59038
+690	St Cloud, FL	58964
+691	St Clair Shores, MI	58874
+692	Apex, NC	58780
+693	Margate, FL	58712
+694	Orland Park, IL	58703
+695	Springfield, OH	58662
+696	Carson City, NV	58639
+697	Shoreline, WA	58608
+698	Blue Springs, MO	58603
+699	Jackson, NJ	58544
+700	Parker, CO	58512
+701	Midwest City, OK	58409
+702	Terre Haute, IN	58389
+703	Oak Lawn, IL	58362
+704	Bowie, MD	58329
+705	Royal Oak, MI	58211
+706	Maricopa, AZ	58125
+707	Lancaster, PA	58039
+708	Hanford, CA	57990
+709	Decatur, AL	57938
+710	Kettering, OH	57862
+711	Coconut Creek, FL	57833
+712	Bartlett, TN	57786
+713	St Peters, MO	57732
+714	Wylie, TX	57526
+715	Weymouth, MA	57437
+716	Lenexa, KS	57434
+717	Burlington, NC	57303
+718	Berwyn, IL	57250
+719	Lake Havasu City, AZ	57144
+720	Fountain Valley, CA	57047
+721	Highland, CA	56999
+722	Madison, AL	56933
+723	Mount Prospect, IL	56852
+724	Arcadia, CA	56681
+725	Albany, OR	56472
+726	Apple Valley, MN	56374
+727	Pocatello, ID	56320
+728	National City, CA	56173
+729	Parsippany-Troy Hills, NJ	56162
+730	DeSoto, TX	56145
+731	Port Arthur, TX	56039
+732	Tinley Park, IL	55971
+733	Bradenton, FL	55698
+734	Ypsilanti, MI	55670
+735	Smyrna, GA	55663
+736	Olympia, WA	55605
+737	West Haven, CT	55584
+738	Chicopee, MA	55560
+739	Kingsport, TN	55442
+740	Perth Amboy, NJ	55436
+741	Valdosta, GA	55378
+742	New Brunswick, NJ	55266
+743	Brookhaven, GA	55161
+744	Herriman, UT	55144
+745	Diamond Bar, CA	55072
+746	Huntington Park, CA	54883
+747	Apopka, FL	54873
+748	Sarasota, FL	54842
+749	Wayne, NJ	54838
+750	Anderson, IN	54788
+751	Southaven, MS	54648
+752	Coeur dAlene, ID	54628
+753	Plainfield, NJ	54586
+754	Oak Park, IL	54583
+755	Yucaipa, CA	54542
+756	Tigard, OR	54539
+757	Peabody, MA	54481
+758	Rocky Mount, NC	54341
+759	Pensacola, FL	54312
+760	Kentwood, MI	54304
+761	Bentonville, AR	54164
+762	Manhattan, KS	54100
+763	Georgetown, MI	54091
+764	Wheaton, IL	53970
+765	Elkhart, IN	53923
+766	West Sacramento, CA	53915
+767	Colton, CA	53909
+768	San Jacinto, CA	53898
+769	Minnetonka, MN	53781
+770	Paramount, CA	53733
+771	Galveston, TX	53695
+772	Casa Grande, AZ	53658
+773	Bonita Springs, FL	53644
+774	Howell, NJ	53537
+775	Lacey, WA	53526
+776	Edina, MN	53494
+777	Bozeman, MT	53293
+778	Novato, CA	53225
+779	Grand Island, NE	53131
+780	Kannapolis, NC	53114
+781	Bloomfield, NJ	53105
+782	Pinellas Park, FL	53093
+783	Smyrna, TN	53070
+784	Methuen, MA	53059
+785	Beaumont, CA	53036
+786	West New York, NJ	52912
+787	Logan, UT	52778
+788	Normal, IL	52736
+789	Battle Creek, MI	52721
+790	La Crosse, WI	52680
+791	Elyria, OH	52656
+792	Watsonville, CA	52590
+793	Glendora, CA	52558
+794	Florissant, MO	52533
+795	Hoffman Estates, IL	52530
+796	Stratford, CT	52355
+797	Aliso Viejo, CA	52176
+798	Burien, WA	52066
+799	Marana, AZ	51908
+800	Texas City, TX	51898
+801	Placentia, CA	51824
+802	Harrisonburg, VA	51814
+803	Twin Falls, ID	51807
+804	Joplin, MO	51762
+805	Dunwoody, GA	51683
+806	Cathedral City, CA	51493
+807	Delano, CA	51428
+808	Troy, NY	51401
+809	Collierville, TN	51324
+810	Enid, OK	51308
+811	Covina, CA	51268
+812	Rosemead, CA	51185
+813	Palm Desert, CA	51163
+814	Cuyahoga Falls, OH	51114
+815	Mishawaka, IN	51063
+816	East Hartford, CT	51045
+817	Draper, UT	51017
+818	Middletown, OH	50987
+819	Lakewood, OH	50942
+820	East Honolulu, HI	50922
+821	Summerville, SC	50915
+822	Murray, UT	50637
+823	Grapevine, TX	50631
+824	Milford, CT	50558
+825	Columbus, IN	50474
+826	Downers Grove, IL	50247
+827	Mooresville, NC	50193
+828	Cypress, CA	50151
+829	Harrisburg, PA	50099
+830	St Louis Park, MN	50010
+831	Spring Hill, TN	50005
+832	Azusa, CA	50000
+833	Chesterfield, MO	49999
+834	Newark, OH	49934
+835	Sheboygan, WI	49929
+836	Bedford, TX	49928
+837	Lincoln, CA	49757
+838	East Brunswick, NJ	49715
+839	Euclid, OH	49692
+840	Cerritos, CA	49578
+841	Redford, MI	49504
+842	Biloxi, MS	49449
+843	Jeffersonville, IN	49447
+844	Lawrence, IN	49370
+845	Dublin, OH	49328
+846	Ceres, CA	49302
+847	Coral Gables, FL	49248
+848	Winter Haven, FL	49219
+849	Cedar Hill, TX	49148
+850	Everett, MA	49075
+851	Barnstable, MA	48916
+852	Portage, MI	48891
+853	Charleston, WV	48864
+854	West Orange, NJ	48843
+855	Poway, CA	48841
+856	Titusville, FL	48789
+857	Hattiesburg, MS	48730
+858	Glenview, IL	48705
+859	Washington, NJ	48677
+860	Niagara Falls, NY	48671
+861	Monroe, NJ	48594
+862	Roswell, NM	48422
+863	Stillwater, OK	48394
+864	Wauwatosa, WI	48387
+865	Minot, ND	48377
+866	Leesburg, VA	48250
+867	Bothell, WA	48161
+868	La Mirada, CA	48008
+869	Binghamton, NY	47969
+870	Rancho Santa Margarita, CA	47949
+871	Wilson, NC	47851
+872	Egg Harbor, NJ	47842
+873	East Lansing, MI	47741
+874	Middletown, CT	47717
+875	Roseville, MI	47710
+876	Monroe, LA	47702
+877	Burleson, TX	47641
+878	Wake Forest, NC	47601
+879	Mansfield, OH	47534
+880	Newark, CA	47529
+881	Mentor, OH	47450
+882	Cleveland, TN	47356
+883	Brea, CA	47325
+884	Fort Pierce, FL	47297
+885	Ocoee, FL	47295
+886	Rockwall, TX	47251
+887	East Providence, RI	47139
+888	Oro Valley, AZ	47070
+889	San Luis Obispo, CA	47063
+890	South Brunswick, NJ	47043
+891	Winter Garden, FL	46964
+892	Salina, KS	46889
+893	Huntington, WV	46842
+894	Evesham, NJ	46826
+895	Prescott Valley, AZ	46785
+896	Farmington, NM	46624
+897	Charlottesville, VA	46553
+898	Beavercreek, OH	46549
+899	Strongsville, OH	46491
+900	Attleboro, MA	46461
+901	Little Elm, TX	46453
+902	Westfield, IN	46410
+903	Arlington, MA	46308
+904	Altamonte Springs, FL	46231
+905	Haltom City, TX	46073
+906	Hackensack, NJ	46030
+907	Bridgewater, NJ	45977
+908	Goose Creek, SC	45946
+909	Huntsville, TX	45941
+910	Prescott, AZ	45827
+911	Elmhurst, IL	45786
+912	Keller, TX	45776
+913	Bountiful, UT	45762
+914	Kyle, TX	45697
+915	Littleton, CO	45652
+916	Urbandale, IA	45580
+917	Los Banos, CA	45532
+918	Morgan Hill, CA	45483
+919	Cutler Bay, FL	45425
+920	Brentwood, TN	45373
+921	Sayreville, NJ	45345
+922	Cleveland Heights, OH	45312
+923	Sierra Vista, AZ	45308
+924	Pearl City, HI	45295
+925	Riverton, UT	45285
+926	Alexandria, LA	45275
+927	Manchester, NJ	45115
+928	Fairfield, OH	44907
+929	Blacksburg, VA	44826
+930	York, PA	44800
+931	North Lauderdale, FL	44794
+932	Plainfield, IL	44762
+933	Burlington, VT	44743
+934	Fond du Lac, WI	44678
+935	Mount Laurel, NJ	44633
+936	West Lafayette, IN	44595
+937	Palm Springs, CA	44575
+938	The Colony, TX	44534
+939	Moorhead, MN	44505
+940	Mankato, MN	44488
+941	Salem, MA	44480
+942	Lombard, IL	44476
+943	Freeport, NY	44472
+944	Lompoc, CA	44444
+945	Gallatin, TN	44431
+946	Wallingford, CT	44396
+947	Rohnert Park, CA	44390
+948	Wentzville, MO	44372
+949	Wilkes Barre, PA	44328
+950	El Centro, CA	44322
+951	Bloomfield, MI	44253
+952	Oakland Park, FL	44229
+953	Saginaw, MI	44202
+954	Hilo, HI	44186
+955	Greenacres, FL	43990
+956	Concord, NH	43976
+957	Altoona, PA	43963
+958	Campbell, CA	43959
+959	Pittsfield, MA	43927
+960	Meridian, MI	43916
+961	San Bruno, CA	43908
+962	North Brunswick, NJ	43905
+963	Leominster, MA	43782
+964	Berkeley, NJ	43754
+965	Linden, NJ	43738
+966	Shakopee, MN	43698
+967	North Miami Beach, FL	43676
+968	Sherman, TX	43645
+969	Eagle Mountain, UT	43623
+970	Danville, CA	43582
+971	Hagerstown, MD	43527
+972	Bremerton, WA	43505
+973	Southington, CT	43501
+974	Hickory, NC	43490
+975	Waipahu, HI	43485
+976	Sumter, SC	43463
+977	Huber Heights, OH	43439
+978	Oakley, CA	43357
+979	Hillsborough, NJ	43276
+980	Woonsocket, RI	43240
+981	Jefferson City, MO	43228
+982	Buffalo Grove, IL	43212
+983	Ormond Beach, FL	43080
+984	Commerce, MI	43058
+985	Clermont, FL	43021
+986	Moline, IL	42985
+987	Coppell, TX	42983
+988	Puyallup, WA	42973
+989	Edmonds, WA	42853
+990	Manassas, VA	42772
+991	Beverly, MA	42670
+992	Spanish Fork, UT	42602
+993	Danville, VA	42590
+994	Newnan, GA	42549
+995	Midland, MI	42547
+996	Belleville, IL	42404
+997	Gainesville, GA	42296
+998	Rancho Palos Verdes, CA	42287
+999	Peachtree Corners, GA	42243
+1000	Lake Worth Beach, FL	42219
