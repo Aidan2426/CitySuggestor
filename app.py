@@ -215,139 +215,151 @@ st.set_page_config(
 st.markdown("""
 <style>
     .main { background-color: #0f1117; }
-    .stApp { background-color: #0f1117; }
+    .stApp { background-color: #0d1117; }
     section[data-testid="stSidebar"] {
-        background-color: #1a1d27;
-        border-right: 1px solid #2d3048;
+        background-color: #161b27;
+        border-right: 1px solid #21273a;
     }
+    /* ── City card ── */
     .city-card {
-        background: #1e2130;
-        border: 1px solid #2d3048;
-        border-radius: 10px;
-        padding: 14px 16px;
-        margin-bottom: 8px;
+        background: #161b27;
+        border: 1px solid #21273a;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 12px;
+    }
+    .card-photo {
+        width: 100%; height: 160px;
+        object-fit: cover; display: block;
+    }
+    .card-body { padding: 14px 16px 12px; }
+    .card-header {
         display: flex;
-        gap: 12px;
+        justify-content: space-between;
         align-items: flex-start;
+        margin-bottom: 12px;
     }
-    .city-card-body { flex: 1; min-width: 0; }
-    .city-photo-wrap { flex-shrink: 0; }
-    .photo-carousel { position: relative; width: 160px; }
-    .cr-img {
-        width: 160px;
-        height: 160px;
-        object-fit: cover;
+    .card-rank {
+        font-size: 11px; font-weight: 700;
+        color: #a5b4fc; letter-spacing: 0.08em;
+    }
+    .card-city-name {
+        font-size: 20px; font-weight: 700;
+        color: #f0f4ff; line-height: 1.2;
+    }
+    .card-subtitle {
+        font-size: 12px; color: #4f5b7a; margin-top: 2px;
+    }
+    /* ── 2×2 stat grid ── */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    .stat-box {
+        background: #0d1117;
+        border: 1px solid #21273a;
         border-radius: 8px;
-        display: block;
+        padding: 8px 10px;
     }
-    /* CSS-only carousel: radio + adjacent slide */
-    .cr-slide { display: none; }
-    input[type="radio"]:checked + .cr-slide { display: block; }
-    .cr-dots {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        margin-top: 5px;
+    .stat-label {
+        font-size: 9px; font-weight: 700;
+        color: #4f5b7a; letter-spacing: 0.1em;
+        text-transform: uppercase; margin-bottom: 3px;
     }
-    .cr-dots label {
-        width: 7px;
-        height: 7px;
-        background: #4b5280;
-        border-radius: 50%;
-        cursor: pointer;
-        display: inline-block;
-        transition: background 0.2s;
+    .stat-val {
+        font-size: 16px; font-weight: 700; color: #f0f4ff;
     }
-    .cr-dots label:hover { background: #818cf8; }
-    /* Sports pill — inline <details> element styled like a stat-pill */
+    .stat-val.accent { color: #fb923c; }
+    /* ── Tags row ── */
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .ctag {
+        background: #1e2640;
+        border: 1px solid #2d3a5a;
+        border-radius: 4px;
+        padding: 2px 8px;
+        font-size: 10px; font-weight: 600;
+        color: #7c8db5; letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    .ctag-lakes {
+        background: #0e2a3a;
+        border: 1px solid #1e6a9a;
+        border-radius: 4px;
+        padding: 2px 8px;
+        font-size: 10px; font-weight: 600;
+        color: #38bdf8; letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    /* Sports pill */
     details.sports-pill {
-        display: inline-block;
-        position: relative;
+        display: inline-block; position: relative;
         vertical-align: middle;
-        margin: 2px 3px 2px 0;
     }
     details.sports-pill summary {
-        background: #2d3048;
-        border-radius: 20px;
-        padding: 2px 10px;
-        font-size: 11px;
-        color: #a5b4fc;
-        cursor: pointer;
-        list-style: none;
-        user-select: none;
-        outline: none;
+        background: #1e2640; border: 1px solid #2d3a5a;
+        border-radius: 4px; padding: 2px 8px;
+        font-size: 10px; font-weight: 600;
+        color: #7c8db5; letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer; list-style: none; user-select: none; outline: none;
     }
     details.sports-pill summary::-webkit-details-marker { display: none; }
     details.sports-pill summary::marker { display: none; }
-    details.sports-pill summary:hover { background: #3d4060; color: #c4b5fd; }
-    details.sports-pill[open] summary { border-radius: 10px 10px 0 0; }
+    details.sports-pill summary:hover { color: #a5b4fc; border-color: #4f5b9a; }
+    details.sports-pill[open] summary { border-radius: 4px 4px 0 0; }
     details.sports-pill .sports-dropdown {
+        position: absolute; top: 100%; left: 0;
+        background: #161b27; border: 1px solid #4f46e5;
+        border-radius: 0 6px 6px 6px;
+        padding: 8px 12px; z-index: 999;
+        min-width: 200px; font-size: 12px;
+        color: #d1d5db; line-height: 1.9; white-space: nowrap;
+    }
+    /* ── Search bar ── */
+    div[data-testid="stTextInput"] {
+        max-width: 520px;
+        margin: 0 auto 4px;
+    }
+    div[data-testid="stTextInput"] > div {
+        position: relative;
+    }
+    div[data-testid="stTextInput"] > div::before {
+        content: "";
         position: absolute;
-        top: 100%;
-        left: 0;
-        background: #1e2130;
-        border: 1px solid #4f46e5;
-        border-radius: 0 8px 8px 8px;
-        padding: 8px 12px;
-        z-index: 999;
-        min-width: 220px;
-        font-size: 12px;
-        color: #d1d5db;
-        line-height: 1.8;
-        white-space: nowrap;
+        left: 14px; top: 50%; transform: translateY(-50%);
+        width: 16px; height: 16px; z-index: 1; pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234f5b7a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+        background-repeat: no-repeat; background-size: contain;
     }
-    .city-rank {
-        font-size: 12px;
-        color: #6b7280;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+    div[data-testid="stTextInput"] input {
+        background-color: #1c2333 !important;
+        border: 1px solid #2d3a5a !important;
+        border-radius: 24px !important;
+        padding-left: 40px !important;
+        color: #f0f4ff !important;
+        font-size: 14px !important;
+        height: 42px !important;
     }
-    .city-name {
-        font-size: 20px;
-        font-weight: 700;
-        color: #f9fafb;
-        margin: 2px 0;
+    div[data-testid="stTextInput"] input:focus {
+        border-color: #4f46e5 !important;
+        box-shadow: 0 0 0 2px rgba(79,70,229,0.25) !important;
     }
-    .city-state {
-        font-size: 13px;
-        color: #9ca3af;
+    div[data-testid="stTextInput"] input::placeholder {
+        color: #4f5b7a !important;
     }
-    .city-stat {
-        font-size: 12px;
-        color: #d1d5db;
-        margin-top: 6px;
-    }
-    .stat-pill {
-        display: inline-block;
-        background: #2d3048;
-        border-radius: 20px;
-        padding: 2px 10px;
-        font-size: 11px;
-        color: #a5b4fc;
-        margin: 2px 3px 2px 0;
-    }
-    .match-score {
-        font-size: 22px;
-        font-weight: 800;
-        color: #818cf8;
-    }
+    /* Sidebar */
     .section-header {
-        font-size: 11px;
-        font-weight: 700;
-        color: #6366f1;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        margin: 16px 0 6px 0;
+        font-size: 10px; font-weight: 700;
+        color: #4f5b7a; letter-spacing: 0.12em;
+        text-transform: uppercase; margin: 16px 0 6px 0;
     }
-    div[data-testid="stSlider"] label {
-        font-size: 12px !important;
-        color: #9ca3af !important;
-    }
-    h1 { color: #f9fafb !important; }
-    h2, h3 { color: #e5e7eb !important; }
+    div[data-testid="stSlider"] label { font-size: 12px !important; color: #7c8db5 !important; }
+    h1 { color: #f0f4ff !important; }
+    h2, h3 { color: #c9d1e9 !important; }
     .stSelectbox label, .stMultiSelect label, .stCheckbox label {
-        color: #9ca3af !important;
-        font-size: 12px !important;
+        color: #7c8db5 !important; font-size: 12px !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -401,57 +413,41 @@ _STATE_NAMES = {
 }
 
 @st.cache_data(show_spinner=False, ttl=86400)
-def get_city_images(city: str, state: str, n: int = 4) -> list:
-    """Return up to n photo URLs for a city (Wikimedia Commons + Wikipedia fallback)."""
+def get_city_photo(city: str, state: str) -> str:
+    """Fetch a single Wikipedia thumbnail. Fast — one API call, cached."""
     state_name = _STATE_NAMES.get(state, state)
-    urls, seen = [], set()
-
-    # 1. Wikimedia Commons image search
-    for search_term in [f"{city} {state_name}", f"{city} skyline", f"{city} downtown"]:
-        if len(urls) >= n:
-            break
+    for slug in [
+        f"{city}_skyline".replace(" ", "_"),
+        f"{city},_{state_name}".replace(" ", "_"),
+        city.replace(" ", "_"),
+    ]:
         try:
             resp = requests.get(
-                "https://commons.wikimedia.org/w/api.php",
-                params={
-                    "action": "query", "generator": "search",
-                    "gsrsearch": search_term, "gsrnamespace": 6,
-                    "prop": "imageinfo", "iiprop": "url|mime|size",
-                    "iiurlwidth": 600, "format": "json", "gsrlimit": 10,
-                },
-                timeout=6, headers={"User-Agent": "CitySuggestor/1.0"},
+                f"https://en.wikipedia.org/api/rest_v1/page/summary/{slug}",
+                timeout=4, headers={"User-Agent": "CitySuggestor/1.0"},
             )
             if resp.status_code == 200:
-                pages = resp.json().get("query", {}).get("pages", {})
-                for page in sorted(pages.values(), key=lambda p: p.get("index", 999)):
-                    info = (page.get("imageinfo") or [{}])[0]
-                    url = info.get("thumburl") or info.get("url", "")
-                    mime = info.get("mime", "")
-                    if url and mime in ("image/jpeg", "image/png") and url not in seen:
-                        seen.add(url)
-                        urls.append(url)
-                        if len(urls) >= n:
-                            break
+                url = resp.json().get("thumbnail", {}).get("source", "")
+                if url:
+                    return url
         except Exception:
             pass
+    return ""
 
-    # 2. Wikipedia page thumbnail fallback
-    if not urls:
-        for slug in [f"{city},_{state_name}".replace(" ", "_"), city.replace(" ", "_")]:
-            try:
-                resp = requests.get(
-                    f"https://en.wikipedia.org/api/rest_v1/page/summary/{slug}",
-                    timeout=4, headers={"User-Agent": "CitySuggestor/1.0"},
-                )
-                if resp.status_code == 200:
-                    url = resp.json().get("thumbnail", {}).get("source", "")
-                    if url:
-                        urls.append(url)
-                        break
-            except Exception:
-                pass
 
-    return urls
+def fmt_pop(n):
+    if pd.isna(n): return "N/A"
+    n = int(n)
+    if n >= 1_000_000: return f"{n/1_000_000:.1f}M"
+    if n >= 1_000: return f"{n/1_000:.0f}k"
+    return str(n)
+
+def fmt_money(n, short=True):
+    if pd.isna(n): return "N/A"
+    if short:
+        if n >= 1_000_000: return f"${n/1_000_000:.1f}M"
+        if n >= 1_000: return f"${n/1_000:.0f}k"
+    return f"${int(n):,}"
 
 # ── helper: safe min/max ──────────────────────────────────────────────────────
 
@@ -672,9 +668,14 @@ filtered = filtered.sort_values("population", ascending=False).reset_index(drop=
 
 # ── header ────────────────────────────────────────────────────────────────────
 
-st.markdown(f"## City Suggestor")
-
-city_search = st.text_input("Search for a specific city", placeholder="e.g. Austin, Denver...", key="city_search")
+_, search_col, _ = st.columns([1, 2, 1])
+with search_col:
+    city_search = st.text_input(
+        "search",
+        placeholder="Search cities, regions, or climates...",
+        key="city_search",
+        label_visibility="collapsed",
+    )
 if city_search.strip():
     search_mask = filtered["city"].str.contains(city_search.strip(), case=False, na=False)
     filtered = filtered[search_mask].reset_index(drop=True)
@@ -682,164 +683,163 @@ if city_search.strip():
 st.markdown(f"**{len(filtered)}** cities match your filters")
 st.markdown("---")
 
-# ── main layout: list + map ───────────────────────────────────────────────────
+# ── map (full width, between search and list) ─────────────────────────────────
 
-col_list, col_map = st.columns([1, 1.4], gap="large")
+map_df = filtered.dropna(subset=["lat", "lon"]).copy()
+
+if map_df.empty:
+    st.info("No cities with coordinates to display on map.")
+else:
+    fig = px.scatter_mapbox(
+        map_df,
+        lat="lat",
+        lon="lon",
+        hover_name="city",
+        hover_data={
+            "lat": False,
+            "lon": False,
+            "state": True,
+            "population": ":,.0f",
+            "avg_temp_f": ":.1f",
+            "median_household_income": ":,.0f",
+            "walkability_score_100": ":.0f",
+            "nature_score": ":.0f",
+        },
+        color="metro_population",
+        color_continuous_scale="Viridis",
+        size_max=18,
+        zoom=3,
+        height=430,
+        mapbox_style="carto-darkmatter",
+    )
+    fig.update_layout(
+        margin={"r": 0, "t": 0, "l": 0, "b": 0},
+        coloraxis_colorbar=dict(title="Metro Pop", thickness=12, len=0.5),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+    )
+    fig.update_traces(marker=dict(size=10, opacity=0.85))
+    st.plotly_chart(fig, use_container_width=True)
+
+st.markdown("---")
 
 # ── city list ─────────────────────────────────────────────────────────────────
 
-with col_list:
-    st.markdown("### Matching Cities")
+st.markdown("### Matching Cities")
 
-    if filtered.empty:
-        st.warning("No cities match your current filters. Try widening your ranges.")
-    else:
-        for i, row in filtered.iterrows():
-            rank = i + 1
+if filtered.empty:
+    st.warning("No cities match your current filters. Try widening your ranges.")
+else:
+    for i, row in filtered.iterrows():
+        rank = i + 1
 
-            # Build stat pills
-            pills = []
-            temp_parts = []
-            if pd.notna(row.get("avg_temp_f")):
-                temp_parts.append(f"{row['avg_temp_f']:.0f}°F avg")
-            if pd.notna(row.get("avg_summer_high_f")):
-                temp_parts.append(f"{row['avg_summer_high_f']:.0f}°F summer")
-            if pd.notna(row.get("avg_winter_low_f")):
-                temp_parts.append(f"{row['avg_winter_low_f']:.0f}°F winter")
-            if temp_parts:
-                pills.append("  |  ".join(temp_parts))
-            if pd.notna(row.get("median_household_income")):
-                pills.append(f"${row['median_household_income']:,.0f} income")
-            if pd.notna(row.get("median_home_price")):
-                pills.append(f"${row['median_home_price']:,.0f} home")
-            if pd.notna(row.get("walkability_score_100")):
-                pills.append(f"{row['walkability_score_100']:.0f} walk score")
-            if pd.notna(row.get("dist_airport_miles")):
-                pills.append(f"{row['dist_airport_miles']:.0f} mi to airport")
-            if pd.notna(row.get("nature_score")):
-                pills.append(f"{row['nature_score']:.0f} nature")
-            if pd.notna(row.get("seasons_count")):
-                pills.append(f"{int(row['seasons_count'])} seasons")
+        # ── photo
+        photo_url = get_city_photo(row["city"], row["state"])
+        photo_html = f'<img class="card-photo" src="{photo_url}" alt="{row["city"]}">' if photo_url else ""
 
-            # Sports pill — built separately as a clickable <details> element
-            total_teams = int(row.get("total_pro_teams", 0) or 0)
-            teams_by_league = get_teams(row["city"], row) if total_teams > 0 else {}
-            if total_teams > 0:
-                teams_rows = "".join(
-                    f'<div><strong style="color:#c4b5fd">{lg}:</strong> {", ".join(names)}</div>'
-                    for lg, names in teams_by_league.items()
-                ) or f"<div>{total_teams} pro team(s) in metro area</div>"
-                sports_pill = f"""
-                <details class="sports-pill">
-                  <summary>{total_teams} pro team{'s' if total_teams != 1 else ''}</summary>
-                  <div class="sports-dropdown">{teams_rows}</div>
-                </details>"""
-            else:
-                sports_pill = ""
+        # ── subtitle (region · biome)
+        env = str(row.get("environment_type") or "").replace("_", " ").title()
+        subtitle = f"{row['state']}"
+        if env:
+            subtitle += f" &nbsp;·&nbsp; {env}"
 
-            if pd.notna(row.get("environment_type")):
-                pills.append(str(row["environment_type"]).replace("_", " ").title())
-            elif row.get("coastline_type") in ("ocean", "great_lakes"):
-                pills.append("Ocean" if row["coastline_type"] == "ocean" else "Great Lakes")
+        # ── 4 main stats
+        temp_str = f"{row['avg_temp_f']:.0f}°F" if pd.notna(row.get("avg_temp_f")) else "N/A"
+        summer_str = f"{row['avg_summer_high_f']:.0f}°" if pd.notna(row.get("avg_summer_high_f")) else ""
+        winter_str = f"{row['avg_winter_low_f']:.0f}°" if pd.notna(row.get("avg_winter_low_f")) else ""
+        temp_detail = f"<br><span style='font-size:11px;color:#7c8db5'>{summer_str} hi / {winter_str} lo</span>" if summer_str else ""
 
-            pills_html = "".join([f'<span class="stat-pill">{p}</span>' for p in pills])
-
-            pop_str = f"{row['population']:,.0f}" if pd.notna(row.get("population")) else "N/A"
-            metro_str = f"{row['metro_population']:,.0f}" if pd.notna(row.get("metro_population")) else "N/A"
-
-            imgs = get_city_images(row["city"], row["state"])
-            cid = f"c{rank}"
-            if len(imgs) > 1:
-                slides = "".join(
-                    f'<input type="radio" name="{cid}" id="{cid}_{i}" {"checked" if i == 0 else ""} hidden>'
-                    f'<div class="cr-slide"><img class="cr-img" src="{url}" alt="{row["city"]}"></div>'
-                    for i, url in enumerate(imgs)
-                )
-                dots = "".join(f'<label for="{cid}_{i}"></label>' for i in range(len(imgs)))
-                carousel_html = f'<div class="photo-carousel">{slides}<div class="cr-dots">{dots}</div></div>'
-            elif len(imgs) == 1:
-                carousel_html = f'<img class="cr-img" src="{imgs[0]}" alt="{row["city"]}">'
-            else:
-                carousel_html = ""
-
-            st.markdown(f"""
-            <div class="city-card">
-                <div class="city-card-body">
-                    <div class="city-rank">#{rank}</div>
-                    <div class="city-name">{row['city']}</div>
-                    <div class="city-state">{row['state']} &nbsp;·&nbsp; Pop: {pop_str} &nbsp;·&nbsp; Metro: {metro_str}</div>
-                    <div style="margin-top:8px">{pills_html}{sports_pill}</div>
-                </div>
-                {f'<div class="city-photo-wrap">{carousel_html}</div>' if carousel_html else ""}
+        stats_html = f"""
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-label">Population</div>
+                <div class="stat-val">{fmt_pop(row.get('population'))}</div>
             </div>
-            """, unsafe_allow_html=True)
+            <div class="stat-box">
+                <div class="stat-label">Avg Temp</div>
+                <div class="stat-val accent">{temp_str}{temp_detail}</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Median Income</div>
+                <div class="stat-val">{fmt_money(row.get('median_household_income'))}</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Home Price</div>
+                <div class="stat-val">{fmt_money(row.get('median_home_price'))}</div>
+            </div>
+        </div>"""
 
-# ── map ───────────────────────────────────────────────────────────────────────
+        # ── pills / tags
+        tags_html = ""
 
-with col_map:
-    st.markdown("### Map")
+        # Seasons
+        if pd.notna(row.get("seasons_count")):
+            tags_html += f'<span class="ctag">{int(row["seasons_count"])} Seasons</span>'
 
-    map_df = filtered.dropna(subset=["lat", "lon"]).copy()
+        # Metro population
+        if pd.notna(row.get("metro_population")):
+            tags_html += f'<span class="ctag">Metro {fmt_pop(row["metro_population"])}</span>'
 
-    if map_df.empty:
-        st.info("No cities with coordinates to display on map.")
-    else:
-        # Build hover text
-        map_df["hover"] = map_df.apply(lambda r: (
-            f"{r['city']}, {r['state']}<br>"
-            f"Pop: {r['population']:,.0f}<br>" if pd.notna(r.get('population')) else f"{r['city']}, {r['state']}<br>"
-        ) + (
-            f"Avg Temp: {r['avg_temp_f']:.0f}°F<br>" if pd.notna(r.get('avg_temp_f')) else ""
-        ) + (
-            f"Income: ${r['median_household_income']:,.0f}<br>" if pd.notna(r.get('median_household_income')) else ""
-        ) + (
-            f"Home Price: ${r['median_home_price']:,.0f}<br>" if pd.notna(r.get('median_home_price')) else ""
-        ) + (
-            f"Walk Score: {r['walkability_score_100']:.0f}<br>" if pd.notna(r.get('walkability_score_100')) else ""
-        ) + (
-            f"Nature: {r['nature_score']:.0f}<br>" if pd.notna(r.get('nature_score')) else ""
-        ) + (
-            f"Pro Teams: {int(r['total_pro_teams'])}" if pd.notna(r.get('total_pro_teams')) else ""
-        ), axis=1)
+        # Walkability score
+        if pd.notna(row.get("walkability_score_100")):
+            tags_html += f'<span class="ctag">Walk {int(row["walkability_score_100"])}</span>'
 
-        fig = px.scatter_mapbox(
-            map_df,
-            lat="lat",
-            lon="lon",
-            hover_name="city",
-            hover_data={
-                "lat": False,
-                "lon": False,
-                "state": True,
-                "population": ":,.0f",
-                "avg_temp_f": ":.1f",
-                "median_household_income": ":,.0f",
-                "walkability_score_100": ":.0f",
-            },
-            color="metro_population",
-            color_continuous_scale="Viridis",
-            size_max=18,
-            zoom=3,
-            height=680,
-            mapbox_style="carto-darkmatter",
-        )
+        # Outdoor / nature score
+        if pd.notna(row.get("nature_score")):
+            tags_html += f'<span class="ctag">Outdoors {int(row["nature_score"])}</span>'
 
-        fig.update_layout(
-            margin={"r": 0, "t": 0, "l": 0, "b": 0},
-            coloraxis_colorbar=dict(
-                title="Metro Pop",
-                thickness=12,
-                len=0.5,
-            ),
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)",
-        )
+        # Airport distance
+        if pd.notna(row.get("dist_airport_miles")):
+            tags_html += f'<span class="ctag">Airport {row["dist_airport_miles"]:.0f} mi</span>'
 
-        fig.update_traces(
-            marker=dict(size=10, opacity=0.85)
-        )
+        # Zoo distance
+        if pd.notna(row.get("dist_zoo_miles")):
+            tags_html += f'<span class="ctag">Zoo {row["dist_zoo_miles"]:.0f} mi</span>'
 
-        st.plotly_chart(fig, use_container_width=True)
+        # Theme park distance
+        if pd.notna(row.get("dist_theme_park_miles")):
+            tags_html += f'<span class="ctag">Theme Park {row["dist_theme_park_miles"]:.0f} mi</span>'
+
+        # National park distance
+        if pd.notna(row.get("dist_natl_park_miles")):
+            tags_html += f'<span class="ctag">Natl Park {row["dist_natl_park_miles"]:.0f} mi</span>'
+
+        # Coastline (Great Lakes gets special bright styling)
+        coast = row.get("coastline_type", "none")
+        if coast == "ocean":
+            tags_html += '<span class="ctag">Ocean</span>'
+        elif coast == "great_lakes":
+            tags_html += '<span class="ctag-lakes">Great Lakes</span>'
+
+        # Sports teams (clickable pill)
+        total_teams = int(row.get("total_pro_teams", 0) or 0)
+        teams_by_league = get_teams(row["city"], row) if total_teams > 0 else {}
+        if total_teams > 0:
+            teams_rows = "".join(
+                f'<div><strong style="color:#c4b5fd">{lg}:</strong> {", ".join(names)}</div>'
+                for lg, names in teams_by_league.items()
+            ) or f"<div>{total_teams} pro team(s)</div>"
+            tags_html += f"""<details class="sports-pill">
+              <summary>{total_teams} Pro Team{'s' if total_teams != 1 else ''}</summary>
+              <div class="sports-dropdown">{teams_rows}</div>
+            </details>"""
+
+        st.markdown(f"""
+        <div class="city-card">
+            {photo_html}
+            <div class="card-body">
+                <div class="card-header">
+                    <div>
+                        <div class="card-rank">#{rank}</div>
+                        <div class="card-city-name">{row['city']}</div>
+                        <div class="card-subtitle">{subtitle}</div>
+                    </div>
+                </div>
+                {stats_html}
+                <div class="card-tags">{tags_html}</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
 # ── data table at bottom ──────────────────────────────────────────────────────
 
