@@ -214,23 +214,46 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    .main { background-color: #0f1117; }
-    .stApp { background-color: #0d1117; }
-    section[data-testid="stSidebar"] {
-        background-color: #161b27;
-        border-right: 1px solid #21273a;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* ── Base ── */
+    html, body, [class*="css"], * { font-family: 'Inter', sans-serif !important; }
+    .stApp { background-color: #F4F6F9; }
+    .main  { background-color: #F4F6F9; }
+
+    /* ── Top header / toolbar ── */
+    header[data-testid="stHeader"] {
+        background-color: #FFFFFF !important;
+        border-bottom: 1px solid #E2E8F0;
     }
+    [data-testid="stToolbar"] { background: transparent !important; }
+    [data-testid="stDecoration"] { background: #1D4ED8 !important; }
+
+    /* ── Sidebar ── */
+    section[data-testid="stSidebar"] {
+        background-color: #FFFFFF;
+        border-right: 1px solid #E2E8F0;
+    }
+
     /* ── City card ── */
     .city-card {
-        background: #161b27;
-        border: 1px solid #21273a;
-        border-radius: 12px;
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-radius: 14px;
         overflow: hidden;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
     .card-photo {
-        width: 100%; height: 160px;
+        width: 100%; height: 180px;
         object-fit: cover; display: block;
+        background-color: #E2E8F0;
+    }
+    .card-photo-placeholder {
+        width: 100%; height: 180px;
+        background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 32px; color: #93C5FD;
     }
     .card-body { padding: 14px 16px 12px; }
     .card-header {
@@ -241,15 +264,16 @@ st.markdown("""
     }
     .card-rank {
         font-size: 11px; font-weight: 700;
-        color: #a5b4fc; letter-spacing: 0.08em;
+        color: #1D4ED8; letter-spacing: 0.08em;
     }
     .card-city-name {
         font-size: 20px; font-weight: 700;
-        color: #f0f4ff; line-height: 1.2;
+        color: #111827; line-height: 1.2;
     }
     .card-subtitle {
-        font-size: 12px; color: #4f5b7a; margin-top: 2px;
+        font-size: 12px; color: #6B7280; margin-top: 2px;
     }
+
     /* ── 2×2 stat grid ── */
     .stats-grid {
         display: grid;
@@ -258,65 +282,69 @@ st.markdown("""
         margin-bottom: 12px;
     }
     .stat-box {
-        background: #0d1117;
-        border: 1px solid #21273a;
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
         border-radius: 8px;
         padding: 8px 10px;
     }
     .stat-label {
         font-size: 9px; font-weight: 700;
-        color: #4f5b7a; letter-spacing: 0.1em;
+        color: #9CA3AF; letter-spacing: 0.1em;
         text-transform: uppercase; margin-bottom: 3px;
     }
     .stat-val {
-        font-size: 16px; font-weight: 700; color: #f0f4ff;
+        font-size: 16px; font-weight: 700; color: #111827;
     }
-    .stat-val.accent { color: #fb923c; }
+    .stat-val.accent { color: #EA580C; }
+
     /* ── Tags row ── */
     .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
     .ctag {
-        background: #1e2640;
-        border: 1px solid #2d3a5a;
+        background: #EFF6FF;
+        border: 1px solid #BFDBFE;
         border-radius: 4px;
         padding: 2px 8px;
         font-size: 10px; font-weight: 600;
-        color: #7c8db5; letter-spacing: 0.06em;
+        color: #1D4ED8; letter-spacing: 0.06em;
         text-transform: uppercase;
     }
     .ctag-lakes {
-        background: #0e2a3a;
-        border: 1px solid #1e6a9a;
+        background: #F0F9FF;
+        border: 1px solid #7DD3FC;
         border-radius: 4px;
         padding: 2px 8px;
         font-size: 10px; font-weight: 600;
-        color: #38bdf8; letter-spacing: 0.06em;
+        color: #0284C7; letter-spacing: 0.06em;
         text-transform: uppercase;
     }
-    /* Sports pill */
+
+    /* ── Sports pill ── */
     details.sports-pill {
         display: inline-block; position: relative;
         vertical-align: middle;
     }
     details.sports-pill summary {
-        background: #1e2640; border: 1px solid #2d3a5a;
+        background: #FFF7ED; border: 1px solid #FED7AA;
         border-radius: 4px; padding: 2px 8px;
         font-size: 10px; font-weight: 600;
-        color: #7c8db5; letter-spacing: 0.06em;
+        color: #C2410C; letter-spacing: 0.06em;
         text-transform: uppercase;
         cursor: pointer; list-style: none; user-select: none; outline: none;
     }
     details.sports-pill summary::-webkit-details-marker { display: none; }
     details.sports-pill summary::marker { display: none; }
-    details.sports-pill summary:hover { color: #a5b4fc; border-color: #4f5b9a; }
+    details.sports-pill summary:hover { background: #FFEDD5; border-color: #FB923C; }
     details.sports-pill[open] summary { border-radius: 4px 4px 0 0; }
     details.sports-pill .sports-dropdown {
         position: absolute; top: 100%; left: 0;
-        background: #161b27; border: 1px solid #4f46e5;
+        background: #FFFFFF; border: 1px solid #1D4ED8;
         border-radius: 0 6px 6px 6px;
         padding: 8px 12px; z-index: 999;
         min-width: 200px; font-size: 12px;
-        color: #d1d5db; line-height: 1.9; white-space: nowrap;
+        color: #374151; line-height: 1.9; white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
     /* ── Search bar ── */
     div[data-testid="stTextInput"] {
         max-width: 520px;
@@ -330,37 +358,40 @@ st.markdown("""
         position: absolute;
         left: 14px; top: 50%; transform: translateY(-50%);
         width: 16px; height: 16px; z-index: 1; pointer-events: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234f5b7a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
         background-repeat: no-repeat; background-size: contain;
     }
     div[data-testid="stTextInput"] input {
-        background-color: #1c2333 !important;
-        border: 1px solid #2d3a5a !important;
+        background-color: #FFFFFF !important;
+        border: 1px solid #D1D5DB !important;
         border-radius: 24px !important;
         padding-left: 40px !important;
-        color: #f0f4ff !important;
+        color: #111827 !important;
         font-size: 14px !important;
         height: 42px !important;
     }
     div[data-testid="stTextInput"] input:focus {
-        border-color: #4f46e5 !important;
-        box-shadow: 0 0 0 2px rgba(79,70,229,0.25) !important;
+        border-color: #1D4ED8 !important;
+        box-shadow: 0 0 0 3px rgba(29,78,216,0.15) !important;
     }
     div[data-testid="stTextInput"] input::placeholder {
-        color: #4f5b7a !important;
+        color: #9CA3AF !important;
     }
-    /* Sidebar */
+
+    /* ── Sidebar labels & sliders ── */
     .section-header {
         font-size: 10px; font-weight: 700;
-        color: #4f5b7a; letter-spacing: 0.12em;
+        color: #9CA3AF; letter-spacing: 0.12em;
         text-transform: uppercase; margin: 16px 0 6px 0;
     }
-    div[data-testid="stSlider"] label { font-size: 12px !important; color: #7c8db5 !important; }
-    h1 { color: #f0f4ff !important; }
-    h2, h3 { color: #c9d1e9 !important; }
+    div[data-testid="stSlider"] label { font-size: 12px !important; color: #6B7280 !important; }
     .stSelectbox label, .stMultiSelect label, .stCheckbox label {
-        color: #7c8db5 !important; font-size: 12px !important;
+        color: #6B7280 !important; font-size: 12px !important;
     }
+
+    /* ── Headings & body text ── */
+    h1, h2, h3 { color: #111827 !important; }
+    p, li, span { color: #374151; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -681,11 +712,13 @@ if city_search.strip():
     filtered = filtered[search_mask].reset_index(drop=True)
 
 st.markdown(f"**{len(filtered)}** cities match your filters")
+display_df = filtered
+
 st.markdown("---")
 
 # ── map (full width, between search and list) ─────────────────────────────────
 
-map_df = filtered.dropna(subset=["lat", "lon"]).copy()
+map_df = display_df.dropna(subset=["lat", "lon"]).copy()
 
 if map_df.empty:
     st.info("No cities with coordinates to display on map.")
@@ -710,13 +743,23 @@ else:
         size_max=18,
         zoom=3,
         height=430,
-        mapbox_style="carto-darkmatter",
+        mapbox_style="carto-positron",
     )
     fig.update_layout(
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
-        coloraxis_colorbar=dict(title="Metro Pop", thickness=12, len=0.5),
+        coloraxis_colorbar=dict(
+            title="Metro Pop",
+            thickness=12,
+            len=0.5,
+            title_font=dict(color="#374151", size=11),
+            tickfont=dict(color="#374151", size=10),
+            bgcolor="rgba(255,255,255,0.85)",
+            bordercolor="#E2E8F0",
+            borderwidth=1,
+        ),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#374151"),
     )
     fig.update_traces(marker=dict(size=10, opacity=0.85))
     st.plotly_chart(fig, use_container_width=True)
@@ -725,25 +768,69 @@ st.markdown("---")
 
 # ── city list ─────────────────────────────────────────────────────────────────
 
-st.markdown("### Matching Cities")
+heading_col, toggle_col = st.columns([5, 1])
+with heading_col:
+    st.markdown("### Matching Cities")
+with toggle_col:
+    card_view = st.radio(
+        "display",
+        ["Cards", "Table"],
+        horizontal=True,
+        label_visibility="collapsed",
+        key="card_view",
+    )
 
-if filtered.empty:
+if display_df.empty:
     st.warning("No cities match your current filters. Try widening your ranges.")
+elif card_view == "Table":
+    data_cols = [c for c in [
+        "state", "population", "metro_population",
+        "median_household_income", "median_home_price",
+        "avg_temp_f", "avg_summer_high_f", "avg_winter_low_f",
+        "walkability_score_100", "dist_airport_miles",
+        "dist_zoo_miles", "dist_theme_park_miles",
+        "nature_score", "dist_natl_park_miles",
+        "coastline_type", "dist_coast_miles", "elevation_ft",
+        "seasons_count", "total_pro_teams",
+        "nfl_teams", "mlb_teams", "nba_teams", "nhl_teams", "mls_teams",
+    ] if c in display_df.columns]
+    tbl = display_df[["city"] + data_cols].copy().reset_index(drop=True)
+    tbl.insert(0, "#", range(1, len(tbl) + 1))
+    tbl = tbl.set_index(["#", "city"])
+    st.dataframe(
+        tbl.style.format({
+            "population":               "{:,.0f}",
+            "metro_population":         "{:,.0f}",
+            "median_household_income":  "${:,.0f}",
+            "median_home_price":        "${:,.0f}",
+            "avg_temp_f":               "{:.1f}°F",
+            "avg_summer_high_f":        "{:.1f}°F",
+            "avg_winter_low_f":         "{:.1f}°F",
+            "walkability_score_100":    "{:.0f}",
+            "dist_airport_miles":       "{:.1f} mi",
+            "dist_zoo_miles":           "{:.1f} mi",
+            "dist_theme_park_miles":    "{:.1f} mi",
+            "nature_score":             "{:.0f}",
+            "dist_natl_park_miles":     "{:.1f} mi",
+            "dist_coast_miles":         "{:.1f} mi",
+            "elevation_ft":             "{:.0f} ft",
+        }, na_rep="N/A"),
+        use_container_width=True,
+        height=600,
+    )
 else:
-    for i, row in filtered.iterrows():
-        rank = i + 1
-
-        # ── photo
+    def render_card(rank, row):
         photo_url = get_city_photo(row["city"], row["state"])
-        photo_html = f'<img class="card-photo" src="{photo_url}" alt="{row["city"]}">' if photo_url else ""
+        if photo_url:
+            photo_html = f'<img class="card-photo" src="{photo_url}" alt="{row["city"]}" onerror="this.parentNode.innerHTML=\'<div class=&quot;card-photo-placeholder&quot;></div>\'">'
+        else:
+            photo_html = '<div class="card-photo-placeholder"></div>'
 
-        # ── subtitle (region · biome)
         env = str(row.get("environment_type") or "").replace("_", " ").title()
         subtitle = f"{row['state']}"
         if env:
             subtitle += f" &nbsp;·&nbsp; {env}"
 
-        # ── 4 main stats
         temp_str = f"{row['avg_temp_f']:.0f}°F" if pd.notna(row.get("avg_temp_f")) else "N/A"
         summer_str = f"{row['avg_summer_high_f']:.0f}°" if pd.notna(row.get("avg_summer_high_f")) else ""
         winter_str = f"{row['avg_winter_low_f']:.0f}°" if pd.notna(row.get("avg_winter_low_f")) else ""
@@ -769,52 +856,32 @@ else:
             </div>
         </div>"""
 
-        # ── pills / tags
         tags_html = ""
-
-        # Seasons
         if pd.notna(row.get("seasons_count")):
             tags_html += f'<span class="ctag">{int(row["seasons_count"])} Seasons</span>'
-
-        # Metro population
-        if pd.notna(row.get("metro_population")):
+        if pd.notna(row.get("metro_population")) and row.get("metro_population", 0) > 0:
             tags_html += f'<span class="ctag">Metro {fmt_pop(row["metro_population"])}</span>'
-
-        # Walkability score
         if pd.notna(row.get("walkability_score_100")):
             tags_html += f'<span class="ctag">Walk {int(row["walkability_score_100"])}</span>'
-
-        # Outdoor / nature score
         if pd.notna(row.get("nature_score")):
             tags_html += f'<span class="ctag">Outdoors {int(row["nature_score"])}</span>'
-
-        # Airport distance
         if pd.notna(row.get("dist_airport_miles")):
             tags_html += f'<span class="ctag">Airport {row["dist_airport_miles"]:.0f} mi</span>'
-
-        # Zoo distance
         if pd.notna(row.get("dist_zoo_miles")):
             tags_html += f'<span class="ctag">Zoo {row["dist_zoo_miles"]:.0f} mi</span>'
-
-        # Theme park distance
         if pd.notna(row.get("dist_theme_park_miles")):
             tags_html += f'<span class="ctag">Theme Park {row["dist_theme_park_miles"]:.0f} mi</span>'
-
-        # National park distance
         if pd.notna(row.get("dist_natl_park_miles")):
             tags_html += f'<span class="ctag">Natl Park {row["dist_natl_park_miles"]:.0f} mi</span>'
-
-        # Coastline (Great Lakes gets special bright styling)
         coast = row.get("coastline_type", "none")
         if coast == "ocean":
             tags_html += '<span class="ctag">Ocean</span>'
         elif coast == "great_lakes":
             tags_html += '<span class="ctag-lakes">Great Lakes</span>'
 
-        # Sports teams (clickable pill)
         total_teams = int(row.get("total_pro_teams", 0) or 0)
-        teams_by_league = get_teams(row["city"], row) if total_teams > 0 else {}
         if total_teams > 0:
+            teams_by_league = get_teams(row["city"], row)
             teams_rows = "".join(
                 f'<div><strong style="color:#c4b5fd">{lg}:</strong> {", ".join(names)}</div>'
                 for lg, names in teams_by_league.items()
@@ -841,41 +908,9 @@ else:
         </div>
         """, unsafe_allow_html=True)
 
-# ── data table at bottom ──────────────────────────────────────────────────────
-
-st.markdown("---")
-st.markdown("### Full Data Table")
-
-display_cols = [c for c in [
-    "city", "state", "population", "metro_population",
-    "median_household_income", "median_home_price",
-    "avg_temp_f", "avg_summer_high_f", "avg_winter_low_f",
-    "walkability_score_100", "dist_airport_miles",
-    "dist_zoo_miles", "dist_theme_park_miles",
-    "nature_score", "dist_natl_park_miles",
-    "coastline_type", "dist_coast_miles", "elevation_ft",
-    "seasons_count", "total_pro_teams",
-    "nfl_teams", "mlb_teams", "nba_teams", "nhl_teams", "mls_teams",
-] if c in filtered.columns]
-
-st.dataframe(
-    filtered[display_cols].style.format({
-        "population":               "{:,.0f}",
-        "metro_population":         "{:,.0f}",
-        "median_household_income":  "${:,.0f}",
-        "median_home_price":        "${:,.0f}",
-        "avg_temp_f":               "{:.1f}°F",
-        "avg_summer_high_f":        "{:.1f}°F",
-        "avg_winter_low_f":         "{:.1f}°F",
-        "walkability_score_100":    "{:.0f}",
-        "dist_airport_miles":       "{:.1f} mi",
-        "dist_zoo_miles":           "{:.1f} mi",
-        "dist_theme_park_miles":    "{:.1f} mi",
-        "nature_score":             "{:.0f}",
-        "dist_natl_park_miles":     "{:.1f} mi",
-        "dist_coast_miles":         "{:.1f} mi",
-        "elevation_ft":             "{:.0f} ft",
-    }, na_rep="N/A"),
-    use_container_width=True,
-    height=400,
-)
+    rows = list(display_df.iterrows())
+    for row_start in range(0, len(rows), 3):
+        cols = st.columns(3, gap="medium")
+        for col_idx, (i, row) in enumerate(rows[row_start:row_start + 3]):
+            with cols[col_idx]:
+                render_card(i + 1, row)
