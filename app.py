@@ -223,27 +223,45 @@ st.markdown("""
         background: #1e2130;
         border: 1px solid #2d3048;
         border-radius: 10px;
-        padding: 14px 16px 28px 16px;
-        margin-bottom: 0px;
+        padding: 14px 16px;
+        margin-bottom: 8px;
     }
-    /* Sports popover button — styled as a stat pill, pulled up into the card */
-    div[data-testid="stPopover"] > button {
-        background: #2d3048 !important;
-        border: none !important;
-        border-radius: 20px !important;
-        padding: 2px 10px !important;
-        font-size: 11px !important;
-        color: #a5b4fc !important;
-        margin-top: -34px !important;
-        margin-bottom: 8px !important;
-        margin-left: 4px !important;
-        height: auto !important;
-        min-height: unset !important;
-        line-height: 1.6 !important;
+    /* Sports pill — inline <details> element styled like a stat-pill */
+    details.sports-pill {
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        margin: 2px 3px 2px 0;
     }
-    div[data-testid="stPopover"] > button:hover {
-        background: #3d4060 !important;
-        color: #c4b5fd !important;
+    details.sports-pill summary {
+        background: #2d3048;
+        border-radius: 20px;
+        padding: 2px 10px;
+        font-size: 11px;
+        color: #a5b4fc;
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+        outline: none;
+    }
+    details.sports-pill summary::-webkit-details-marker { display: none; }
+    details.sports-pill summary::marker { display: none; }
+    details.sports-pill summary:hover { background: #3d4060; color: #c4b5fd; }
+    details.sports-pill[open] summary { border-radius: 10px 10px 0 0; }
+    details.sports-pill .sports-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #1e2130;
+        border: 1px solid #4f46e5;
+        border-radius: 0 8px 8px 8px;
+        padding: 8px 12px;
+        z-index: 999;
+        min-width: 220px;
+        font-size: 12px;
+        color: #d1d5db;
+        line-height: 1.8;
+        white-space: nowrap;
     }
     .city-rank {
         font-size: 12px;
@@ -580,7 +598,6 @@ with col_list:
 
             # Build stat pills
             pills = []
-            # Temperature: avg / summer high / winter low
             temp_parts = []
             if pd.notna(row.get("avg_temp_f")):
                 temp_parts.append(f"{row['avg_temp_f']:.0f}°F avg")
@@ -602,6 +619,23 @@ with col_list:
                 pills.append(f"{row['nature_score']:.0f} nature")
             if pd.notna(row.get("seasons_count")):
                 pills.append(f"{int(row['seasons_count'])} seasons")
+
+            # Sports pill — built separately as a clickable <details> element
+            total_teams = int(row.get("total_pro_teams", 0) or 0)
+            teams_by_league = get_teams(row["city"], row) if total_teams > 0 else {}
+            if total_teams > 0:
+                teams_rows = "".join(
+                    f'<div><strong style="color:#c4b5fd">{lg}:</strong> {", ".join(names)}</div>'
+                    for lg, names in teams_by_league.items()
+                ) or f"<div>{total_teams} pro team(s) in metro area</div>"
+                sports_pill = f"""
+                <details class="sports-pill">
+                  <summary>{total_teams} pro team{'s' if total_teams != 1 else ''}</summary>
+                  <div class="sports-dropdown">{teams_rows}</div>
+                </details>"""
+            else:
+                sports_pill = ""
+
             if pd.notna(row.get("environment_type")):
                 pills.append(str(row["environment_type"]).replace("_", " ").title())
             elif row.get("coastline_type") in ("ocean", "great_lakes"):
@@ -612,26 +646,14 @@ with col_list:
             pop_str = f"{row['population']:,.0f}" if pd.notna(row.get("population")) else "N/A"
             metro_str = f"{row['metro_population']:,.0f}" if pd.notna(row.get("metro_population")) else "N/A"
 
-            total_teams = int(row.get("total_pro_teams", 0) or 0)
-            teams_by_league = get_teams(row["city"], row) if total_teams > 0 else {}
-
             st.markdown(f"""
             <div class="city-card">
                 <div class="city-rank">#{rank}</div>
                 <div class="city-name">{row['city']}</div>
                 <div class="city-state">{row['state']} &nbsp;·&nbsp; Pop: {pop_str} &nbsp;·&nbsp; Metro: {metro_str}</div>
-                <div style="margin-top:8px">{pills_html}</div>
+                <div style="margin-top:8px">{pills_html}{sports_pill}</div>
             </div>
             """, unsafe_allow_html=True)
-
-            if total_teams > 0:
-                label = f"{total_teams} pro team{'s' if total_teams != 1 else ''}"
-                with st.popover(label):
-                    if teams_by_league:
-                        for league, names in teams_by_league.items():
-                            st.markdown(f"**{league}:** {', '.join(names)}")
-                    else:
-                        st.markdown(f"*{total_teams} pro team(s) in metro area*")
 
 # ── map ───────────────────────────────────────────────────────────────────────
 
