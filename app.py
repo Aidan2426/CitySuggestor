@@ -13,6 +13,193 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 
+# ── pro sports team lookup ────────────────────────────────────────────────────
+# Keyed by metro name; cities map to a metro below.
+
+_METRO_TEAMS = {
+    "new_york":        {"NFL": ["NY Giants", "NY Jets"], "MLB": ["NY Yankees", "NY Mets"], "NBA": ["NY Knicks", "Brooklyn Nets"], "NHL": ["NY Rangers", "NY Islanders", "NJ Devils"], "MLS": ["NY Red Bulls", "NYCFC"]},
+    "los_angeles":     {"NFL": ["LA Rams", "LA Chargers"], "MLB": ["LA Dodgers", "LA Angels"], "NBA": ["LA Lakers", "LA Clippers"], "NHL": ["LA Kings", "Anaheim Ducks"], "MLS": ["LA Galaxy", "LAFC"]},
+    "chicago":         {"NFL": ["Chicago Bears"], "MLB": ["Cubs", "White Sox"], "NBA": ["Chicago Bulls"], "NHL": ["Blackhawks"], "MLS": ["Chicago Fire"]},
+    "dallas":          {"NFL": ["Dallas Cowboys"], "MLB": ["Texas Rangers"], "NBA": ["Dallas Mavericks"], "NHL": ["Dallas Stars"], "MLS": ["FC Dallas"]},
+    "houston":         {"NFL": ["Houston Texans"], "MLB": ["Houston Astros"], "NBA": ["Houston Rockets"], "MLS": ["Houston Dynamo"]},
+    "phoenix":         {"MLB": ["Arizona Diamondbacks"], "NBA": ["Phoenix Suns"]},
+    "philadelphia":    {"NFL": ["Philadelphia Eagles"], "MLB": ["Philadelphia Phillies"], "NBA": ["Philadelphia 76ers"], "NHL": ["Philadelphia Flyers"], "MLS": ["Philadelphia Union"]},
+    "san_antonio":     {"NBA": ["San Antonio Spurs"]},
+    "san_diego":       {"MLB": ["San Diego Padres"], "MLS": ["San Diego FC"]},
+    "san_jose":        {"NFL": ["SF 49ers"], "MLB": ["SF Giants", "Oakland Athletics"], "NBA": ["Golden State Warriors"], "NHL": ["San Jose Sharks"], "MLS": ["San Jose Earthquakes"]},
+    "san_francisco":   {"NFL": ["SF 49ers"], "MLB": ["SF Giants", "Oakland Athletics"], "NBA": ["Golden State Warriors"], "NHL": ["San Jose Sharks"], "MLS": ["San Jose Earthquakes"]},
+    "oakland":         {"NFL": ["SF 49ers"], "MLB": ["SF Giants", "Oakland Athletics"], "NBA": ["Golden State Warriors"], "NHL": ["San Jose Sharks"], "MLS": ["San Jose Earthquakes"]},
+    "austin":          {"MLS": ["Austin FC"]},
+    "jacksonville":    {"NFL": ["Jacksonville Jaguars"]},
+    "charlotte":       {"NFL": ["Carolina Panthers"], "NBA": ["Charlotte Hornets"], "MLS": ["Charlotte FC"]},
+    "columbus":        {"NHL": ["Columbus Blue Jackets"], "MLS": ["Columbus Crew"]},
+    "indianapolis":    {"NFL": ["Indianapolis Colts"], "NBA": ["Indiana Pacers"]},
+    "washington_dc":   {"NFL": ["Washington Commanders"], "MLB": ["Washington Nationals"], "NBA": ["Washington Wizards"], "NHL": ["Washington Capitals"], "MLS": ["DC United"]},
+    "seattle":         {"NFL": ["Seattle Seahawks"], "MLB": ["Seattle Mariners"], "NHL": ["Seattle Kraken"], "MLS": ["Seattle Sounders"]},
+    "denver":          {"NFL": ["Denver Broncos"], "MLB": ["Colorado Rockies"], "NBA": ["Denver Nuggets"], "NHL": ["Colorado Avalanche"], "MLS": ["Colorado Rapids"]},
+    "nashville":       {"NFL": ["Tennessee Titans"], "NHL": ["Nashville Predators"], "MLS": ["Nashville SC"]},
+    "las_vegas":       {"NFL": ["Las Vegas Raiders"], "NHL": ["Vegas Golden Knights"]},
+    "boston":          {"NFL": ["New England Patriots"], "MLB": ["Boston Red Sox"], "NBA": ["Boston Celtics"], "NHL": ["Boston Bruins"], "MLS": ["New England Revolution"]},
+    "detroit":         {"NFL": ["Detroit Lions"], "MLB": ["Detroit Tigers"], "NBA": ["Detroit Pistons"], "NHL": ["Detroit Red Wings"]},
+    "portland":        {"NBA": ["Portland Trail Blazers"], "MLS": ["Portland Timbers"]},
+    "memphis":         {"NBA": ["Memphis Grizzlies"]},
+    "baltimore":       {"NFL": ["Baltimore Ravens"], "MLB": ["Baltimore Orioles"]},
+    "milwaukee":       {"MLB": ["Milwaukee Brewers"], "NBA": ["Milwaukee Bucks"]},
+    "sacramento":      {"NBA": ["Sacramento Kings"]},
+    "atlanta":         {"NFL": ["Atlanta Falcons"], "MLB": ["Atlanta Braves"], "NBA": ["Atlanta Hawks"], "MLS": ["Atlanta United"]},
+    "kansas_city":     {"NFL": ["Kansas City Chiefs"], "MLB": ["Kansas City Royals"], "MLS": ["Sporting KC"]},
+    "raleigh":         {"NHL": ["Carolina Hurricanes"]},
+    "miami":           {"NFL": ["Miami Dolphins"], "MLB": ["Miami Marlins"], "NBA": ["Miami Heat"], "NHL": ["Florida Panthers"], "MLS": ["Inter Miami"]},
+    "oklahoma_city":   {"NBA": ["Oklahoma City Thunder"]},
+    "minneapolis":     {"NFL": ["Minnesota Vikings"], "MLB": ["Minnesota Twins"], "NBA": ["Minnesota Timberwolves"], "NHL": ["Minnesota Wild"], "MLS": ["Minnesota United"]},
+    "cleveland":       {"NFL": ["Cleveland Browns"], "MLB": ["Cleveland Guardians"], "NBA": ["Cleveland Cavaliers"]},
+    "pittsburgh":      {"NFL": ["Pittsburgh Steelers"], "MLB": ["Pittsburgh Pirates"], "NHL": ["Pittsburgh Penguins"]},
+    "new_orleans":     {"NFL": ["New Orleans Saints"], "NBA": ["New Orleans Pelicans"]},
+    "st_louis":        {"MLB": ["St. Louis Cardinals"], "NHL": ["St. Louis Blues"], "MLS": ["St. Louis City SC"]},
+    "tampa":           {"NFL": ["Tampa Bay Buccaneers"], "MLB": ["Tampa Bay Rays"], "NHL": ["Tampa Bay Lightning"]},
+    "salt_lake_city":  {"NBA": ["Utah Jazz"], "NHL": ["Utah Hockey Club"], "MLS": ["Real Salt Lake"]},
+    "buffalo":         {"NFL": ["Buffalo Bills"], "NHL": ["Buffalo Sabres"]},
+    "cincinnati":      {"NFL": ["Cincinnati Bengals"], "MLB": ["Cincinnati Reds"], "MLS": ["FC Cincinnati"]},
+    "orlando":         {"NBA": ["Orlando Magic"], "MLS": ["Orlando City SC"]},
+    "green_bay":       {"NFL": ["Green Bay Packers"]},
+    "baton_rouge":     {"NFL": ["New Orleans Saints"], "NBA": ["New Orleans Pelicans"]},
+    "fresno":          {"NBA": ["Fresno Grizzlies (G-League)"]},
+    "tulsa":           {"NBA": ["Tulsa Thunder (G-League)"]},
+    "laredo":          {"NBA": ["Laredo Lemurs"]},
+    "spokane":         {},
+    "colorado_springs":{"NFL": ["Denver Broncos"], "MLB": ["Colorado Rockies"], "NBA": ["Denver Nuggets"], "NHL": ["Colorado Avalanche"], "MLS": ["Colorado Rapids"]},
+}
+
+# City name → metro key
+_CITY_METRO = {
+    # New York metro
+    "New York": "new_york", "Jersey City": "new_york", "Newark": "new_york",
+    "Yonkers": "new_york", "Paterson": "new_york", "Elizabeth": "new_york",
+    "Stamford": "new_york", "Bridgeport": "new_york", "New Haven": "new_york",
+    # Los Angeles metro
+    "Los Angeles": "los_angeles", "Long Beach": "los_angeles", "Anaheim": "los_angeles",
+    "Santa Ana": "los_angeles", "Irvine": "los_angeles", "Glendale": "los_angeles",
+    "Santa Clarita": "los_angeles", "Fontana": "los_angeles", "San Bernardino": "los_angeles",
+    "Moreno Valley": "los_angeles", "Oxnard": "los_angeles", "Thousand Oaks": "los_angeles",
+    "Simi Valley": "los_angeles", "Torrance": "los_angeles", "Fullerton": "los_angeles",
+    "Pomona": "los_angeles", "Orange": "los_angeles", "Rancho Cucamonga": "los_angeles",
+    "Inglewood": "los_angeles", "Burbank": "los_angeles", "El Monte": "los_angeles",
+    "Pasadena": "los_angeles", "Downey": "los_angeles", "Costa Mesa": "los_angeles",
+    "Huntington Beach": "los_angeles", "Garden Grove": "los_angeles", "West Covina": "los_angeles",
+    "Lancaster": "los_angeles", "Palmdale": "los_angeles", "Corona": "los_angeles",
+    "Menifee": "los_angeles", "Murrieta": "los_angeles", "Temecula": "los_angeles",
+    "Jurupa Valley": "los_angeles", "Ontario": "los_angeles",
+    # Chicago metro
+    "Chicago": "chicago", "Aurora": "chicago", "Naperville": "chicago",
+    "Joliet": "chicago", "Elgin": "chicago",
+    # Dallas metro
+    "Dallas": "dallas", "Fort Worth": "dallas", "Arlington": "dallas",
+    "Plano": "dallas", "Garland": "dallas", "Irving": "dallas",
+    "Mesquite": "dallas", "McKinney": "dallas", "Lewisville": "dallas",
+    "Denton": "dallas", "Richardson": "dallas", "Carrollton": "dallas",
+    "Grand Prairie": "dallas", "Frisco": "dallas", "Allen": "dallas",
+    # Houston metro
+    "Houston": "houston", "Pasadena": "houston", "Pearland": "houston",
+    "Sugar Land": "houston", "Conroe": "houston", "League City": "houston",
+    "Beaumont": "houston",
+    # Phoenix metro
+    "Phoenix": "phoenix", "Mesa": "phoenix", "Scottsdale": "phoenix",
+    "Chandler": "phoenix", "Gilbert": "phoenix", "Glendale": "phoenix",
+    "Goodyear": "phoenix", "Surprise": "phoenix", "Peoria": "phoenix",
+    "Tempe": "phoenix", "Buckeye": "phoenix",
+    # Philadelphia
+    "Philadelphia": "philadelphia", "Allentown": "philadelphia",
+    # San Diego
+    "San Diego": "san_diego", "Escondido": "san_diego",
+    "El Cajon": "san_diego", "Chula Vista": "san_diego", "Carlsbad": "san_diego",
+    "Oceanside": "san_diego",
+    # SF Bay Area
+    "San Francisco": "san_francisco", "San Jose": "san_jose", "Oakland": "oakland",
+    "Fremont": "san_jose", "Santa Clara": "san_jose", "Berkeley": "oakland",
+    "Richmond": "oakland", "Fairfield": "san_jose", "Vallejo": "san_jose",
+    "Antioch": "san_jose", "Concord": "san_jose", "Hayward": "oakland",
+    "Sunnyvale": "san_jose", "San Mateo": "san_francisco", "Daly City": "san_francisco",
+    "Stockton": "san_jose",
+    # Seattle metro
+    "Seattle": "seattle", "Tacoma": "seattle", "Bellevue": "seattle",
+    "Kent": "seattle", "Renton": "seattle", "Everett": "seattle",
+    "Federal Way": "seattle", "Spokane Valley": "spokane",
+    # Denver metro
+    "Denver": "denver", "Lakewood": "denver", "Thornton": "denver",
+    "Arvada": "denver", "Westminster": "denver", "Centennial": "denver",
+    "Greeley": "denver", "Boulder": "denver", "Colorado Springs": "colorado_springs",
+    # Miami metro
+    "Miami": "miami", "Fort Lauderdale": "miami", "Hialeah": "miami",
+    "Miramar": "miami", "Pompano Beach": "miami", "West Palm Beach": "miami",
+    "Pembroke Pines": "miami", "Coral Springs": "miami", "Boca Raton": "miami",
+    "Miami Gardens": "miami", "Hollywood": "miami", "Davie": "miami",
+    "Plantation": "miami", "Sunrise": "miami", "Port St. Lucie": "miami",
+    # Boston metro
+    "Boston": "boston", "Worcester": "boston", "Cambridge": "boston",
+    "Lowell": "boston", "Brockton": "boston", "Lynn": "boston",
+    "Quincy": "boston", "New Bedford": "boston", "Providence": "boston",
+    "Manchester": "boston",
+    # DC metro
+    "Washington": "washington_dc", "Alexandria": "washington_dc",
+    "Chesapeake": "washington_dc",
+    # Other major cities (standalone)
+    "Chicago": "chicago", "Nashville": "nashville", "Las Vegas": "las_vegas",
+    "North Las Vegas": "las_vegas", "Henderson": "las_vegas",
+    "Detroit": "detroit", "Warren": "detroit", "Sterling Heights": "detroit",
+    "Dearborn": "detroit", "Ann Arbor": "detroit", "Clinton": "detroit",
+    "Portland": "portland", "Gresham": "portland", "Hillsboro": "portland",
+    "Vancouver": "portland", "Salem": "portland", "Eugene": "portland",
+    "Memphis": "memphis", "Baltimore": "baltimore",
+    "Milwaukee": "milwaukee", "Madison": "milwaukee",
+    "Sacramento": "sacramento", "Elk Grove": "sacramento",
+    "Roseville": "sacramento", "Vacaville": "sacramento",
+    "Atlanta": "atlanta", "Sandy Springs": "atlanta", "South Fulton": "atlanta",
+    "Kansas City": "kansas_city", "Overland Park": "kansas_city",
+    "Olathe": "kansas_city", "Independence": "kansas_city", "Lee's Summit": "kansas_city",
+    "Raleigh": "raleigh", "Durham": "raleigh", "Cary": "raleigh",
+    "Greensboro": "raleigh", "Winston-Salem": "raleigh", "High Point": "raleigh",
+    "Concord": "charlotte",
+    "Tampa": "tampa", "St. Petersburg": "tampa", "Clearwater": "tampa",
+    "Lakeland": "tampa",
+    "Salt Lake City": "salt_lake_city", "West Valley City": "salt_lake_city",
+    "West Jordan": "salt_lake_city", "Provo": "salt_lake_city",
+    "St. George": "salt_lake_city",
+    "Buffalo": "buffalo", "Cincinnati": "cincinnati",
+    "Columbus": "columbus", "Orlando": "orlando", "Deltona": "orlando",
+    "Cape Coral": "orlando",
+    "Green Bay": "green_bay", "Indianapolis": "indianapolis",
+    "Fishers": "indianapolis", "Carmel": "indianapolis", "South Bend": "indianapolis",
+    "Oklahoma City": "oklahoma_city", "Norman": "oklahoma_city",
+    "Broken Arrow": "oklahoma_city", "Tulsa": "tulsa",
+    "Minneapolis": "minneapolis", "Saint Paul": "minneapolis",
+    "Rochester": "minneapolis",
+    "Cleveland": "cleveland", "Akron": "cleveland",
+    "Pittsburgh": "pittsburgh", "New Orleans": "new_orleans",
+    "Baton Rouge": "baton_rouge", "Shreveport": "baton_rouge",
+    "St. Louis": "st_louis", "Jacksonville": "jacksonville",
+    "Charlotte": "charlotte", "San Antonio": "san_antonio",
+    "Austin": "austin", "Round Rock": "austin", "Georgetown": "austin",
+    "Miami": "miami", "Richmond": "washington_dc",
+    "Fresno": "fresno", "Bakersfield": "fresno",
+    "Laredo": "laredo", "Stockton": "san_jose",
+    "Modesto": "san_jose",
+}
+
+
+def get_teams(city: str, row) -> dict:
+    """Return {league: [team names]} for a city, or empty dict if no teams."""
+    metro = _CITY_METRO.get(city)
+    if not metro:
+        return {}
+    teams = _METRO_TEAMS.get(metro, {})
+    # Filter to only leagues where this city's count > 0
+    result = {}
+    for league, col in [("NFL", "nfl_teams"), ("MLB", "mlb_teams"),
+                        ("NBA", "nba_teams"), ("NHL", "nhl_teams"), ("MLS", "mls_teams")]:
+        if pd.notna(row.get(col)) and row.get(col, 0) >= 1 and league in teams:
+            result[league] = teams[league]
+    return result
+
 # ── page config ───────────────────────────────────────────────────────────────
 
 st.set_page_config(
@@ -374,8 +561,16 @@ with col_list:
 
             # Build stat pills
             pills = []
+            # Temperature: avg / summer high / winter low
+            temp_parts = []
             if pd.notna(row.get("avg_temp_f")):
-                pills.append(f"{row['avg_temp_f']:.0f}°F avg")
+                temp_parts.append(f"{row['avg_temp_f']:.0f}°F avg")
+            if pd.notna(row.get("avg_summer_high_f")):
+                temp_parts.append(f"{row['avg_summer_high_f']:.0f}°F summer")
+            if pd.notna(row.get("avg_winter_low_f")):
+                temp_parts.append(f"{row['avg_winter_low_f']:.0f}°F winter")
+            if temp_parts:
+                pills.append("  |  ".join(temp_parts))
             if pd.notna(row.get("median_household_income")):
                 pills.append(f"${row['median_household_income']:,.0f} income")
             if pd.notna(row.get("median_home_price")):
@@ -388,18 +583,18 @@ with col_list:
                 pills.append(f"{row['nature_score']:.0f} nature")
             if pd.notna(row.get("seasons_count")):
                 pills.append(f"{int(row['seasons_count'])} seasons")
-            if pd.notna(row.get("total_pro_teams")) and row.get("total_pro_teams", 0) > 0:
-                pills.append(f"{int(row['total_pro_teams'])} pro teams")
             if pd.notna(row.get("environment_type")):
                 pills.append(str(row["environment_type"]).replace("_", " ").title())
             elif row.get("coastline_type") in ("ocean", "great_lakes"):
-                ct = "Ocean" if row["coastline_type"] == "ocean" else "Great Lakes"
-                pills.append(ct)
+                pills.append("Ocean" if row["coastline_type"] == "ocean" else "Great Lakes")
 
             pills_html = "".join([f'<span class="stat-pill">{p}</span>' for p in pills])
 
             pop_str = f"{row['population']:,.0f}" if pd.notna(row.get("population")) else "N/A"
             metro_str = f"{row['metro_population']:,.0f}" if pd.notna(row.get("metro_population")) else "N/A"
+
+            total_teams = int(row.get("total_pro_teams", 0) or 0)
+            teams_by_league = get_teams(row["city"], row) if total_teams > 0 else {}
 
             st.markdown(f"""
             <div class="city-card">
@@ -409,6 +604,15 @@ with col_list:
                 <div style="margin-top:8px">{pills_html}</div>
             </div>
             """, unsafe_allow_html=True)
+
+            if total_teams > 0:
+                label = f"{total_teams} pro team{'s' if total_teams != 1 else ''}"
+                with st.expander(label, expanded=False):
+                    if teams_by_league:
+                        for league, names in teams_by_league.items():
+                            st.markdown(f"**{league}:** {', '.join(names)}")
+                    else:
+                        st.markdown(f"*{total_teams} pro team(s) in metro area*")
 
 # ── map ───────────────────────────────────────────────────────────────────────
 
