@@ -223,8 +223,27 @@ st.markdown("""
         background: #1e2130;
         border: 1px solid #2d3048;
         border-radius: 10px;
-        padding: 14px 16px;
-        margin-bottom: 8px;
+        padding: 14px 16px 28px 16px;
+        margin-bottom: 0px;
+    }
+    /* Sports popover button — styled as a stat pill, pulled up into the card */
+    div[data-testid="stPopover"] > button {
+        background: #2d3048 !important;
+        border: none !important;
+        border-radius: 20px !important;
+        padding: 2px 10px !important;
+        font-size: 11px !important;
+        color: #a5b4fc !important;
+        margin-top: -34px !important;
+        margin-bottom: 8px !important;
+        margin-left: 4px !important;
+        height: auto !important;
+        min-height: unset !important;
+        line-height: 1.6 !important;
+    }
+    div[data-testid="stPopover"] > button:hover {
+        background: #3d4060 !important;
+        color: #c4b5fd !important;
     }
     .city-rank {
         font-size: 12px;
@@ -607,7 +626,7 @@ with col_list:
 
             if total_teams > 0:
                 label = f"{total_teams} pro team{'s' if total_teams != 1 else ''}"
-                with st.expander(label, expanded=False):
+                with st.popover(label):
                     if teams_by_league:
                         for league, names in teams_by_league.items():
                             st.markdown(f"**{league}:** {', '.join(names)}")
