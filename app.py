@@ -216,6 +216,11 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+    /* hide sidebar collapse/expand button */
+    [data-testid="collapsedControl"] { display: none !important; }
+    button[data-testid="stSidebarNavCollapseButton"] { display: none !important; }
+    section[data-testid="stSidebar"] > div > div:first-child button { display: none !important; }
+
     /* ── Base ── */
     html, body, [class*="css"], * { font-family: 'Inter', sans-serif !important; }
     .stApp { background-color: #F4F6F9; }
@@ -487,6 +492,7 @@ def fmt_money(n, short=True):
     return f"${int(n):,}"
 
 # ── helper: safe min/max ──────────────────────────────────────────────────────
+
 
 def safe_range(col, default_min=0, default_max=100):
     if col not in df.columns or df[col].isna().all():
