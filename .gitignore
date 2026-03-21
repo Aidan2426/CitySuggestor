@@ -1,4 +1,5 @@
-echo walkability.csv >> .gitignore
-git add .gitignore
-git commit -m "Remove large walkability.csv from tracking"
-git push
+walkability.csv
+cities_master_old.csv
+__pycache__/
+*.pyc
+.env
