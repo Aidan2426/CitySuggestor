@@ -874,6 +874,7 @@ else:
             <div class="stat-box">
                 <div class="stat-label">Population</div>
                 <div class="stat-val">{fmt_pop(row.get('population'))}</div>
+                <div style="font-size:11px;color:#7c8db5;margin-top:2px">Metro {fmt_pop(row.get('metro_population'))}</div>
             </div>
             <div class="stat-box">
                 <div class="stat-label">Avg Temp</div>
