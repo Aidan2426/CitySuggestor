@@ -245,9 +245,13 @@ st.markdown("""
         background: #FFFFFF;
         border: 1px solid #E2E8F0;
         border-radius: 14px;
-        overflow: hidden;
+        overflow: visible;
         margin-bottom: 14px;
         box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .card-photo, .card-photo-placeholder {
+        border-radius: 14px 14px 0 0;
+        overflow: hidden;
     }
     .card-photo {
         width: 100%; height: 180px;
